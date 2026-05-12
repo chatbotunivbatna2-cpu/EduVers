@@ -2,7 +2,6 @@ import os
 import logging
 from datetime import timedelta
 from dotenv import load_dotenv
-
 load_dotenv()
 
 def _require(var):
@@ -14,7 +13,12 @@ class Config:
     SECRET_KEY = _require('SECRET_KEY')
     DEBUG = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
 
-    SQLALCHEMY_DATABASE_URI = _require('DATABASE_URL')
+    # Handle DATABASE_URL carefully
+    db_url = _require('DATABASE_URL').strip()
+    if db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql://", 1)
+    
+    SQLALCHEMY_DATABASE_URI = db_url
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # Database connection pool parameters
     SQLALCHEMY_ENGINE_OPTIONS = {
