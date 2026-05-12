@@ -96,19 +96,5 @@ def create_app(config_class=None):
     
 app = create_app()
 
-import os
-
-database_url = os.getenv("DATABASE_URL")
-
-if database_url.startswith("postgres://"):
-    database_url = database_url.replace(
-        "postgres://",
-        "postgresql://",
-        1
-    )
-
-app.config["SQLALCHEMY_DATABASE_URI"] = database_url
-app = create_app()
-
 if __name__ == '__main__':
     app.run(debug=app.config.get('DEBUG', False), host='0.0.0.0', port=5000)
