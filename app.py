@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-
+import os
 import logging
 from flask import Flask, render_template, jsonify
 from config import get_config
@@ -93,8 +93,21 @@ def create_app(config_class=None):
         log.info(f'FAQs reloaded: {len(faq_matcher.faqs)} entries')
 
     return app
+    
+app = create_app()
 
+import os
 
+database_url = os.getenv("DATABASE_URL")
+
+if database_url.startswith("postgres://"):
+    database_url = database_url.replace(
+        "postgres://",
+        "postgresql://",
+        1
+    )
+
+app.config["SQLALCHEMY_DATABASE_URI"] = database_url
 app = create_app()
 
 if __name__ == '__main__':
