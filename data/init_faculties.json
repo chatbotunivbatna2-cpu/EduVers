@@ -1,0 +1,1075 @@
+[
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Faculty of Technology",
+            "name_ar": "كلية التكنولوجيا",
+            "name_fr": "Faculté de Technologie",
+            "code": "TECH_BATNA2",
+            "dean": "Unknown",
+            "email": "tech@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Common Core Technology",
+            "name_ar": "الجذع المشترك تكنولوجيا",
+            "name_fr": "Socle Commun en Technologie",
+            "code": "CC_TECH_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "cctech@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Mechanical Engineering",
+            "name_ar": "الهندسة الميكانيكية",
+            "name_fr": "Génie Mécanique",
+            "code": "MECH_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "mech@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept3": {
+            "name": "Electrotechnics",
+            "name_ar": "الهندسة الكهربائية",
+            "name_fr": "Électrotechnique",
+            "code": "ELEC_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "electrotech@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept4": {
+            "name": "Electromechanics",
+            "name_ar": "الكهروميكانيكا",
+            "name_fr": "Électromécanique",
+            "code": "EMECH_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "electromech@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept5": {
+            "name": "Electronics",
+            "name_ar": "الإلكترونيك",
+            "name_fr": "Électronique",
+            "code": "ELN_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "electronics@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept6": {
+            "name": "Civil Engineering",
+            "name_ar": "الهندسة المدنية",
+            "name_fr": "Génie Civil",
+            "code": "CIVIL_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "civil@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept7": {
+            "name": "Industrial Engineering",
+            "name_ar": "الهندسة الصناعية",
+            "name_fr": "Génie Industriel",
+            "code": "IND_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "industrial@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept8": {
+            "name": "Hydraulics",
+            "name_ar": "الري",
+            "name_fr": "Hydraulique",
+            "code": "HYD_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "hydraulics@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept9": {
+            "name": "Process Engineering",
+            "name_ar": "هندسة الطرائق",
+            "name_fr": "Génie des Procédés",
+            "code": "PROC_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "process@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Faculty of Medicine",
+            "name_ar": "كلية الطب",
+            "name_fr": "Faculté de Médecine",
+            "code": "MED_BATNA2",
+            "dean": "Unknown",
+            "email": "med@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Central"
+        },
+        "dept1": {
+            "name": "Medicine",
+            "name_ar": "الطب",
+            "name_fr": "Médecine",
+            "code": "MED_D_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "medicine@univ-batna2.dz",
+            "building": "Campus Central"
+        },
+        "dept2": {
+            "name": "Pharmacy",
+            "name_ar": "الصيدلة",
+            "name_fr": "Pharmacie",
+            "code": "PHARM_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "pharmacy@univ-batna2.dz",
+            "building": "Campus Central"
+        },
+        "dept3": {
+            "name": "Dental Medicine",
+            "name_ar": "طب الأسنان",
+            "name_fr": "Médecine Dentaire",
+            "code": "DENT_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "dental@univ-batna2.dz",
+            "building": "Campus Central"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Faculty of Mathematics and Computer Science",
+            "name_ar": "كلية الرياضيات والإعلام الآلي",
+            "name_fr": "Faculté des Mathématiques et de l'Informatique",
+            "code": "MI_BATNA2",
+            "dean": "Unknown",
+            "email": "mi@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "code": "MATH_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "math@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Computer Science",
+            "name_ar": "الإعلام الآلي",
+            "name_fr": "Informatique",
+            "code": "CS_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "cs@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Faculty of Nature and Life Sciences",
+            "name_ar": "كلية علوم الطبيعة والحياة",
+            "name_fr": "Faculté des Sciences de la Nature et de la Vie",
+            "code": "SNV_BATNA2",
+            "dean": "Unknown",
+            "email": "snv@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Common Core SNV",
+            "name_ar": "الجذع المشترك",
+            "name_fr": "Socle Commun SNV",
+            "code": "CC_SNV_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "ccsnv@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Organism Biology",
+            "name_ar": "بيولوجيا الكائنات",
+            "name_fr": "Biologie des Organismes",
+            "code": "BIO_ORG_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "bioorg@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept3": {
+            "name": "Microbiology and Biochemistry",
+            "name_ar": "الميكروبيولوجيا والكيمياء الحيوية",
+            "name_fr": "Microbiologie et Biochimie",
+            "code": "MICRO_BIO_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "microbio@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept4": {
+            "name": "Ecology and Environment",
+            "name_ar": "علم البيئة والمحيط",
+            "name_fr": "Écologie et Environnement",
+            "code": "ECOL_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "ecology@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Faculty of Letters and Foreign Languages",
+            "name_ar": "كلية الآداب واللغات الأجنبية",
+            "name_fr": "Faculté des Lettres et des Langues Étrangères",
+            "code": "LLE_BATNA2",
+            "dean": "Unknown",
+            "email": "lle@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "French Language and Literature",
+            "name_ar": "اللغة والأدب الفرنسي",
+            "name_fr": "Langue et Littérature Française",
+            "code": "FR_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "french@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "English Language and Literature",
+            "name_ar": "اللغة والأدب الإنجليزي",
+            "name_fr": "Langue et Littérature Anglaise",
+            "code": "ENG_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "english@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept3": {
+            "name": "Translation",
+            "name_ar": "الترجمة",
+            "name_fr": "Traduction",
+            "code": "TRANS_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "translation@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Institute of Hygiene and Safety",
+            "name_ar": "معهد النظافة والأمن الصناعي",
+            "name_fr": "Institut d'Hygiène et de Sécurité",
+            "code": "IHS_BATNA2",
+            "dean": "Unknown",
+            "email": "ihs@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Working Conditions",
+            "name_ar": "ظروف العمل",
+            "name_fr": "Conditions de Travail",
+            "code": "WC_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "wc@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Industrial Risk Management",
+            "name_ar": "التحكم في الأخطار الصناعية",
+            "name_fr": "Maîtrise des Risques Industriels",
+            "code": "IRM_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "irm@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Institute of Earth Sciences and Universe",
+            "name_ar": "معهد علوم الأرض والكون",
+            "name_fr": "Institut des Sciences de la Terre et de l'Univers",
+            "code": "ISTU_BATNA2",
+            "dean": "Unknown",
+            "email": "istu@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Geology",
+            "name_ar": "الجيولوجيا",
+            "name_fr": "Géologie",
+            "code": "GEO_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "geology@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Geography and Spatial Planning",
+            "name_ar": "الجغرافيا وتهيئة الإقليم",
+            "name_fr": "Géographie et Aménagement du Territoire",
+            "code": "GEOG_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "geography@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "batna2",
+        "faculty": {
+            "name": "Institute of Physical Education and Sports",
+            "name_ar": "معهد علوم وتقنيات النشاطات البدنية والرياضية",
+            "name_fr": "Institut des Sciences et Techniques des Activités Physiques et Sportives",
+            "code": "ISTAPS_BATNA2",
+            "dean": "Unknown",
+            "email": "istaps@univ-batna2.dz",
+            "phone": "+213 33 00 00 00",
+            "building": "Campus Fesdis"
+        },
+        "dept1": {
+            "name": "Motor Education",
+            "name_ar": "التربية الحركية",
+            "name_fr": "Éducation Motrice",
+            "code": "ME_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "motor@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        },
+        "dept2": {
+            "name": "Sports Training",
+            "name_ar": "التدريب الرياضي",
+            "name_fr": "Entraînement Sportif",
+            "code": "ST_BATNA2",
+            "head_of_department": "Unknown",
+            "email": "sports@univ-batna2.dz",
+            "building": "Campus Fesdis"
+        }
+    },
+    {
+        "university_var": "algiers1",
+        "faculty": {
+            "name": "Faculty of Letters and Languages",
+            "name_ar": "كلية الآداب واللغات",
+            "name_fr": "Faculté des Lettres et Langues",
+            "code": "FL_ALGIERS1",
+            "dean": "Prof. Rachid Saïd",
+            "email": "letters@univ-alger.dz",
+            "phone": "+213 21 23 45 67",
+            "building": "Building D"
+        },
+        "dept1": {
+            "name": "English Literature",
+            "name_ar": "اللغة الإنجليزية والأدب",
+            "name_fr": "Littérature Anglaise",
+            "code": "ENG_ALGIERS1",
+            "head_of_department": "Prof. Samia Benali",
+            "email": "english@univ-alger.dz",
+            "building": "Building D - Floor 1"
+        },
+        "dept2": {
+            "name": "French Literature",
+            "name_ar": "اللغة الفرنسية والأدب",
+            "name_fr": "Littérature Française",
+            "code": "FR_ALGIERS1",
+            "head_of_department": "Prof. Nadia Fouad",
+            "email": "french@univ-alger.dz",
+            "building": "Building D - Floor 2"
+        }
+    },
+    {
+        "university_var": "algiers1",
+        "faculty": {
+            "name": "Faculty of Law",
+            "name_ar": "كلية الحقوق",
+            "name_fr": "Faculté de Droit",
+            "code": "FLW_ALGIERS1",
+            "dean": "Prof. Karim Tabbane",
+            "email": "law@univ-alger.dz",
+            "phone": "+213 21 23 45 68",
+            "building": "Building E"
+        },
+        "dept1": {
+            "name": "Private Law",
+            "name_ar": "القانون الخاص",
+            "name_fr": "Droit Privé",
+            "code": "PL_ALGIERS1",
+            "head_of_department": "Prof. Amir Hassan",
+            "email": "private-law@univ-alger.dz",
+            "building": "Building E - Floor 1"
+        },
+        "dept2": {
+            "name": "Public Law",
+            "name_ar": "القانون العام",
+            "name_fr": "Droit Public",
+            "code": "PBL_ALGIERS1",
+            "head_of_department": "Prof. Souad Benmansour",
+            "email": "public-law@univ-alger.dz",
+            "building": "Building E - Floor 2"
+        }
+    },
+    {
+        "university_var": "constantine1",
+        "faculty": {
+            "name": "Faculty of Exact Sciences",
+            "name_ar": "كلية العلوم الدقيقة",
+            "name_fr": "Faculté des Sciences Exactes",
+            "code": "FSE_CONST1",
+            "dean": "Prof. Jamal Medina",
+            "email": "science@umc.edu.dz",
+            "phone": "+213 31 81 88 00",
+            "building": "Building F"
+        },
+        "dept1": {
+            "name": "Physics",
+            "name_ar": "الفيزياء",
+            "name_fr": "Physique",
+            "code": "PHY_CONST1",
+            "head_of_department": "Prof. Samir Tatar",
+            "email": "physics@umc.edu.dz",
+            "building": "Building F - Floor 1"
+        },
+        "dept2": {
+            "name": "Chemistry",
+            "name_ar": "الكيمياء",
+            "name_fr": "Chimie",
+            "code": "CHEM_CONST1",
+            "head_of_department": "Prof. Hana Abdellatif",
+            "email": "chemistry@umc.edu.dz",
+            "building": "Building F - Floor 2"
+        }
+    },
+    {
+        "university_var": "constantine1",
+        "faculty": {
+            "name": "Faculty of Medicine",
+            "name_ar": "كلية الطب",
+            "name_fr": "Faculté de Médecine",
+            "code": "FM_CONST1",
+            "dean": "Prof. Najib Salma",
+            "email": "medicine@umc.edu.dz",
+            "phone": "+213 31 81 88 01",
+            "building": "Building G"
+        },
+        "dept1": {
+            "name": "General Medicine",
+            "name_ar": "الطب العام",
+            "name_fr": "Médecine Générale",
+            "code": "GM_CONST1",
+            "head_of_department": "Prof. Khalil Berghout",
+            "email": "gen-medicine@umc.edu.dz",
+            "building": "Building G - Floor 1"
+        },
+        "dept2": {
+            "name": "Surgery",
+            "name_ar": "الجراحة",
+            "name_fr": "Chirurgie",
+            "code": "SUR_CONST1",
+            "head_of_department": "Prof. Tariq Amoun",
+            "email": "surgery@umc.edu.dz",
+            "building": "Building G - Floor 2"
+        }
+    },
+    {
+        "university_var": "batna1",
+        "faculty": {
+            "name": "Faculty of Natural Sciences",
+            "name_ar": "كلية العلوم الطبيعية",
+            "name_fr": "Faculté des Sciences Naturelles",
+            "code": "FNS_BATNA1",
+            "dean": "Prof. Slimane Oussama",
+            "email": "natural-sci@univ-batna.dz",
+            "phone": "+213 33 81 10 31",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Biology",
+            "name_ar": "علم الأحياء",
+            "name_fr": "Biologie",
+            "code": "BIO_BATNA1",
+            "head_of_department": "Prof. Rania Khaled",
+            "email": "biology@univ-batna.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Geology",
+            "name_ar": "الجيولوجيا",
+            "name_fr": "Géologie",
+            "code": "GEO_BATNA1",
+            "head_of_department": "Prof. Nassim Belaid",
+            "email": "geology@univ-batna.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "batna1",
+        "faculty": {
+            "name": "Faculty of Law and Political Sciences",
+            "name_ar": "كلية الحقوق والعلوم السياسية",
+            "name_fr": "Faculté de Droit et Sciences Politiques",
+            "code": "FLPS_BATNA1",
+            "dean": "Prof. Aissa Touati",
+            "email": "law@univ-batna.dz",
+            "phone": "+213 33 81 10 32",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Private Law",
+            "name_ar": "القانون الخاص",
+            "name_fr": "Droit Privé",
+            "code": "PL_BATNA1",
+            "head_of_department": "Prof. Samira Zeroual",
+            "email": "private-law@univ-batna.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Administrative Law",
+            "name_ar": "القانون الإداري",
+            "name_fr": "Droit Administratif",
+            "code": "AL_BATNA1",
+            "head_of_department": "Prof. Kamal Kheira",
+            "email": "admin-law@univ-batna.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "biskra",
+        "faculty": {
+            "name": "Faculty of Exact Sciences and Computer Science",
+            "name_ar": "كلية العلوم الدقيقة وعلوم الحاسوب",
+            "name_fr": "Faculté des Sciences Exactes et Informatique",
+            "code": "FSECI_BISKRA",
+            "dean": "Prof. Tahar Boukhobza",
+            "email": "sci@univ-biskra.dz",
+            "phone": "+213 33 74 68 45",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_BISKRA",
+            "head_of_department": "Prof. Amira Said",
+            "email": "cs@univ-biskra.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "code": "MATH_BISKRA",
+            "head_of_department": "Prof. Bilal Hamzaoui",
+            "email": "math@univ-biskra.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "biskra",
+        "faculty": {
+            "name": "Faculty of Technology",
+            "name_ar": "كلية التكنولوجيا",
+            "name_fr": "Faculté de Technologie",
+            "code": "FT_BISKRA",
+            "dean": "Prof. Lyes Achouri",
+            "email": "tech@univ-biskra.dz",
+            "phone": "+213 33 74 68 46",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Civil Engineering",
+            "name_ar": "الهندسة المدنية",
+            "name_fr": "Génie Civil",
+            "code": "CE_BISKRA",
+            "head_of_department": "Prof. Nour Benali",
+            "email": "civil@univ-biskra.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Mechanical Engineering",
+            "name_ar": "الهندسة الميكانيكية",
+            "name_fr": "Génie Mécanique",
+            "code": "ME_BISKRA",
+            "head_of_department": "Prof. Farid Khelifa",
+            "email": "mechanical@univ-biskra.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "annaba",
+        "faculty": {
+            "name": "Faculty of Sciences",
+            "name_ar": "كلية العلوم",
+            "name_fr": "Faculté des Sciences",
+            "code": "FS_ANNABA",
+            "dean": "Prof. Lila Meziane",
+            "email": "science@univ-annaba.dz",
+            "phone": "+213 38 57 02 58",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_ANNABA",
+            "head_of_department": "Prof. Walid Guemmaz",
+            "email": "cs@univ-annaba.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Physics",
+            "name_ar": "الفيزياء",
+            "name_fr": "Physique",
+            "code": "PHY_ANNABA",
+            "head_of_department": "Prof. Sabrina Benhamed",
+            "email": "physics@univ-annaba.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "annaba",
+        "faculty": {
+            "name": "Faculty of Medicine",
+            "name_ar": "كلية الطب",
+            "name_fr": "Faculté de Médecine",
+            "code": "FM_ANNABA",
+            "dean": "Prof. Hocine Benali",
+            "email": "medicine@univ-annaba.dz",
+            "phone": "+213 38 57 02 59",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Pharmacy",
+            "name_ar": "الصيدلة",
+            "name_fr": "Pharmacie",
+            "code": "PHARMA_ANNABA",
+            "head_of_department": "Prof. Asma Chikhi",
+            "email": "pharmacy@univ-annaba.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Dentistry",
+            "name_ar": "طب الأسنان",
+            "name_fr": "Médecine Dentaire",
+            "code": "DENT_ANNABA",
+            "head_of_department": "Prof. Ryad Dahmani",
+            "email": "dentistry@univ-annaba.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "setif1",
+        "faculty": {
+            "name": "Faculty of Sciences",
+            "name_ar": "كلية العلوم",
+            "name_fr": "Faculté des Sciences",
+            "code": "FS_SETIF1",
+            "dean": "Prof. Boualem Mansouri",
+            "email": "science@univ-setif.dz",
+            "phone": "+213 36 66 11 90",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_SETIF1",
+            "head_of_department": "Prof. Fares Boudjemai",
+            "email": "cs@univ-setif.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "code": "MATH_SETIF1",
+            "head_of_department": "Prof. Hakima Larbi",
+            "email": "math@univ-setif.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "setif1",
+        "faculty": {
+            "name": "Faculty of Economics and Management",
+            "name_ar": "كلية الاقتصاد والتسيير",
+            "name_fr": "Faculté des Sciences Économiques et de Gestion",
+            "code": "FEM_SETIF1",
+            "dean": "Prof. Malek Bouziane",
+            "email": "eco@univ-setif.dz",
+            "phone": "+213 36 66 11 91",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Management",
+            "name_ar": "التسيير",
+            "name_fr": "Management",
+            "code": "MGT_SETIF1",
+            "head_of_department": "Prof. Dalila Cherif",
+            "email": "management@univ-setif.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Finance and Accounting",
+            "name_ar": "المالية والمحاسبة",
+            "name_fr": "Finance et Comptabilité",
+            "code": "FIN_SETIF1",
+            "head_of_department": "Prof. Adel Ksouri",
+            "email": "finance@univ-setif.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "setif2",
+        "faculty": {
+            "name": "Faculty of Law",
+            "name_ar": "كلية الحقوق",
+            "name_fr": "Faculté de Droit",
+            "code": "FL_SETIF2",
+            "dean": "Prof. Nora Aouissi",
+            "email": "law@univ-setif2.dz",
+            "phone": "+213 36 66 11 92",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Private Law",
+            "name_ar": "القانون الخاص",
+            "name_fr": "Droit Privé",
+            "code": "PL_SETIF2",
+            "head_of_department": "Prof. Riad Bensalem",
+            "email": "private-law@univ-setif2.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Political Sciences",
+            "name_ar": "العلوم السياسية",
+            "name_fr": "Sciences Politiques",
+            "code": "PS_SETIF2",
+            "head_of_department": "Prof. Amina Khelifi",
+            "email": "polsci@univ-setif2.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "setif2",
+        "faculty": {
+            "name": "Faculty of Arabic Language and Letters",
+            "name_ar": "كلية اللغة العربية والآداب",
+            "name_fr": "Faculté de Langue et Lettres Arabes",
+            "code": "FLLA_SETIF2",
+            "dean": "Prof. Hamid Berrahal",
+            "email": "arabic@univ-setif2.dz",
+            "phone": "+213 36 66 11 93",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Arabic Language",
+            "name_ar": "اللغة العربية",
+            "name_fr": "Langue Arabe",
+            "code": "AR_SETIF2",
+            "head_of_department": "Prof. Sihem Benhamed",
+            "email": "arabic-lang@univ-setif2.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "History",
+            "name_ar": "التاريخ",
+            "name_fr": "Histoire",
+            "code": "HIST_SETIF2",
+            "head_of_department": "Prof. Youcef Djoudi",
+            "email": "history@univ-setif2.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "bejaia",
+        "faculty": {
+            "name": "Faculty of Exact Sciences",
+            "name_ar": "كلية العلوم الدقيقة",
+            "name_fr": "Faculté des Sciences Exactes",
+            "code": "FSE_BEJAIA",
+            "dean": "Prof. Nasser Hamzaoui",
+            "email": "sci@univ-bejaia.dz",
+            "phone": "+213 34 21 09 11",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_BEJAIA",
+            "head_of_department": "Prof. Zineb Ait Ali",
+            "email": "cs@univ-bejaia.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "code": "MATH_BEJAIA",
+            "head_of_department": "Prof. Karim Idir",
+            "email": "math@univ-bejaia.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "bejaia",
+        "faculty": {
+            "name": "Faculty of Technology",
+            "name_ar": "كلية التكنولوجيا",
+            "name_fr": "Faculté de Technologie",
+            "code": "FT_BEJAIA",
+            "dean": "Prof. Djamel Amrani",
+            "email": "tech@univ-bejaia.dz",
+            "phone": "+213 34 21 09 12",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Mechanical Engineering",
+            "name_ar": "الهندسة الميكانيكية",
+            "name_fr": "Génie Mécanique",
+            "code": "ME_BEJAIA",
+            "head_of_department": "Prof. Sofiane Aissaoui",
+            "email": "mechanical@univ-bejaia.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Electrical Engineering",
+            "name_ar": "الهندسة الكهربائية",
+            "name_fr": "Génie Électrique",
+            "code": "EE_BEJAIA",
+            "head_of_department": "Prof. Lynda Ramdani",
+            "email": "electrical@univ-bejaia.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "tizi",
+        "faculty": {
+            "name": "Faculty of Sciences",
+            "name_ar": "كلية العلوم",
+            "name_fr": "Faculté des Sciences",
+            "code": "FS_TIZI",
+            "dean": "Prof. Malika Amara",
+            "email": "science@ummto.dz",
+            "phone": "+213 26 11 55 12",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_TIZI",
+            "head_of_department": "Prof. Rachid Aouali",
+            "email": "cs@ummto.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Biology and Ecology",
+            "name_ar": "الأحياء والبيئة",
+            "name_fr": "Biologie et Écologie",
+            "code": "BIO_TIZI",
+            "head_of_department": "Prof. Farida Chikh",
+            "email": "biology@ummto.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "tizi",
+        "faculty": {
+            "name": "Faculty of Letters and Languages",
+            "name_ar": "كلية الآداب واللغات",
+            "name_fr": "Faculté des Lettres et Langues",
+            "code": "FLL_TIZI",
+            "dean": "Prof. Yidir Achour",
+            "email": "letters@ummto.dz",
+            "phone": "+213 26 11 55 13",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Tamazight Language",
+            "name_ar": "اللغة الأمازيغية",
+            "name_fr": "Langue Tamazight",
+            "code": "TAM_TIZI",
+            "head_of_department": "Prof. Samira Agouni",
+            "email": "tamazight@ummto.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "French Language",
+            "name_ar": "اللغة الفرنسية",
+            "name_fr": "Langue Française",
+            "code": "FR_TIZI",
+            "head_of_department": "Prof. Nassima Ouali",
+            "email": "french@ummto.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "blida1",
+        "faculty": {
+            "name": "Faculty of Sciences",
+            "name_ar": "كلية العلوم",
+            "name_fr": "Faculté des Sciences",
+            "code": "FS_BLIDA1",
+            "dean": "Prof. Omar Benali",
+            "email": "science@univ-blida.dz",
+            "phone": "+213 25 43 38 40",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "code": "CS_BLIDA1",
+            "head_of_department": "Prof. Nadia Slimani",
+            "email": "cs@univ-blida.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "code": "MATH_BLIDA1",
+            "head_of_department": "Prof. Said Boudali",
+            "email": "math@univ-blida.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "blida1",
+        "faculty": {
+            "name": "Faculty of Medicine",
+            "name_ar": "كلية الطب",
+            "name_fr": "Faculté de Médecine",
+            "code": "FM_BLIDA1",
+            "dean": "Prof. Houria Medjdoub",
+            "email": "medicine@univ-blida.dz",
+            "phone": "+213 25 43 38 41",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "General Medicine",
+            "name_ar": "الطب العام",
+            "name_fr": "Médecine Générale",
+            "code": "GM_BLIDA1",
+            "head_of_department": "Prof. Ali Mansouri",
+            "email": "medicine@univ-blida.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Pharmacy",
+            "name_ar": "الصيدلة",
+            "name_fr": "Pharmacie",
+            "code": "PHARMA_BLIDA1",
+            "head_of_department": "Prof. Sonia Ghozlane",
+            "email": "pharmacy@univ-blida.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "blida2",
+        "faculty": {
+            "name": "Faculty of Law",
+            "name_ar": "كلية الحقوق",
+            "name_fr": "Faculté de Droit",
+            "code": "FL_BLIDA2",
+            "dean": "Prof. Faiza Laib",
+            "email": "law@univ-blida2.dz",
+            "phone": "+213 25 43 38 42",
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Private Law",
+            "name_ar": "القانون الخاص",
+            "name_fr": "Droit Privé",
+            "code": "PL_BLIDA2",
+            "head_of_department": "Prof. Mourad Chibout",
+            "email": "private-law@univ-blida2.dz",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Political Sciences",
+            "name_ar": "العلوم السياسية",
+            "name_fr": "Sciences Politiques",
+            "code": "PS_BLIDA2",
+            "head_of_department": "Prof. Karima Benhadj",
+            "email": "polsci@univ-blida2.dz",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "blida2",
+        "faculty": {
+            "name": "Faculty of Economics",
+            "name_ar": "كلية الاقتصاد",
+            "name_fr": "Faculté des Sciences Économiques",
+            "code": "FE_BLIDA2",
+            "dean": "Prof. Abdelkrim Benzina",
+            "email": "eco@univ-blida2.dz",
+            "phone": "+213 25 43 38 43",
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Economics",
+            "name_ar": "الاقتصاد",
+            "name_fr": "Économie",
+            "code": "ECO_BLIDA2",
+            "head_of_department": "Prof. Hind Bouzid",
+            "email": "economics@univ-blida2.dz",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Management",
+            "name_ar": "التسيير",
+            "name_fr": "Management",
+            "code": "MGT_BLIDA2",
+            "head_of_department": "Prof. Tahar Hamzaoui",
+            "email": "management@univ-blida2.dz",
+            "building": "Building B - Floor 2"
+        }
+    },
+    {
+        "university_var": "uni",
+        "faculty": {
+            "name": "Faculty of Sciences",
+            "name_ar": "كلية العلوم",
+            "name_fr": "Faculté des Sciences",
+            "phone": null,
+            "building": "Building A"
+        },
+        "dept1": {
+            "name": "Computer Science",
+            "name_ar": "علوم الحاسوب",
+            "name_fr": "Informatique",
+            "building": "Building A - Floor 1"
+        },
+        "dept2": {
+            "name": "Mathematics",
+            "name_ar": "الرياضيات",
+            "name_fr": "Mathématiques",
+            "building": "Building A - Floor 2"
+        }
+    },
+    {
+        "university_var": "uni",
+        "faculty": {
+            "name": "Faculty of Law and Economics",
+            "name_ar": "كلية الحقوق والاقتصاد",
+            "name_fr": "Faculté de Droit et Économie",
+            "phone": null,
+            "building": "Building B"
+        },
+        "dept1": {
+            "name": "Private Law",
+            "name_ar": "القانون الخاص",
+            "name_fr": "Droit Privé",
+            "building": "Building B - Floor 1"
+        },
+        "dept2": {
+            "name": "Economics",
+            "name_ar": "الاقتصاد",
+            "name_fr": "Économie",
+            "building": "Building B - Floor 2"
+        }
+    }
+]

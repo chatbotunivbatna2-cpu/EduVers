@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Algerian Universities AI Assistant{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3B82F6', 600: '#2563EB', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                        secondary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366F1', 600: '#4F46E5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' },
+                        surface: { light: '#FFFFFF', dark: '#111827' },
+                        bgpage: { light: '#F9FAFB', dark: '#0F172A' },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <script>
+            (function () {
+                var t = localStorage.getItem('eduverse-theme');
+                if (t === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-dialogs.css') }}">
+    {% block extra_css %}{% endblock %}
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}?v=3">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body
+    class="font-sans antialiased bg-bgpage-light dark:bg-bgpage-dark text-gray-900 dark:text-gray-200 transition-colors duration-300">
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/core.js') }}?v=3"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

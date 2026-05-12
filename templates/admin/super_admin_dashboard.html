@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block title %}Super Admin Dashboard - Algerian Universities AI Assistant{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="admin-container">
+
+    <div class="admin-header">
+        <div>
+            <h1 data-i18n="super.title">Super Admin Dashboard</h1>
+            <p id="systemInfo" style="margin:5px;color:var(--text-secondary);font-size:14px;"
+                data-i18n="super.sys_info">System-wide Management</p>
+        </div>
+        <div class="admin-actions">
+            <span id="adminNameDisplay" style="margin:5px;color:var(--text-secondary);"></span>
+            <button id="refreshBtn" class="btn btn-primary" data-i18n="admin.refresh">Refresh</button>
+            <button id="logoutBtn" class="btn btn-outline" data-i18n="admin.logout">Logout</button>
+        </div>
+    </div>
+
+    <div class="admin-tabs">
+        <button class="tab-button active" data-tab="overview" data-i18n="super.tab_overview">Overview</button>
+        <button class="tab-button" data-tab="universities" data-i18n="super.tab_universities">Universities</button>
+        <button class="tab-button" data-tab="faculties" data-i18n="super.tab_faculties">Faculties</button>
+        <button class="tab-button" data-tab="departments" data-i18n="super.tab_departments">Departments</button>
+        <button class="tab-button" data-tab="users" data-i18n="super.tab_users">Users</button>
+        <button class="tab-button" data-tab="admins" data-i18n="super.tab_admins">Admins</button>
+    </div>
+
+    <div class="tab-content active" id="overview-tab">
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalUniversities">-</div>
+                    <div class="stat-label" data-i18n="super.universities">Universities</div>
+                    <div class="stat-detail" id="activeUniversities">- <span data-i18n="super.active">active</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalFaculties">-</div>
+                    <div class="stat-label" data-i18n="super.faculties">Faculties</div>
+                    <div class="stat-detail" id="activeFaculties">- <span data-i18n="super.active">active</span></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalDepartments">-</div>
+                    <div class="stat-label" data-i18n="super.departments">Departments</div>
+                    <div class="stat-detail" id="activeDepartments">- <span data-i18n="super.active">active</span></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalUsers">-</div>
+                    <div class="stat-label" data-i18n="super.users">Users</div>
+                    <div class="stat-detail" id="verifiedUsers">- <span data-i18n="super.active">active</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h2 data-i18n="super.sys_overview">System Overview</h2>
+            <div class="stats-table">
+                <table>
+                    <tr>
+                        <td><strong data-i18n="super.total_unis">Total Universities:</strong></td>
+                        <td id="sysUniversities">-</td>
+                        <td style="width:50%;"></td>
+                        <td><strong data-i18n="super.total_facs">Total Faculties:</strong></td>
+                        <td id="sysFaculties">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="super.total_depts">Total Departments:</strong></td>
+                        <td id="sysDepartments">-</td>
+                        <td></td>
+                        <td><strong data-i18n="super.total_users">Total Users:</strong></td>
+                        <td id="sysUsers">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="super.total_admins">Total Admins:</strong></td>
+                        <td id="sysAdmins">-</td>
+                        <td></td>
+                        <td><strong data-i18n="super.active_unis">Active Universities:</strong></td>
+                        <td id="sysActiveUnis">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="universities-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="super.unis_mgmt">Universities Management</h2>
+                <button class="btn btn-primary" id="addUniversityBtn" data-i18n="super.add_uni">+ Add
+                    University</button>
+            </div>
+            <div class="data-table">
+                <table id="universitiesTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="super.uni_name">University Name</th>
+                            <th data-i18n="super.code">Code</th>
+                            <th data-i18n="super.city">City</th>
+                            <th data-i18n="super.fac_count">Faculties</th>
+                            <th data-i18n="super.dept_count">Departments</th>
+                            <th data-i18n="super.user_count">Users</th>
+                            <th data-i18n="super.status">Status</th>
+                            <th data-i18n="super.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="universitiesTableBody">
+                        <tr>
+                            <td colspan="8" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="faculties-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="super.facs_mgmt">Faculties Management</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="facultyUnivFilter" class="filter-select">
+                        <option value="" data-i18n="super.all_unis">All Universities</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="facultiesTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="super.fac_name">Faculty Name</th>
+                            <th data-i18n="super.university">University</th>
+                            <th data-i18n="super.code">Code</th>
+                            <th data-i18n="super.dean">Dean</th>
+                            <th data-i18n="super.dept_count">Departments</th>
+                            <th data-i18n="super.status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="facultiesTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="departments-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="super.depts_mgmt">Departments Management</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="deptUnivFilter" class="filter-select">
+                        <option value="" data-i18n="super.all_unis">All Universities</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="departmentsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="super.dept_name">Department Name</th>
+                            <th data-i18n="super.university">University</th>
+                            <th data-i18n="super.faculty">Faculty</th>
+                            <th data-i18n="super.code">Code</th>
+                            <th data-i18n="super.head">Head</th>
+                            <th data-i18n="super.status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="departmentsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="users-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="super.users_mgmt">Users Management</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="userUnivFilter" class="filter-select">
+                        <option value="" data-i18n="super.all_unis">All Universities</option>
+                    </select>
+                    <select id="userFilter" class="filter-select">
+                        <option value="all" data-i18n="super.all_users">All Users</option>
+                        <option value="verified" data-i18n="super.verified_only">Verified Only</option>
+                        <option value="unverified" data-i18n="super.unverified_only">Unverified Only</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="super.username">Username</th>
+                            <th data-i18n="super.email">Email</th>
+                            <th data-i18n="super.university">University</th>
+                            <th data-i18n="super.department">Department</th>
+                            <th data-i18n="super.verified">Verified</th>
+                            <th data-i18n="super.joined">Joined</th>
+                            <th data-i18n="super.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td colspan="7" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="admins-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="super.admins_mgmt">Admins Management</h2>
+                <button class="btn btn-primary" id="addAdminBtn" data-i18n="super.add_admin">+ Create Admin</button>
+            </div>
+            <div class="data-table">
+                <table id="adminsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="super.username">Username</th>
+                            <th data-i18n="super.email">Email</th>
+                            <th data-i18n="super.type">Type</th>
+                            <th data-i18n="super.university">University</th>
+                            <th data-i18n="super.created">Created</th>
+                            <th data-i18n="super.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% from 'forms.html' import render_admin_modals %}
+    {{ render_admin_modals() }}
+
+    {% from 'forms.html' import render_super_admin_modals %}
+    {{ render_super_admin_modals() }}
+</div>
+
+
+<script src="{{ url_for('static', filename='js/super_admin_dashboard.js') }}"></script>
+{%- endblock %}

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Algerian Universities AI{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+<style>
+    .ts-wrapper {
+        position: relative;
+    }
+
+    .ts-control {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 16px !important;
+        padding-right: 40px !important;
+        background: var(--bg-secondary) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 12px !important;
+        font-size: 15px !important;
+        color: var(--text-primary) !important;
+        transition: all 0.2s ease !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 14px center !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .ts-wrapper.focus .ts-control,
+    .ts-wrapper.focus .ts-control.input-active {
+        outline: none !important;
+        border-color: var(--accent-primary) !important;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+        background-color: var(--surface) !important;
+    }
+
+    .ts-wrapper:hover .ts-control {
+        border-color: var(--border-light) !important;
+    }
+
+    .ts-control input {
+        color: var(--text-primary) !important;
+        font-size: 15px !important;
+    }
+
+    .ts-control input::placeholder {
+        color: var(--text-tertiary) !important;
+    }
+
+    .ts-wrapper .ts-control::after {
+        display: none !important;
+    }
+
+    .ts-dropdown {
+        background: var(--surface) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 12px !important;
+        box-shadow: var(--shadow-lg) !important;
+        margin-top: 6px !important;
+        color: var(--text-primary) !important;
+    }
+
+    .ts-dropdown .option {
+        padding: 12px 16px !important;
+        border-bottom: 1px solid var(--border) !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+
+    .ts-dropdown .option:last-child {
+        border-bottom: none !important;
+    }
+
+    .ts-dropdown .active,
+    .ts-dropdown .option:hover {
+        background: rgba(37, 99, 235, 0.08) !important;
+        color: var(--text-primary) !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <a href="{{ url_for('index') }}" class="back-to-home" title="Back to Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </a>
+
+        <div class="auth-header">
+            <div class="auth-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+            </div>
+            <h1 data-i18n="signup.title">Create Account</h1>
+            <p data-i18n="signup.subtitle">Join EduVerse AI</p>
+        </div>
+
+        {% from 'forms.html' import render_signup_form %}
+        {{ render_signup_form() }}
+
+        <div class="auth-footer">
+            <p>
+                <span data-i18n="signup.have_account">Already have an account?</span>
+                <a href="{{ url_for('auth.login') }}" data-i18n="signup.login_link">Log in</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+<script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+{% endblock %}
+{% endblock %}

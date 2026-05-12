@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+{% block title %}University Admin Dashboard{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+{% block content %}
+<div class="admin-container">
+
+    <div class="admin-header">
+        <div>
+            <h1 data-i18n="univ_adm.title"> University Admin Dashboard</h1>
+            <p id="universityInfo" style="margin:5px 0;color:var(--text-secondary);font-size:14px;"></p>
+        </div>
+        <div class="admin-actions">
+            <span id="adminNameDisplay" style="margin:5px;color:var(--text-secondary);"></span>
+            <button id="refreshBtn" class="btn btn-primary" data-i18n="admin.refresh">Refresh</button>
+            <button id="logoutBtn" class="btn btn-outline" data-i18n="admin.logout">Logout</button>
+        </div>
+    </div>
+
+    <div class="admin-tabs">
+        <button class="tab-button active" data-tab="overview" data-i18n="univ_adm.tab_overview">Overview</button>
+        <button class="tab-button" data-tab="faculties" data-i18n="univ_adm.tab_faculties">Faculties</button>
+        <button class="tab-button" data-tab="departments" data-i18n="univ_adm.tab_departments">Departments</button>
+        <button class="tab-button" data-tab="knowledge" data-i18n="univ_adm.tab_knowledge">Knowledge Base</button>
+        <button class="tab-button" data-tab="users" data-i18n="univ_adm.tab_users">Users</button>
+        <button class="tab-button" data-tab="admins" data-i18n="univ_adm.tab_admins">Faculty Admins</button>
+    </div>
+
+    <div class="tab-content active" id="overview-tab">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalFaculties">-</div>
+                    <div class="stat-label" data-i18n="univ_adm.stat_faculties">Faculties</div>
+                    <div class="stat-detail" id="activeFaculties"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalDepartments">-</div>
+                    <div class="stat-label" data-i18n="univ_adm.stat_departments">Departments</div>
+                    <div class="stat-detail" id="activeDepartments"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalUsers">-</div>
+                    <div class="stat-label" data-i18n="univ_adm.stat_users">Users</div>
+                    <div class="stat-detail" id="verifiedUsers"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalKnowledge">-</div>
+                    <div class="stat-label" data-i18n="univ_adm.stat_knowledge">Knowledge Entries</div>
+                    <div class="stat-detail" id="activeKnowledge"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h2 data-i18n="univ_adm.overview_title">University Overview</h2>
+            <div class="stats-table">
+                <table>
+                    <tr>
+                        <td><strong data-i18n="univ_adm.ov_name">University:</strong></td>
+                        <td id="univName">-</td>
+                        <td style="width:50%"></td>
+                        <td><strong data-i18n="univ_adm.ov_city">City:</strong></td>
+                        <td id="univCity">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="univ_adm.ov_faculties">Total Faculties:</strong></td>
+                        <td id="univFaculties">-</td>
+                        <td></td>
+                        <td><strong data-i18n="univ_adm.ov_departments">Total Departments:</strong></td>
+                        <td id="univDepartments">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="univ_adm.ov_users">Total Users:</strong></td>
+                        <td id="univUsers">-</td>
+                        <td></td>
+                        <td><strong data-i18n="univ_adm.ov_knowledge">Knowledge Entries:</strong></td>
+                        <td id="univKnowledge">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="faculties-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="univ_adm.fac_mgmt">Faculties Management</h2>
+                <button class="btn btn-primary" id="addFacultyBtn" data-i18n="univ_adm.add_faculty">+ Add
+                    Faculty</button>
+            </div>
+            <div class="data-table">
+                <table id="facultiesTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="univ_adm.col_fac_name">Faculty Name</th>
+                            <th data-i18n="univ_adm.col_fac_name_ar">Name (AR)</th>
+                            <th data-i18n="admin.code">Code</th>
+                            <th data-i18n="form.dean">Dean</th>
+                            <th data-i18n="univ_adm.col_dept_count">Departments</th>
+                            <th data-i18n="admin.status">Status</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="facultiesTableBody">
+                        <tr>
+                            <td colspan="7" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="departments-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="univ_adm.dept_mgmt">Departments Management</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="deptFacultyFilter" class="filter-select">
+                        <option value="" data-i18n="univ_adm.all_faculties">All Faculties</option>
+                    </select>
+                    <button class="btn btn-primary" id="addDepartmentBtn" data-i18n="univ_adm.add_dept">+ Add
+                        Department</button>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="departmentsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="univ_adm.col_dept_name">Department Name</th>
+                            <th data-i18n="admin.code">Code</th>
+                            <th data-i18n="univ_adm.col_faculty">Faculty</th>
+                            <th data-i18n="form.head">Head</th>
+                            <th data-i18n="admin.status">Status</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="departmentsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="knowledge-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="univ_adm.kb_mgmt">Knowledge Base</h2>
+                <div style="display:flex;gap:10px;align-items:center;">
+                    <select id="kbCategoryFilter" class="filter-select">
+                        <option value="" data-i18n="dept_adm.all_categories">All Categories</option>
+                    </select>
+                    <button class="btn btn-primary" id="addKnowledgeBtn" data-i18n="dept_adm.add_entry">+ Add
+                        Entry</button>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="knowledgeTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="dept_adm.col_title">Title</th>
+                            <th data-i18n="dept_adm.col_category">Category</th>
+                            <th data-i18n="dept_adm.col_priority">Priority</th>
+                            <th data-i18n="dept_adm.col_tags">Tags</th>
+                            <th data-i18n="dept_adm.col_updated">Updated</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="knowledgeTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="users-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="univ_adm.users_mgmt">Users Management</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="userFilter" class="filter-select">
+                        <option value="all" data-i18n="admin.all_users">All Users</option>
+                        <option value="verified" data-i18n="admin.verified_only">Verified Only</option>
+                        <option value="unverified" data-i18n="admin.unverified_only">Unverified Only</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.username">Username</th>
+                            <th data-i18n="admin.email">Email</th>
+                            <th data-i18n="dept_adm.col_fullname">Full Name</th>
+                            <th data-i18n="univ_adm.col_department">Department</th>
+                            <th data-i18n="dept_adm.col_verified">Verified</th>
+                            <th data-i18n="dept_adm.col_joined">Joined</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td colspan="7" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="admins-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="univ_adm.fac_admins_mgmt">Faculty Admins Management</h2>
+                <button class="btn btn-primary" id="addFacultyAdminBtn" data-i18n="univ_adm.add_fac_admin">+ Create
+                    Faculty Admin</button>
+            </div>
+            <div class="data-table">
+                <table id="adminsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.username">Username</th>
+                            <th data-i18n="dept_adm.col_fullname">Full Name</th>
+                            <th data-i18n="admin.email">Email</th>
+                            <th data-i18n="univ_adm.col_faculty">Faculty</th>
+                            <th data-i18n="admin.created">Created</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% from 'forms.html' import render_admin_modals %}
+    {{ render_admin_modals() }}
+
+
+    <script src="{{ url_for('static', filename='js/university_admin_dashboard.js') }}"></script>
+    {% endblock %}

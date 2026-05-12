@@ -1,0 +1,58 @@
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.lang-btn {
+  padding: clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.5rem, 1vw, 0.875rem);
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: clamp(0.6875rem, 0.3vw + 0.6rem, 0.8125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+.lang-btn:hover { color: var(--text-primary); }
+.lang-btn--active {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(37,99,235,.3);
+}
+
+body.rtl {
+  font-family: 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
+  text-align: right;
+}
+body.rtl .hero-text          { text-align: right; }
+body.rtl .stat-item          { text-align: right; }
+body.rtl .step-arrow         { transform: scaleX(-1); display: inline-block; }
+
+body.rtl .nav-links {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body.rtl .step-arrow       { transform: rotate(90deg) !important; }
+
+  body.rtl .nav-links {
+    align-items: center;
+  }
+}
+
+body.rtl .password-toggle {
+    right: auto;
+    left: 12px;
+}
+
+body.rtl .password-wrapper input {
+    padding-right: 16px !important;
+    padding-left: 48px !important;
+}

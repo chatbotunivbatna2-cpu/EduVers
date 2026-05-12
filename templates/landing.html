@@ -1,0 +1,315 @@
+{% extends "base.html" %}
+
+{% block title %}Algerian Universities AI Assistant - AI-Powered Academic Assistant{% endblock %}
+
+{% block content %}
+<div class="landing-page">
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <nav class="landing-nav">
+            <div class="nav-logo" style="display: flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/logo.png') }}?v=45" class="logo-icon"
+                    style="height: 40px !important; max-height: 40px !important; width: auto !important; object-fit: contain !important;">
+                <span class="logo-text" style="font-size: 24px !important;">EduVerse AI</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="en" onclick="I18n.setLang('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="I18n.setLang('ar')">عر</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline" data-i18n="nav.login">Login</a>
+                <a href="{{ url_for('auth.signup') }}" class="btn btn-primary" data-i18n="nav.get_started">Get
+                    Started</a>
+            </div>
+        </nav>
+        <script>
+            document.getElementById('navToggle').addEventListener('click', function () {
+                document.getElementById('navLinks').classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            function toggleTheme() {
+                var html = document.documentElement;
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('eduverse-theme', 'light');
+                    document.body.classList.add('light-theme');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('eduverse-theme', 'dark');
+                    document.body.classList.remove('light-theme');
+                }
+            }
+        </script>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span data-i18n="hero.badge">Powered by Advanced AI</span>
+                </div>
+                <h1 class="hero-title">
+                    <span data-i18n="hero.title_1">Your Intelligent</span>
+                    <span class="gradient-text" data-i18n="hero.title_2">Academic Assistant</span>
+                </h1>
+                <p class="hero-description" data-i18n="hero.description">
+                    Experience the future of learning with Algerian Universities AI-powered chatbot.
+                </p>
+                <div class="hero-cta">
+                    <a href="{{ url_for('auth.signup') }}" class="btn btn-primary btn-large">
+                        <span data-i18n="hero.cta_start">Start Chatting Now</span>
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4.5 10H15.5M15.5 10L10.5 5M15.5 10L10.5 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large" data-i18n="hero.cta_learn">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-i18n="hero.stat_1">24/7</div>
+                        <div class="stat-label" data-i18n="hero.stat_1_label">Available</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-i18n="hero.stat_2">Instant</div>
+                        <div class="stat-label" data-i18n="hero.stat_2_label">Responses</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-i18n="hero.stat_3">AI</div>
+                        <div class="stat-label" data-i18n="hero.stat_3_label">Powered</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="chat-preview">
+                    <div class="preview-header">
+                        <div class="preview-header-left">
+                            <div class="preview-avatar">✦</div>
+                            <div>
+                                <div class="preview-name">EduVerse AI</div>
+                                <div class="preview-status"><span class="status-dot"></span> <span
+                                        data-i18n="hero.chat_online">Online</span></div>
+                            </div>
+                        </div>
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="preview-messages">
+                        <div class="preview-msg user">
+                            <div class="msg-bubble user-bubble" data-i18n="hero.chat_q1">What are the registration
+                                deadlines?</div>
+                        </div>
+                        <div class="preview-msg bot">
+                            <div class="bot-icon">✦</div>
+                            <div class="msg-bubble bot-bubble" data-i18n="hero.chat_a1">The registration period for the
+                                2024/2025 academic year starts on <strong>September 5th</strong> and ends on
+                                <strong>October 15th</strong>. You'll need your baccalaureate certificate and a valid
+                                ID. 📋
+                            </div>
+                        </div>
+                        <div class="preview-msg user">
+                            <div class="msg-bubble user-bubble" data-i18n="hero.chat_q2">What documents do I need?</div>
+                        </div>
+                        <div class="preview-msg bot">
+                            <div class="bot-icon">✦</div>
+                            <div class="msg-bubble bot-bubble typing-indicator">
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-input">
+                        <span class="preview-placeholder" data-i18n="hero.chat_placeholder">Ask anything about your
+                            university...</span>
+                        <div class="preview-send">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="features.title">Powerful Features</h2>
+            <p class="section-description" data-i18n="features.subtitle">Everything you need for an enhanced learning
+                experience</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f1_title">AI-Powered Conversations</h3>
+                <p class="feature-description" data-i18n="features.f1_desc">Engage in natural, intelligent conversations
+                    with our advanced AI assistant.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f2_title">Instant Answers</h3>
+                <p class="feature-description" data-i18n="features.f2_desc">Get immediate responses to your questions,
+                    no waiting time required.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f3_title">Academic Focus</h3>
+                <p class="feature-description" data-i18n="features.f3_desc">Specialized in university-level content,
+                    from coursework to research assistance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f4_title">Chat History</h3>
+                <p class="feature-description" data-i18n="features.f4_desc">Access your previous conversations anytime,
+                    organized and searchable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f5_title">Secure &amp; Private</h3>
+                <p class="feature-description" data-i18n="features.f5_desc">Your conversations are encrypted and
+                    protected with university-grade security.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg class="feature-icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="feature-title" data-i18n="features.f6_title">Personalized Learning</h3>
+                <p class="feature-description" data-i18n="features.f6_desc">Adaptive responses tailored to your learning
+                    style and academic level.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="how.title">How It Works?</h2>
+            <p class="section-description" data-i18n="how.subtitle">Get started in three simple steps</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n="how.s1_title">Create Account</h3>
+                    <p class="step-description" data-i18n="how.s1_desc">Sign up with your university email in seconds
+                    </p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n="how.s2_title">Start Chatting</h3>
+                    <p class="step-description" data-i18n="how.s2_desc">Ask questions and get instant AI-powered answers
+                    </p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n="how.s3_title">Learn &amp; Grow</h3>
+                    <p class="step-description" data-i18n="how.s3_desc">Access your chat history and continue learning
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title" data-i18n="cta.title">Ready to Transform Your Learning?</h2>
+            <p class="cta-description" data-i18n="cta.subtitle">Join Algerian Universities students using AI to enhance
+                their academic journey</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('auth.signup') }}" class="btn btn-primary btn-large">
+                    <span data-i18n="cta.start">Get Started Free</span>
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4.5 10H15.5M15.5 10L10.5 5M15.5 10L10.5 15" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline btn-large" data-i18n="cta.signin">Sign
+                    In</a>
+            </div>
+        </div>
+        <div class="cta-background">
+            <div class="cta-glow"></div>
+        </div>
+    </section>
+
+    <footer class="landing-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">Algerian Universities AI</span>
+            </div>
+            <p class="footer-text" data-i18n="footer.tagline">Empowering students through intelligent conversation</p>
+            <p class="footer-copyright" data-i18n="footer.copy">© 2026 EduVerse AI. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+{% endblock %}

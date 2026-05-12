@@ -1,0 +1,1034 @@
+[
+    {
+        "id": 1,
+        "category": "greeting",
+        "question": "Hello / Hi / Greetings",
+        "answers": {
+            "en": "Hello! Welcome to {university_name} Chatbot. I'm here to help you with:\n- Course registration and enrollment\n- Tuition fees and payments\n- Academic information and grades\n- Campus facilities and services\n- Exams and schedules\n- Student services\n\nHow can I assist you today?",
+            "ar": "مرحباً! أهلاً بك في شات بوت {university_name_ar}. أنا هنا لمساعدتك في:\n- التسجيل في المقررات\n- الرسوم الدراسية والمدفوعات\n- المعلومات الأكاديمية والدرجات\n- مرافق الحرم الجامعي والخدمات\n- الامتحانات والجداول الزمنية\n- خدمات الطلاب\n\nكيف يمكنني مساعدتك اليوم؟",
+            "fr": "Bonjour! Bienvenue sur le Chatbot de {university_name_fr}. Je suis là pour vous aider avec:\n- L'inscription aux cours\n- Les frais de scolarité et paiements\n- Les informations académiques et les notes\n- Les installations du campus et services\n- Les examens et les emplois du temps\n- Les services aux étudiants\n\nComment puis-je vous aider aujourd'hui?"
+        },
+        "keywords": [
+            "hello",
+            "hi",
+            "hey",
+            "greetings",
+            "salut",
+            "bonjour",
+            "salam",
+            "مرحبا",
+            "السلام عليكم",
+            "أهلا",
+            "هلا"
+        ],
+        "variants": [
+            "hello",
+            "hi there",
+            "hey",
+            "good morning",
+            "bonjour",
+            "salut",
+            "مرحبا",
+            "السلام عليكم"
+        ]
+    },
+    {
+        "id": 2,
+        "category": "greeting",
+        "question": "How are you?",
+        "answers": {
+            "en": "I'm functioning well, thank you! I'm ready to help you with any questions about {university_name}. What would you like to know?",
+            "ar": "أنا بخير، شكراً لسؤالك! أنا جاهز لمساعدتك في أي سؤال يتعلق بـ{university_name_ar}. ماذا تريد أن تعرف؟",
+            "fr": "Je fonctionne très bien, merci! Je suis prêt à vous aider pour toutes vos questions sur {university_name_fr}. Que souhaitez-vous savoir?"
+        },
+        "keywords": [
+            "how are you",
+            "comment allez-vous",
+            "ça va",
+            "كيف حالك",
+            "كيفك"
+        ],
+        "variants": [
+            "how are you",
+            "how are you doing",
+            "comment vas-tu",
+            "كيف حالك"
+        ]
+    },
+    {
+        "id": 3,
+        "category": "greeting",
+        "question": "Thank you / Thanks",
+        "answers": {
+            "en": "You're very welcome! I'm glad I could help. Feel free to ask anytime. Have a great day!",
+            "ar": "على الرحب والسعة! يسعدني أنني استطعت المساعدة. لا تتردد في السؤال في أي وقت. أتمنى لك يوماً رائعاً!",
+            "fr": "De rien! Je suis ravi d'avoir pu vous aider. N'hésitez pas à demander à tout moment. Bonne journée!"
+        },
+        "keywords": [
+            "thank",
+            "thanks",
+            "merci",
+            "شكرا",
+            "شكراً"
+        ],
+        "variants": [
+            "thank you",
+            "thanks",
+            "merci",
+            "شكرا",
+            "شكراً جزيلاً"
+        ]
+    },
+    {
+        "id": 4,
+        "category": "greeting",
+        "question": "Goodbye / See you",
+        "answers": {
+            "en": "Goodbye! It was nice helping you today. Come back anytime you have questions about {university_name}. Take care!",
+            "ar": "وداعاً! كان من دواعي سروري مساعدتك. عُد في أي وقت لديك أسئلة حول {university_name_ar}. اعتنِ بنفسك!",
+            "fr": "Au revoir! C'était un plaisir de vous aider. Revenez à tout moment pour {university_name_fr}. Prenez soin de vous!"
+        },
+        "keywords": [
+            "goodbye",
+            "bye",
+            "see you",
+            "au revoir",
+            "مع السلامة",
+            "وداعا"
+        ],
+        "variants": [
+            "goodbye",
+            "bye",
+            "see you later",
+            "au revoir",
+            "مع السلامة"
+        ]
+    },
+    {
+        "id": 5,
+        "category": "help",
+        "question": "What can you help me with?",
+        "answers": {
+            "en": "I can help you with many aspects of {university_name}:\n\n📚 **Academic:** Course registration, grading system, attendance policies\n💰 **Financial:** Tuition fees, payment methods, scholarships\n🏢 **Campus Life:** Library, gym, cafeteria, student housing\n📝 **Student Services:** Student ID, portal access, admin procedures\n📅 **Important Dates:** Registration deadlines, exam periods\n\nJust ask me anything!",
+            "ar": "يمكنني مساعدتك في كثير من جوانب {university_name_ar}:\n\n📚 **الأكاديمي:** التسجيل في المقررات، نظام التقييم، سياسات الحضور\n💰 **المالي:** الرسوم الدراسية، طرق الدفع، المنح الدراسية\n🏢 **الحياة الجامعية:** المكتبة، قاعة الرياضة، المطعم، السكن الجامعي\n📝 **خدمات الطلاب:** بطاقة الطالب، الوصول إلى البوابة، الإجراءات الإدارية\n📅 **مواعيد هامة:** مواعيد التسجيل، فترات الامتحانات\n\nاسألني أي شيء!",
+            "fr": "Je peux vous aider avec de nombreux aspects de {university_name_fr}:\n\n📚 **Académique:** Inscription aux cours, système de notation, politiques de présence\n💰 **Financier:** Frais de scolarité, modes de paiement, bourses\n🏢 **Vie du campus:** Bibliothèque, gymnase, cafétéria, logement étudiant\n📝 **Services étudiants:** Carte étudiant, accès au portail, procédures administratives\n📅 **Dates importantes:** Dates d'inscription, périodes d'examens\n\nPosez-moi n'importe quelle question!"
+        },
+        "keywords": [
+            "help",
+            "what can you do",
+            "aide",
+            "مساعدة",
+            "ماذا تفعل",
+            "ماذا تستطيع"
+        ],
+        "variants": [
+            "what can you help with",
+            "what do you do",
+            "how can you help",
+            "aide",
+            "مساعدة"
+        ]
+    },
+    {
+        "id": 6,
+        "category": "registration",
+        "question": "How do I register for courses?",
+        "answers": {
+            "en": "**Course Registration Process:**\n\n1. Log into the student portal: {portal_url}\n2. Navigate to 'Course Registration'\n3. Select your desired courses\n4. Check for time conflicts\n5. Submit your registration\n6. Pay registration fees within the deadline\n\nRegistration opens 2 weeks before each semester. Limited seats – register early!\n\n📧 {email_registrar}",
+            "ar": "**خطوات التسجيل في المقررات:**\n\n1. سجّل الدخول على بوابة الطلاب: {portal_url}\n2. انتقل إلى قسم 'تسجيل المقررات'\n3. اختر المقررات المطلوبة\n4. تحقق من التعارض في الجداول\n5. أرسل طلب التسجيل\n6. ادفع رسوم التسجيل قبل الموعد النهائي\n\nيفتح التسجيل قبل أسبوعين من كل فصل. الأماكن محدودة – سجّل مبكراً!\n\n📧 {email_registrar}",
+            "fr": "**Processus d'inscription aux cours:**\n\n1. Connectez-vous au portail étudiant: {portal_url}\n2. Allez dans 'Inscription aux cours'\n3. Sélectionnez vos cours\n4. Vérifiez les conflits d'horaires\n5. Soumettez votre inscription\n6. Payez les frais dans le délai imparti\n\nL'inscription ouvre 2 semaines avant chaque semestre. Places limitées – inscrivez-vous tôt!\n\n📧 {email_registrar}"
+        },
+        "keywords": [
+            "register",
+            "registration",
+            "enroll",
+            "enrollment",
+            "course",
+            "signup",
+            "inscription",
+            "inscrire",
+            "cours",
+            "تسجيل",
+            "مادة",
+            "كيف أسجل",
+            "كيف اسجل"
+        ],
+        "variants": [
+            "how to register",
+            "registration process",
+            "enroll in courses",
+            "comment s'inscrire",
+            "كيف أسجل",
+            "طريقة التسجيل"
+        ]
+    },
+    {
+        "id": 7,
+        "category": "registration",
+        "question": "What are the registration deadlines?",
+        "answers": {
+            "en": "**Registration Deadlines:**\n\n🍂 Fall: Early registration → Regular → Late registration (with late fee)\n🌸 Spring: Early registration → Regular → Late registration (with late fee)\n☀️ Summer: Short registration window\n\n⚠️ Check the official academic calendar on {portal_url} for exact dates.\nLate registration incurs additional fees. No registration after late period ends!",
+            "ar": "**مواعيد التسجيل:**\n\n🍂 الخريف: تسجيل مبكر ← عادي ← متأخر (برسوم إضافية)\n🌸 الربيع: تسجيل مبكر ← عادي ← متأخر (برسوم إضافية)\n☀️ الصيف: فترة تسجيل قصيرة\n\n⚠️ راجع التقويم الأكاديمي الرسمي على {portal_url} للمواعيد الدقيقة.\nالتسجيل المتأخر يستلزم رسوماً إضافية. لا يُقبل أي تسجيل بعد انتهاء الفترة!",
+            "fr": "**Dates limites d'inscription:**\n\n🍂 Automne: Inscription anticipée → Normale → Tardive (avec frais supplémentaires)\n🌸 Printemps: Inscription anticipée → Normale → Tardive (avec frais supplémentaires)\n☀️ Été: Courte période d'inscription\n\n⚠️ Consultez le calendrier académique officiel sur {portal_url} pour les dates exactes.\nL'inscription tardive entraîne des frais supplémentaires. Aucune inscription après la période tardive!"
+        },
+        "keywords": [
+            "deadline",
+            "last day",
+            "registration date",
+            "when",
+            "due date",
+            "date limite",
+            "موعد",
+            "آخر موعد",
+            "متى التسجيل"
+        ],
+        "variants": [
+            "registration deadline",
+            "when to register",
+            "date limite d'inscription",
+            "موعد التسجيل"
+        ]
+    },
+    {
+        "id": 8,
+        "category": "registration",
+        "question": "Can I drop a course after registration?",
+        "answers": {
+            "en": "**Course Drop Policy:**\n\n✅ Weeks 1-2 (Add/Drop Period): Full refund, no transcript record\n⚠️ Weeks 3-6 (Withdrawal): Partial refund, 'W' on transcript (no GPA impact)\n❌ After Week 6: No refund, 'WF' on transcript (affects GPA)\n\nHow to Drop: via the student portal ({portal_url}) or the Registrar's Office.\n📧 {email_registrar}",
+            "ar": "**سياسة حذف المقررات:**\n\n✅ الأسبوعان 1-2: استرداد كامل، بدون سجل في كشف الدرجات\n⚠️ الأسابيع 3-6: استرداد جزئي، يظهر 'W' في كشف الدرجات (لا يؤثر على المعدل)\n❌ بعد الأسبوع 6: لا استرداد، يظهر 'WF' في كشف الدرجات (يؤثر على المعدل)\n\nطريقة الحذف: عبر بوابة الطالب ({portal_url}) أو مكتب التسجيل.\n📧 {email_registrar}",
+            "fr": "**Politique d'abandon de cours:**\n\n✅ Semaines 1-2: Remboursement total, aucune mention sur le relevé\n⚠️ Semaines 3-6: Remboursement partiel, 'W' sur le relevé (pas d'impact sur la moyenne)\n❌ Après la semaine 6: Pas de remboursement, 'WF' sur le relevé (affecte la moyenne)\n\nComment abandonner: via le portail étudiant ({portal_url}) ou le Bureau du Registraire.\n📧 {email_registrar}"
+        },
+        "keywords": [
+            "drop",
+            "withdraw",
+            "remove course",
+            "cancel registration",
+            "annuler",
+            "حذف المادة",
+            "الانسحاب",
+            "حذف مقرر"
+        ],
+        "variants": [
+            "drop a course",
+            "withdraw from course",
+            "annuler un cours",
+            "حذف مادة"
+        ]
+    },
+    {
+        "id": 9,
+        "category": "tuition",
+        "question": "How much are the tuition fees?",
+        "answers": {
+            "en": "**Tuition Fees (Per Semester):**\n\n🎓 Undergraduate: Base tuition + applicable lab fees\n🎓 Master's: Base tuition + research fees\n🎓 PhD: Base tuition + research & lab access fees\n\nAdditional fees may include: registration, library access, sports facilities, and student services.\n\n💡 For exact amounts, check {portal_url} or contact the Finance Office: 📧 {email_finance}\nScholarships are available – ask about financial aid!",
+            "ar": "**الرسوم الدراسية (لكل فصل):**\n\n🎓 الليسانس: رسوم أساسية + رسوم مختبر (إن وجدت)\n🎓 الماستر: رسوم أساسية + رسوم بحثية\n🎓 الدكتوراه: رسوم أساسية + رسوم مختبر وبحث\n\nقد تشمل الرسوم الإضافية: التسجيل، المكتبة، الرياضة، والخدمات الطلابية.\n\n💡 للمبالغ الدقيقة، راجع {portal_url} أو تواصل مع الشؤون المالية: 📧 {email_finance}\nتتوفر منح دراسية – اسأل عن المساعدات المالية!",
+            "fr": "**Frais de scolarité (par semestre):**\n\n🎓 Licence: Frais de base + frais de laboratoire\n🎓 Master: Frais de base + frais de recherche\n🎓 Doctorat: Frais de base + accès labo et recherche\n\n💡 Pour les montants exacts, consultez {portal_url} ou contactez le Bureau des finances: 📧 {email_finance}"
+        },
+        "keywords": [
+            "tuition",
+            "fees",
+            "cost",
+            "price",
+            "how much",
+            "money",
+            "frais",
+            "scolarite",
+            "scolarité",
+            "رسوم",
+            "المصاريف",
+            "كم الرسوم",
+            "كم التكلفة",
+            "الرسوم الدراسية",
+            "ما هي الرسوم"
+        ],
+        "variants": [
+            "tuition fees",
+            "how much does it cost",
+            "frais de scolarité",
+            "quels sont les frais",
+            "كم الرسوم",
+            "الرسوم الدراسية"
+        ]
+    },
+    {
+        "id": 10,
+        "category": "tuition",
+        "question": "What payment methods are accepted?",
+        "answers": {
+            "en": "**Accepted Payment Methods:**\n\n🏦 Bank Transfer: to the university's official bank account (reference: your Student ID)\n💵 Cash: at the Finance Office on campus (office hours: Sun–Thu 8AM–4PM)\n📮 Postal account (CCP) if available\n💳 Online payment via {portal_url}/payment (CIB, EDAHABIA, Visa, Mastercard)\n\n📧 Always send your payment receipt to: {email_finance}\n☎ Finance Office: {phone_main}",
+            "ar": "**طرق الدفع المقبولة:**\n\n🏦 تحويل بنكي: إلى الحساب الرسمي للجامعة (المرجع: رقم الطالب)\n💵 نقداً: في مكتب الشؤون المالية بالحرم الجامعي (أوقات العمل: الأحد–الخميس 8ص–4م)\n📮 حساب بريدي (CCP) إن كان متاحاً\n💳 دفع إلكتروني عبر {portal_url}/payment (CIB، EDAHABIA، Visa، Mastercard)\n\n📧 أرسل دائماً إيصال الدفع إلى: {email_finance}\n☎ الشؤون المالية: {phone_main}",
+            "fr": "**Modes de paiement acceptés:**\n\n🏦 Virement bancaire: sur le compte officiel (réf: votre ID étudiant)\n💵 Espèces: au Bureau des finances (Dim–Jeu 8h–16h)\n💳 Paiement en ligne via {portal_url}/payment (CIB, EDAHABIA, Visa, Mastercard)\n\n📧 Envoyez toujours votre reçu à: {email_finance}"
+        },
+        "keywords": [
+            "payment",
+            "pay",
+            "method",
+            "transfer",
+            "cash",
+            "online",
+            "credit card",
+            "paiement",
+            "طريقة الدفع",
+            "كيف أدفع",
+            "دفع"
+        ],
+        "variants": [
+            "how to pay",
+            "payment methods",
+            "modes de paiement",
+            "كيف أدفع"
+        ]
+    },
+    {
+        "id": 11,
+        "category": "academic",
+        "question": "What is the grading system?",
+        "answers": {
+            "en": "**Algerian Grading Scale (0-20):**\n\n- 16-20: Excellent (Très Bien) → A\n- 14-15.99: Very Good (Bien) → B\n- 12-13.99: Good (Assez Bien) → C\n- 10-11.99: Satisfactory (Passable) → D\n- Below 10: Fail (Ajourné) → F\n\n**Minimum passing grade:** 10/20\n\n**Typical grade components:** Midterm ~30% | Final ~50% | Assignments ~15% | Attendance ~5%\n\nGrade appeals: usually within 5 days of grade publication. Contact {email_academic} for details.",
+            "ar": "**سلم التقييم الجزائري (0-20):**\n\n- 16-20: ممتاز (Très Bien) → A\n- 14-15.99: جيد جداً (Bien) → B\n- 12-13.99: جيد (Assez Bien) → C\n- 10-11.99: مقبول (Passable) → D\n- أقل من 10: راسب (Ajourné) → F\n\n**الحد الأدنى للنجاح:** 10/20\n\nالتظلم على الدرجات: عادةً خلال 5 أيام من النشر. تواصل مع {email_academic} للتفاصيل.",
+            "fr": "**Barème de notation algérien (0-20):**\n\n- 16-20: Très Bien\n- 14-15.99: Bien\n- 12-13.99: Assez Bien\n- 10-11.99: Passable\n- Moins de 10: Ajourné\n\n**Note minimale:** 10/20"
+        },
+        "keywords": [
+            "grade",
+            "grading",
+            "marks",
+            "score",
+            "gpa",
+            "evaluation",
+            "notation",
+            "درجات",
+            "تقييم",
+            "نظام الدرجات",
+            "النقطة"
+        ],
+        "variants": [
+            "grading system",
+            "how grades work",
+            "système de notation",
+            "نظام التقييم"
+        ]
+    },
+    {
+        "id": 12,
+        "category": "academic",
+        "question": "How can I access my grades?",
+        "answers": {
+            "en": "**Accessing Your Grades:**\n\n💻 Online: {portal_url} → Academic Records → View Grades\n📧 You'll receive an email notification when grades are posted\n🏢 In person: Registrar's Office (Student ID required)\n\nGrades are typically posted within 1-2 weeks after exams.\n📧 IT issues: {email_it}",
+            "ar": "**طريقة الاطلاع على الدرجات:**\n\n💻 إلكترونياً: {portal_url} ← السجلات الأكاديمية ← عرض الدرجات\n📧 ستتلقى إشعاراً بالبريد الإلكتروني عند نشر الدرجات\n🏢 حضورياً: مكتب التسجيل (بطاقة الطالب مطلوبة)\n\nتُنشر الدرجات عادةً خلال 1-2 أسبوع بعد الامتحانات.",
+            "fr": "**Accéder à vos notes:**\n\n💻 En ligne: {portal_url} → Dossier académique → Voir les notes\n📧 Notification email quand les notes sont disponibles\n🏢 En personne: Bureau du Registraire (carte étudiant requise)"
+        },
+        "keywords": [
+            "access grades",
+            "view grades",
+            "check grades",
+            "see results",
+            "transcript",
+            "consulter notes",
+            "الاطلاع على النتائج",
+            "أشوف درجاتي",
+            "كيف أرى نتائجي"
+        ],
+        "variants": [
+            "how to see grades",
+            "check my grades",
+            "voir mes notes",
+            "كيف أرى درجاتي"
+        ]
+    },
+    {
+        "id": 13,
+        "category": "academic",
+        "question": "What is the attendance policy?",
+        "answers": {
+            "en": "**Attendance Policy:**\n\n✅ Minimum required: 75% per course\n- Exceeding 25% absences: Automatic failure\n\nExcused absences (medical certificate) must be submitted within 3 days.\n3 late arrivals (>15 min) = 1 absence.\n\n📧 Contact {email_student} for absence justification procedures.",
+            "ar": "**سياسة الحضور:**\n\n✅ الحد الأدنى المطلوب: 75% لكل مقرر\n- تجاوز 25% من الغيابات: رسوب تلقائي\n\nالغياب المبرر (شهادة طبية) يجب تقديمه خلال 3 أيام.\nعادةً 3 تأخيرات (>15 دقيقة) = غياب واحد.\n\n📧 تواصل مع {email_student} لإجراءات تبرير الغياب.",
+            "fr": "**Politique de présence:**\n\n✅ Présence minimale: 75% par cours\n- Dépasser 25% d'absences: Échec automatique\n\nAbsences justifiées à soumettre dans les 3 jours.\n📧 {email_student}"
+        },
+        "keywords": [
+            "attendance",
+            "absence",
+            "present",
+            "miss class",
+            "skip",
+            "assiduité",
+            "présence",
+            "الحضور",
+            "الغياب",
+            "غياب"
+        ],
+        "variants": [
+            "attendance policy",
+            "missing class",
+            "politique de présence",
+            "سياسة الحضور"
+        ]
+    },
+    {
+        "id": 14,
+        "category": "campus",
+        "question": "What facilities are available on campus?",
+        "answers": {
+            "en": "**Campus Facilities at {university_name}:**\n\n📚 Central Library: books, journals, e-resources, free WiFi\n💻 Computer Labs: high-speed internet\n🏃 Sports Complex: gym, sports fields\n🍽️ Student Cafeteria: subsidized meals\n🏥 Medical Clinic: basic healthcare\n🖨️ Printing Center\n🚗 Student parking (free with ID)\n\nFor details: {portal_url}",
+            "ar": "**مرافق الحرم الجامعي في {university_name_ar}:**\n\n📚 المكتبة المركزية: كتب، دوريات، واي فاي مجاني\n💻 قاعات الكمبيوتر: إنترنت عالي السرعة\n🏃 المجمع الرياضي: صالة رياضة، ملاعب\n🍽️ المطعم الجامعي: وجبات مدعومة\n🏥 العيادة الطبية\n🚗 موقف سيارات مجاني ببطاقة الطالب\n\nللتفاصيل: {portal_url}",
+            "fr": "**Équipements du campus de {university_name_fr}:**\n\n📚 Bibliothèque centrale\n💻 Salles informatiques\n🏃 Complexe sportif\n🍽️ Cafétéria étudiante\n🏥 Clinique médicale\n🚗 Parking gratuit\n\nPour les détails: {portal_url}"
+        },
+        "keywords": [
+            "facilities",
+            "campus",
+            "library",
+            "gym",
+            "cafeteria",
+            "sports",
+            "مرافق",
+            "مكتبة",
+            "ملعب",
+            "مطعم"
+        ],
+        "variants": [
+            "campus facilities",
+            "what's on campus",
+            "installations du campus",
+            "مرافق الجامعة"
+        ]
+    },
+    {
+        "id": 15,
+        "category": "campus",
+        "question": "What are the library hours?",
+        "answers": {
+            "en": "**Library Hours:**\n\n📅 Regular semester: Sun–Thu 8AM–8PM | Fri 8AM–12PM & 2PM–6PM | Sat 8AM–2PM\n📚 Exam period: extended hours (often until 10PM)\n🌙 Closed: national holidays; reduced hours during Ramadan\n💻 Digital library: 24/7 via {portal_url}\n\n📧 {email_library}",
+            "ar": "**أوقات عمل المكتبة:**\n\n📅 الفصل الدراسي: الأحد–الخميس 8ص–8م | الجمعة 8ص–12م و2م–6م | السبت 8ص–2م\n📚 فترة الامتحانات: ساعات ممتدة (غالباً حتى 10م)\n🌙 مغلق: في العطل الوطنية؛ ساعات مختصرة خلال رمضان\n💻 المكتبة الرقمية: 24/7 عبر {portal_url}\n\n📧 {email_library}",
+            "fr": "**Horaires de la bibliothèque:**\n\n📅 Dim–Jeu 8h–20h | Ven 8h–12h & 14h–18h | Sam 8h–14h\n📚 Examens: horaires étendus\n💻 Bibliothèque numérique: 24h/24 via {portal_url}\n\n📧 {email_library}"
+        },
+        "keywords": [
+            "library",
+            "hours",
+            "time",
+            "open",
+            "close",
+            "schedule",
+            "horaires",
+            "bibliothèque",
+            "ساعات المكتبة",
+            "مكتبة"
+        ],
+        "variants": [
+            "library hours",
+            "when is library open",
+            "horaires de la bibliothèque",
+            "أوقات المكتبة"
+        ]
+    },
+    {
+        "id": 16,
+        "category": "services",
+        "question": "How do I get a student ID card?",
+        "answers": {
+            "en": "**Student ID Card:**\n\n📋 Required: passport-size photo, registration confirmation, national ID, card fee payment\n🏢 Apply at: Student Services Office on campus\n⏰ Processing: 3-7 business days\n\n⚠️ Student ID is mandatory for exams, library, and campus facilities!\n\n📧 {email_student}",
+            "ar": "**بطاقة الطالب:**\n\n📋 المطلوب: صورة شخصية، تأكيد التسجيل، بطاقة الهوية الوطنية، دفع رسوم البطاقة\n🏢 التقديم في: مكتب خدمات الطلاب\n⏰ مدة الإنجاز: 3-7 أيام عمل\n\n⚠️ بطاقة الطالب إلزامية للامتحانات والمكتبة ومرافق الجامعة!\n\n📧 {email_student}",
+            "fr": "**Carte étudiant:**\n\n📋 Requis: photo d'identité, confirmation d'inscription, pièce d'identité\n🏢 Bureau des services étudiants\n⏰ Délai: 3-7 jours ouvrables\n\n📧 {email_student}"
+        },
+        "keywords": [
+            "student id",
+            "card",
+            "identification",
+            "badge",
+            "carte étudiant",
+            "بطاقة الطالب",
+            "بطاقة طالب"
+        ],
+        "variants": [
+            "get student card",
+            "student id card",
+            "obtenir carte étudiant",
+            "الحصول على بطاقة الطالب"
+        ]
+    },
+    {
+        "id": 17,
+        "category": "services",
+        "question": "Is there student housing available?",
+        "answers": {
+            "en": "**Student Housing:**\n\n🏠 On-campus dormitories are available at most Algerian universities.\n💰 Monthly fees vary by room type.\n📋 Priority for: students from distant regions, international students, scholarship recipients.\n\nApply via {portal_url} during the housing application period.\n\n📧 {email_housing}",
+            "ar": "**السكن الجامعي:**\n\n🏠 تتوفر مساكن جامعية في معظم الجامعات الجزائرية.\n💰 الرسوم الشهرية تختلف حسب نوع الغرفة.\n📋 الأولوية لـ: الطلاب من مناطق بعيدة، الطلاب الأجانب، والمنتفعين بالمنح.\n\nقدّم طلبك عبر {portal_url}.\n\n📧 {email_housing}",
+            "fr": "**Logement étudiant:**\n\n🏠 Résidences universitaires disponibles.\n💰 Frais variables selon le type de chambre.\n📋 Priorité: étudiants de régions éloignées, internationaux, boursiers.\n\nPostulez via {portal_url}.\n\n📧 {email_housing}"
+        },
+        "keywords": [
+            "housing",
+            "dormitory",
+            "residence",
+            "accommodation",
+            "room",
+            "dorm",
+            "logement",
+            "résidence",
+            "السكن الجامعي",
+            "إقامة"
+        ],
+        "variants": [
+            "student housing",
+            "dormitories",
+            "résidence universitaire",
+            "السكن الجامعي"
+        ]
+    },
+    {
+        "id": 18,
+        "category": "financial_aid",
+        "question": "What scholarships are available?",
+        "answers": {
+            "en": "**Scholarship Opportunities:**\n\n🏆 Merit-based: high academic performance\n💰 Need-based: financial aid based on family income\n🔬 Research scholarships: for Master's and PhD (tuition waiver + stipend)\n⚽ Sports scholarships: for university team members\n\nApplications via {portal_url} or Financial Aid Office.\n📧 {email_financial_aid}",
+            "ar": "**المنح الدراسية المتاحة:**\n\n🏆 منحة التميز: للأداء الأكاديمي المرتفع\n💰 المنحة الاجتماعية: دعم بناءً على دخل الأسرة\n🔬 منح البحث: لطلاب الماستر والدكتوراه (إعفاء + مخصص مالي)\n⚽ منح الرياضة: لأعضاء الفرق الجامعية\n\nتُقدَّم الطلبات عبر {portal_url}.\n📧 {email_financial_aid}",
+            "fr": "**Bourses disponibles:**\n\n🏆 Bourses au mérite\n💰 Aide financière\n🔬 Bourses de recherche\n⚽ Bourses sportives\n\nCandidatures via {portal_url}\n📧 {email_financial_aid}"
+        },
+        "keywords": [
+            "scholarship",
+            "financial aid",
+            "funding",
+            "grant",
+            "support",
+            "bourse",
+            "aide financière",
+            "منحة",
+            "دعم مالي"
+        ],
+        "variants": [
+            "scholarships available",
+            "financial help",
+            "bourses disponibles",
+            "المنح الدراسية"
+        ]
+    },
+    {
+        "id": 19,
+        "category": "technical",
+        "question": "I forgot my student portal password.",
+        "answers": {
+            "en": "**Password Reset:**\n\n1. Go to {portal_url}\n2. Click 'Forgot Password?'\n3. Enter your university email\n4. Check your inbox for the reset link\n5. Click the link (valid 24h) and set a new password\n\n🏢 In person: IT Support Office with Student ID + National ID\n📧 {email_it}\n⚠️ The university will NEVER ask for your password by email.",
+            "ar": "**إعادة تعيين كلمة المرور:**\n\n1. اذهب إلى {portal_url}\n2. انقر على 'نسيت كلمة المرور؟'\n3. أدخل بريدك الجامعي\n4. تحقق من صندوق الوارد للرابط\n5. انقر الرابط (صالح 24 ساعة) وعيّن كلمة مرور جديدة\n\n🏢 حضورياً: مكتب الدعم التقني مع بطاقة الطالب + بطاقة الهوية\n📧 {email_it}",
+            "fr": "**Réinitialisation du mot de passe:**\n\n1. Allez sur {portal_url}\n2. Cliquez 'Mot de passe oublié?'\n3. Entrez votre email universitaire\n4. Vérifiez votre boîte pour le lien\n5. Cliquez le lien (valide 24h)\n\n📧 {email_it}"
+        },
+        "keywords": [
+            "password",
+            "reset",
+            "forgot",
+            "login",
+            "access",
+            "portal",
+            "mot de passe",
+            "oublié",
+            "reinitialiser",
+            "كلمة السر",
+            "نسيت",
+            "نسيت كلمة المرور"
+        ],
+        "variants": [
+            "reset password",
+            "forgot password",
+            "réinitialiser mot de passe",
+            "نسيت كلمة السر"
+        ]
+    },
+    {
+        "id": 20,
+        "category": "exams",
+        "question": "When are the exam periods?",
+        "answers": {
+            "en": "**Exam Periods (typical Algerian academic calendar):**\n\n🍂 Fall Semester: Midterm (November) | Final (January) | Makeup (February)\n🌸 Spring Semester: Midterm (April) | Final (June) | Makeup (July)\n☀️ Summer: Final (August/September)\n\n📅 Official schedules posted 2-3 weeks before exams on {portal_url}.\n📧 {email_academic}",
+            "ar": "**فترات الامتحانات:**\n\n🍂 الفصل الخريفي: منتصف الفصل (نوفمبر) | نهائي (يناير) | استدراكي (فبراير)\n🌸 الفصل الربيعي: منتصف الفصل (أبريل) | نهائي (يونيو) | استدراكي (يوليو)\n☀️ الدورة الصيفية: نهائي (أغسطس/سبتمبر)\n\n📅 تُنشر جداول الامتحانات الرسمية قبل 2-3 أسابيع على {portal_url}.\n📧 {email_academic}",
+            "fr": "**Périodes d'examens:**\n\n🍂 Automne: Partiels (nov) | Finals (janv) | Rattrapages (fév)\n🌸 Printemps: Partiels (avr) | Finals (juin) | Rattrapages (juil)\n\n📅 Emplois du temps publiés 2-3 sem avant sur {portal_url}.\n📧 {email_academic}"
+        },
+        "keywords": [
+            "exam",
+            "test",
+            "final",
+            "schedule",
+            "when",
+            "period",
+            "examen",
+            "examens",
+            "quand",
+            "date",
+            "امتحان",
+            "الاختبار",
+            "موعد الامتحان",
+            "امتحانات",
+            "متى الامتحان",
+            "جدول الامتحانات"
+        ],
+        "variants": [
+            "exam schedule",
+            "when are exams",
+            "calendrier des examens",
+            "مواعيد الامتحانات",
+            "متى الامتحانات"
+        ]
+    },
+    {
+        "id": 21,
+        "category": "exams",
+        "question": "What should I bring to exams?",
+        "answers": {
+            "en": "**Exam Checklist:**\n\n✅ Required: Student ID, blue/black pens, pencils, eraser\n✅ If allowed: non-programmable calculator, ruler\n\n❌ Prohibited: mobile phones, smart watches, programmable calculators, earphones\n\nArrive at least 15 minutes early. Entry denied if >15 min late.\nGood luck! 🍀",
+            "ar": "**قائمة مستلزمات الامتحان:**\n\n✅ إلزامي: بطاقة الطالب، أقلام حبر أزرق/أسود، أقلام رصاص، ممحاة\n✅ إذا أجاز الأستاذ: آلة حاسبة غير قابلة للبرمجة، مسطرة\n\n❌ محظور: الهاتف، الساعة الذكية، الآلات الحاسبة القابلة للبرمجة، سماعات الأذن\n\nاحضر قبل 15 دقيقة على الأقل.\nبالتوفيق! 🍀",
+            "fr": "**Liste pour l'examen:**\n\n✅ Obligatoire: carte étudiant, stylos, crayons, gomme\n\n❌ Interdit: téléphone, montre connectée, écouteurs\n\nArrivez 15 min à l'avance. Bonne chance! 🍀"
+        },
+        "keywords": [
+            "exam",
+            "bring",
+            "required",
+            "allowed",
+            "need",
+            "apporter",
+            "ماذا أحضر",
+            "مستلزمات",
+            "ما أحتاج"
+        ],
+        "variants": [
+            "what to bring to exam",
+            "exam requirements",
+            "quoi apporter à l'examen",
+            "ماذا أحضر للامتحان"
+        ]
+    },
+    {
+        "id": 22,
+        "category": "contact",
+        "question": "How can I contact the university?",
+        "answers": {
+            "en": "**{university_name} – Contact Information:**\n\n📍 {address}\n🌐 {website}\n📧 General: {email_general}\n☎  {phone_main}\n\nKey contacts:\n- Registrar: {email_registrar}\n- Finance: {email_finance}\n- IT Support: {email_it}\n- Student Affairs: {email_student}\n- Financial Aid: {email_financial_aid}\n- Library: {email_library}\n\nOffice hours: Sunday–Thursday 8AM–4PM",
+            "ar": "**{university_name_ar} – معلومات الاتصال:**\n\n📍 {address}\n🌐 {website}\n📧 عام: {email_general}\n☎  {phone_main}\n\nجهات الاتصال الرئيسية:\n- شؤون التسجيل: {email_registrar}\n- الشؤون المالية: {email_finance}\n- الدعم التقني: {email_it}\n- شؤون الطلاب: {email_student}\n- المنح الدراسية: {email_financial_aid}\n- المكتبة: {email_library}\n\nأوقات العمل: الأحد–الخميس 8ص–4م",
+            "fr": "**{university_name_fr} – Coordonnées:**\n\n📍 {address}\n🌐 {website}\n📧 {email_general}\n☎  {phone_main}\n\n- Registraire: {email_registrar}\n- Finance: {email_finance}\n- IT: {email_it}\n- Scolarité: {email_student}\n\nHoraires: Dim–Jeu 8h–16h"
+        },
+        "keywords": [
+            "contact",
+            "phone",
+            "email",
+            "reach",
+            "call",
+            "address",
+            "contacter",
+            "coordonnées",
+            "تواصل",
+            "رقم",
+            "بريد"
+        ],
+        "variants": [
+            "contact university",
+            "phone number",
+            "contacter l'université",
+            "كيف أتواصل"
+        ]
+    },
+    {
+        "id": 23,
+        "category": "admissions",
+        "question": "What are the admission requirements for undergraduate programs?",
+        "answers": {
+            "en": "**Undergraduate Admission Requirements:**\n\n- Algerian Baccalaureate (or equivalent) with a minimum average of 12/20\n- Specific subject scores depending on the faculty (e.g., Math & Physics for Engineering)\n- Proof of Algerian nationality or recognized equivalence for foreign students\n- Completed application form on the university portal\n- Payment of the registration fee\n\n📧 Admissions Office: {email_admissions}",
+            "ar": "**متطلبات القبول للبرامج الجامعية:**\n\n- الباكالوريا الجزائرية (أو ما يعادلها) بمتوسط لا يقل عن 12/20\n- درجات مواد محددة حسب الكلية (مثلاً رياضيات وعلوم للعلوم الهندسية)\n- إثبات الجنسية الجزائرية أو ما يعادلها للطلاب الأجانب\n- تعبئة استمارة القبول على بوابة الجامعة\n- دفع رسوم التسجيل\n\n📧 مكتب القبول: {email_admissions}",
+            "fr": "**Conditions d'admission en licence:**\n\n- Baccalauréat algérien (ou équivalent) avec une moyenne minimale de 12/20\n- Notes spécifiques selon la filière (ex. Mathématiques & Physique pour l'ingénierie)\n- Preuve de citoyenneté algérienne ou équivalence reconnue pour les étrangers\n- Formulaire d'inscription sur le portail de l'université\n- Paiement des frais d'inscription\n\n📧 Service des admissions: {email_admissions}"
+        },
+        "keywords": [
+            "admission",
+            "requirements",
+            "undergraduate",
+            "baccalaureate",
+            "قبول",
+            "متطلبات",
+            "admission undergraduate",
+            "admission licence"
+        ],
+        "variants": [
+            "admission requirements",
+            "how to apply for bachelor",
+            "متطلبات القبول",
+            "conditions d'admission"
+        ]
+    },
+    {
+        "id": 24,
+        "category": "international",
+        "question": "How can international students apply to University of Batna 2?",
+        "answers": {
+            "en": "**International Student Application:**\n\n1. Submit your recognized secondary school certificate (or equivalence)\n2. Provide a certified translation to French or Arabic\n3. Fill the online application on the portal (select 'International')\n4. Upload passport copy and visa details\n5. Pay the international registration fee\n6. Await the admission decision (usually within 4 weeks)\n\n📧 International Office: {email_international}",
+            "ar": "**كيفية تقديم طلب للطلبة الدوليين:**\n\n1. إرفاق شهادة الثانوية المعتمدة أو ما يعادلها\n2. تقديم ترجمة معتمدة إلى الفرنسية أو العربية\n3. تعبئة الطلب عبر البوابة (اختر 'دولي')\n4. رفع نسخة جواز السفر وتفاصيل الفيزا\n5. دفع رسوم التسجيل الدولي\n6. انتظار قرار القبول (عادة خلال 4 أسابيع)\n\n📧 مكتب الطلبة الدوليين: {email_international}",
+            "fr": "**Candidature des étudiants internationaux:**\n\n1. Soumettre le diplôme du secondaire reconnu (ou équivalence)\n2. Fournir une traduction certifiée en français ou en arabe\n3. Remplir le formulaire en ligne sur le portail (choisir 'International')\n4. Télécharger une copie du passeport et les détails du visa\n5. Payer les frais d'inscription internationaux\n6. Attendre la décision d'admission (environ 4 semaines)\n\n📧 Bureau des étudiants internationaux: {email_international}"
+        },
+        "keywords": [
+            "international",
+            "foreign",
+            "visa",
+            "student",
+            "étudiant étranger",
+            "طلبة دوليين",
+            "foreign student"
+        ],
+        "variants": [
+            "apply as international student",
+            "how to enroll foreign",
+            "كيفية التقديم كطالب دولي",
+            "candidature internationale"
+        ]
+    },
+    {
+        "id": 25,
+        "category": "research",
+        "question": "What research labs are available at University of Batna 2?",
+        "answers": {
+            "en": "**Research Laboratories:**\n\n- **ISTU**: Earth Sciences and Universe (Geography, Geology)\n- **MED-FAC**: Medicine and Pharmacy\n- **MI**: Mathematics & Computer Science (algorithms, data science)\n- **SNV**: Natural Sciences (Biology, Microbiology, Ecology)\n- **ST**: Technology (Industrial Engineering, Hydraulics, Electronics)\n\nEach lab provides facilities, equipment, and master's/PhD projects. Contact the respective faculty for details.\n📧 {email_research}",
+            "ar": "**المختبرات البحثية:**\n\n- **ISTU**: علوم الأرض والكون (جغرافيا، جيولوجيا)\n- **MED-FAC**: الطب والصيدلة\n- **MI**: الرياضيات وعلوم الحاسوب (خوارزميات، علوم البيانات)\n- **SNV**: علوم الطبيعة (أحياء، ميكروبيولوجيا، بيئة)\n- **ST**: التكنولوجيا (هندسة صناعية، هيدروليك، إلكترونيات)\n\nكل مختبر يوفر مرافق ومشاريع ماجستير/دكتوراه. تواصل مع الكلية المختصة.\n📧 {email_research}",
+            "fr": "**Laboratoires de recherche:**\n\n- **ISTU** : Sciences de la Terre et de l’Univers (Géographie, Géologie)\n- **MED-FAC** : Médecine et Pharmacie\n- **MI** : Mathématiques & Informatique (algorithmes, data science)\n- **SNV** : Sciences de la Nature et de la Vie (Biologie, Microbiologie, Écologie)\n- **ST** : Technologie (Génie Industriel, Hydraulique, Électronique)\n\nChaque laboratoire propose des équipements, des projets de master et de doctorat. Contactez la faculté concernée.\n📧 {email_research}"
+        },
+        "keywords": [
+            "research",
+            "labs",
+            "laboratory",
+            "مختبر",
+            "بحث",
+            "laboratoire"
+        ],
+        "variants": [
+            "research labs",
+            "laboratoires de recherche",
+            "المختبرات البحثية"
+        ]
+    },
+    {
+        "id": 26,
+        "category": "transport",
+        "question": "How can I get to the university campus using public transport?",
+        "answers": {
+            "en": "**Public Transport to Campus:**\n\n- **Bus line 12**: Runs from Batna city centre to the main gate (every 15 min)\n- **Mini‑bus 5**: Connects the university dormitories with the downtown station\n- **Taxi**: Official university taxis are available at the main entrance (fixed rates)\n- **Bike‑share**: Stations located near the Faculty of Sciences and near the library\n\nCheck the latest schedule on the city's transport website or via the mobile app.\n📧 {email_transport}",
+            "ar": "**وسائل النقل العامة للوصول إلى الحرم:**\n\n- **خط الحافلة 12**: يمر من مركز باتنا إلى البوابة الرئيسية كل 15 دقيقة\n- **ميني‑باص 5**: يربط سكن الطلاب بمحطة وسط المدينة\n- **تاكسي**: تاكسيات رسمية للجامعة متوفرة عند البوابة (أسعار ثابتة)\n- **دراجة‑مشتركة**: محطات قرب كلية العلوم ومكتبة الجامعة\n\nتحقق من جدول المواعيد على موقع النقل ثم على تطبيق الهاتف.\n📧 {email_transport}",
+            "fr": "**Transports publics vers le campus:**\n\n- **Bus ligne 12** : du centre de Batna à la porte principale (toutes les 15 min)\n- **Mini‑bus 5** : relie les résidences étudiantes à la gare du centre‑ville\n- **Taxi** : taxis officiels de l’université à l’entrée principale (tarifs fixes)\n- **Vélo‑share** : stations près de la Faculté des Sciences et de la bibliothèque\n\nVoir les horaires sur le site de la ville ou via l’application mobile.\n📧 {email_transport}"
+        },
+        "keywords": [
+            "transport",
+            "bus",
+            "public transport",
+            "نقل",
+            "حافلة",
+            "transport public"
+        ],
+        "variants": [
+            "how to reach campus",
+            "الوصول إلى الحرم",
+            "comment se rendre au campus"
+        ]
+    },
+    {
+        "id": 27,
+        "category": "cafeteria",
+        "question": "What are the cafeteria opening hours and menu options?",
+        "answers": {
+            "en": "**Cafeteria (Restaurant Universitaire):**\n\n🕗 Opening hours: Monday‑Friday 7:30 AM – 7:30 PM, Saturday 8 AM – 2 PM, closed on Sundays and holidays.\n🥗 Menu: Daily hot meals (traditional Algerian, Mediterranean, vegetarian), salad bar, soup, pastries, and beverage station.\n💳 Payment: Student card balance, cash, or mobile payment via the university app.\n\nSpecial diet options (halal, gluten‑free) are available on request.\n📧 {email_cafeteria}",
+            "ar": "**مقصف الجامعة:**\n\n🕗 مواعيد العمل: من الاثنين إلى الجمعة 7:30 ص – 7:30 م، السبت 8 ص – 2 م، يوم الأحد والعطلات مغلق.\n🥗 القائمة: وجبات ساخنة يومية (جزائرية، متوسطية، نباتية)، بار سلطة، حساء، معجنات، ومشروبات.\n💳 الدفع: رصيد بطاقة الطالب، نقداً أو عبر الدفع الإلكتروني في تطبيق الجامعة.\n\nخيارات خاصة (حلال، خالية من الغلوتين) متوفرة عند الطلب.\n📧 {email_cafeteria}",
+            "fr": "**Restauration universitaire :**\n\n🕗 Horaires : du lundi au vendredi 7 h30‑19 h30, samedi 8 h‑14 h, fermé le dimanche et les jours fériés.\n🥗 Menu : plats chauds quotidiens (algérien, méditerranéen, végétarien), bar à salades, soupes, pâtisseries et boissons.\n💳 Paiement : solde de la carte étudiante, espèces ou paiement mobile via l’application.\n\nOptions diététiques (halal, sans gluten) sur demande.\n📧 {email_cafeteria}"
+        },
+        "keywords": [
+            "cafeteria",
+            "food",
+            "restaurant",
+            "مقصف",
+            "طعام",
+            "restaurant universitaire"
+        ],
+        "variants": [
+            "food services",
+            "ما هي مواعيد المقصف",
+            "services de restauration"
+        ]
+    },
+    {
+        "id": 28,
+        "category": "health",
+        "question": "Does the university have a medical clinic for students?",
+        "answers": {
+            "en": "**University Medical Clinic:**\n\n- Offers primary care, vaccinations, and basic lab tests.\n- Open Monday‑Thursday 8 AM – 3 PM, Friday 8 AM – 12 PM.\n- Free for students with a valid student ID; some services may require a small co‑payment.\n- Emergency contacts: University Hospital (24 h) – phone {emergency_phone}.\n\n📧 {email_health}",
+            "ar": "**عيادة الجامعة الطبية:**\n\n- تقدم رعاية أساسية، تطعيمات، وفحوصات مختبرية بسيطة.\n- مواعيد العمل من الاثنين إلى الخميس 8 ص – 3 م، الجمعة 8 ص – 12 م.\n- مجانية للطلاب الحاملين بطاقة صالحة؛ قد يتطلب بعض الخدمات رسوماً بسيطة.\n- طوارئ: مستشفى الجامعة (24 س) – هاتف {emergency_phone}.\n\n📧 {email_health}",
+            "fr": "**Clinique médicale de l’université :**\n\n- Soins de base, vaccinations, analyses simples.\n- Horaires : du lundi au jeudi 8 h‑15 h, vendredi 8 h‑12 h.\n- Gratuit pour les étudiants avec carte valide ; certains services sont payants.\n- Urgences : Hôpital universitaire (24 h) – téléphone {emergency_phone}.\n\n📧 {email_health}"
+        },
+        "keywords": [
+            "health",
+            "clinic",
+            "medical",
+            "صحة",
+            "عيادة",
+            "clinic universitaire"
+        ],
+        "variants": [
+            "student health services",
+            "خدمات الصحة",
+            "services de santé"
+        ]
+    },
+    {
+        "id": 29,
+        "category": "IT",
+        "question": "How do I get a university email address and set up my account?",
+        "answers": {
+            "en": "**University Email Account ({{university_email}}):**\n\n1. Visit the IT portal: {portal_url}/it\n2. Click **Create Email** and log in with your student ID and password.\n3. Choose your preferred email prefix (usually your name).\n4. Set a strong password and enable two‑factor authentication.\n5. Access your mailbox via webmail or configure Outlook/Thunderbird.\n\n📧 IT Support: {email_it}\n⚠️ Do NOT share your password with anyone.",
+            "ar": "**البريد الجامعي ({{university_email}}):**\n\n1. ادخل بوابة تقنية المعلومات: {portal_url}/it\n2. اضغط **إنشاء بريد** وسجل الدخول برقم الطالب وكلمة السر.\n3. اختر اسم بريد (عادةً اسمك).\n4. ضع كلمة سر قوية وفعل المصادقة الثنائية.\n5. استخدم الويبmail أو اضبط Outlook/Thunderbird.\n\n📧 دعم التقنية: {email_it}\n⚠️ لا تشارك كلمة السر مع أحد.",
+            "fr": "**Compte e‑mail universitaire ({{university_email}}):**\n\n1. Accédez au portail IT : {portal_url}/it\n2. Cliquez **Créer e‑mail** et connectez‑vous avec votre ID étudiant et mot de passe.\n3. Choisissez un préfixe (généralement votre nom).\n4. Définissez un mot de passe fort et activez l’authentification à deux facteurs.\n5. Consultez votre boîte via le webmail ou configurez Outlook/Thunderbird.\n\n📧 Support IT : {email_it}\n⚠️ Ne partagez jamais votre mot de passe."
+        },
+        "keywords": [
+            "email",
+            "IT",
+            "mail",
+            "بريد",
+            "email universitaire",
+            "compte email"
+        ],
+        "variants": [
+            "create university email",
+            "إنشاء بريد جامعي",
+            "créer un e‑mail universitaire"
+        ]
+    },
+    {
+        "id": 30,
+        "category": "career",
+        "question": "What career services does the university offer to help with job placement?",
+        "answers": {
+            "en": "**Career Services (Centre d'Orientation):**\n\n- CV writing workshops, interview preparation sessions, and job fairs (bi‑annual).\n- Internship portal with listings from partner companies.\n- One‑on‑one counseling with career advisors.\n- Access to online job platforms and alumni network.\n\n📧 Career Office: {email_career}\n🕓 Office hours: Monday‑Friday 9 AM‑5 PM",
+            "ar": "**خدمات التوجيه الوظيفي:**\n\n- ورش كتابة السيرة الذاتية، تحضير للمقابلات، ومعارض توظيف (نصف سنوي).\n- بوابة تدريبية مع عروض من الشركات الشريكة.\n- استشارات شخصية مع مختصي التوجيه.\n- الوصول إلى منصات وظائف إلكترونية وشبكة الخريجين.\n\n📧 مكتب التوجيه الوظيفي: {email_career}\n🕓 أوقات العمل: من الاثنين إلى الجمعة 9 ص‑5 م",
+            "fr": "**Services d'orientation professionnelle :**\n\n- Ateliers CV, préparation aux entretiens, forums emploi (bi‑annuel).\n- Portail stages avec offres d'entreprises partenaires.\n- Entretiens individuels avec des conseillers.\n- Accès aux plateformes d'emploi en ligne et au réseau des anciens.\n\n📧 Bureau d'orientation : {email_career}\n🕓 Horaires : Lundi‑Vendredi 9 h‑17 h"
+        },
+        "keywords": [
+            "career",
+            "jobs",
+            "internship",
+            "توظيف",
+            "تدريب",
+            "services d'orientation"
+        ],
+        "variants": [
+            "job placement",
+            "البحث عن عمل",
+            "recherche d'emploi"
+        ]
+    },
+    {
+        "id": 31,
+        "category": "sports",
+        "question": "What sports facilities are available on campus?",
+        "answers": {
+            "en": "**Sports Facilities:**\n\n- Stadium with athletics track and football field\n- Indoor gymnasium with basketball, volleyball, and handball courts\n- Swimming pool (seasonal)\n- Outdoor tennis courts\n- Fitness center equipped with cardio machines and weights\n\nAccessible for all students with free entry using your student ID.\n📧 {email_sports}",
+            "ar": "**المرافق الرياضية:**\n\n- ملعب مع مضمار للركض وميدان لكرة القدم\n- صالة ألعاب داخلية مع ملاعب كرة سلة، طائرة يد، كرة يد\n- مسبح (موسمي)\n- ملاعب تنس خارجية\n- مركز لياقة بدنية مزود بأجهزة كارديو وأوزان\n\nمفتوح لجميع الطلبة مع دخول مجاني ببطاقة الطالب.\n📧 {email_sports}",
+            "fr": "**Installations sportives:**\n\n- Stade avec piste d'athlétisme et terrain de football\n- Gymnase couvert : basketball, volley, handball\n- Piscine (saisonnière)\n- Courts de tennis extérieurs\n- Centre de fitness avec appareils cardio et poids\n\nAccès gratuit pour les étudiants avec la carte.\n📧 {email_sports}"
+        },
+        "keywords": [
+            "sports",
+            "gym",
+            "football",
+            "رياضة",
+            "ملاعب",
+            "sport"
+        ],
+        "variants": [
+            "sports facilities",
+            "مرافق رياضية",
+            "installations sportives"
+        ]
+    },
+    {
+        "id": 32,
+        "category": "library",
+        "question": "How can I borrow books from the university library?",
+        "answers": {
+            "en": "**Library Borrowing Procedure:**\n\n1. Register at the Library Desk with your student ID.\n2. Obtain a library card (digital or physical).\n3. Search the catalogue on {portal_url}/library.\n4. Place a hold or take the book from the shelf.\n5. Loans: up to 3 books for 3 weeks (renewable online).\n\nLate returns incur a fine of 20 DZD per day.\n📧 {email_library}",
+            "ar": "**طريقة استعارة الكتب:**\n\n1. التسجيل في مكتب المكتبة ببطاقة الطالب.\n2. الحصول على بطاقة مكتبة (رقمية أو ورقية).\n3. البحث في الفهرس على {portal_url}/library.\n4. حجز الكتاب أو أخذه من الرف.\n5. الإعارة: حتى 3 كتب لمدة 3 أسابيع (قابلة للتجديد عبر الإنترنت).\n\nالمخالفات: غرامة 20 دينار جزائري عن كل يوم تأخير.\n📧 {email_library}",
+            "fr": "**Procédure d'emprunt:**\n\n1. Enregistrez‑vous à la bibliothèque avec votre carte étudiant.\n2. Obtenez une carte (physique ou numérique).\n3. Recherchez le catalogue sur {portal_url}/library.\n4. Réservez ou prenez le livre en rayon.\n5. Prêt : jusqu'à 3 titres pendant 3 semaines (renouvelable en ligne).\n\nRetard : amende de 20 DZD par jour.\n📧 {email_library}"
+        },
+        "keywords": [
+            "library",
+            "books",
+            "borrow",
+            "مكتبة",
+            "استعارة",
+            "bibliothèque"
+        ],
+        "variants": [
+            "borrow books",
+            "استعارة كتب",
+            "emprunter des livres"
+        ]
+    },
+    {
+        "id": 33,
+        "category": "housing",
+        "question": "Are there any student accommodation options near the university?",
+        "answers": {
+            "en": "**Student Accommodation:**\n\n- On‑campus dormitories managed by the Housing Office (rooms for 1‑3 occupants).\n- Off‑campus apartments and shared flats listed on the housing portal.\n- Priority given to first‑year, international, and scholarship students.\n- Apply through {portal_url}/housing before the start of the academic year.\n\n📧 {email_housing}",
+            "ar": "**السكن الجامعي:**\n\n- سكن داخل الحرم تُديره مكتب السكن (غرف 1‑3 أفراد).\n- شقق ومساكن مشتركة خارج الحرم معروضة على بوابة السكن.\n- الأولوية للطلبة السنة الأولى، الدوليين، والحاصلين على منح.\n- تقديم الطلب عبر {portal_url}/housing قبل بداية العام الدراسي.\n\n📧 {email_housing}",
+            "fr": "**Logement étudiant:**\n\n- Résidences internes gérées par le Service du logement (chambres 1‑3).\n- Appartements et colocations externes listés sur {portal_url}/housing.\n- Priorité aux étudiants de première année, internationaux et boursiers.\n- Candidature via {portal_url}/housing avant le lancement de l'année.\n\n📧 {email_housing}"
+        },
+        "keywords": [
+            "housing",
+            "dormitory",
+            "accommodation",
+            "سكن",
+            "سكن جامعي",
+            "logement"
+        ],
+        "variants": [
+            "student housing",
+            "سكن طلاب",
+            "logement étudiant"
+        ]
+    },
+    {
+        "id": 34,
+        "category": "visa",
+        "question": "What visa documents are required for international students?",
+        "answers": {
+            "en": "**Visa Requirements for International Students:**\n\n- Valid passport (minimum 6 months validity).\n- Accepted secondary school certificate or equivalent.\n- Certified translation of the certificate to French or Arabic.\n- Proof of financial means (bank statement, scholarship letter).\n- Completed university admission letter.\n- Medical certificate (if required).\n\nSubmit all documents to the Algerian Consulate in your country, then register at the International Office upon arrival.\n📧 {email_international}",
+            "ar": "**وثائق الفيزا للطلبة الدوليين:**\n\n- جواز سفر ساري (على الأقل 6 أشهر).\n- شهادة ثانوية معترف بها أو ما يعادلها.\n- ترجمة معتمدة للوثيقة إلى الفرنسية أو العربية.\n- إثبات القدرة المالية (كشف حساب بنكي أو رسالة منحة).\n- خطاب قبول من الجامعة.\n- شهادة طبية (إذا لزم).\n\nقدّم الوثائق إلى القنصلية الجزائرية ثم سجل في مكتب الطلبة الدوليين عند الوصول.\n📧 {email_international}",
+            "fr": "**Documents de visa pour étudiants étrangers:**\n\n- Passeport valide (au moins 6 mois).\n- Certificat de fin d'études secondaire ou équivalent.\n- Traduction certifiée en français ou arabe.\n- Justificatif de ressources (relevé bancaire, lettre de bourse).\n- Lettre d'admission de l'université.\n- Certificat médical (si requis).\n\nDéposez le dossier au consulat algérien de votre pays, puis enregistrez‑vous au bureau international à l'arrivée.\n📧 {email_international}"
+        },
+        "keywords": [
+            "visa",
+            "documents",
+            "شامل",
+            "فيزا",
+            "documents visa"
+        ],
+        "variants": [
+            "visa requirements",
+            "متطلبات الفيزا",
+            "exigences de visa"
+        ]
+    },
+    {
+        "id": 35,
+        "category": "emergency",
+        "question": "What should I do in case of an emergency on campus?",
+        "answers": {
+            "en": "**Campus Emergency Procedure:**\n\n1. Call the campus emergency number: {emergency_phone} (available 24/7).\n2. Report the incident to Campus Security (location banner).\n3. If medical assistance is needed, go to the University Medical Clinic or call emergency services.\n4. Follow instructions from authorities; evacuate if instructed.\n\nEmergency contacts are posted at every building entrance and on the university website.\n📧 {email_emergency}",
+            "ar": "**إجراءات الطوارئ في الحرم:**\n\n1. اتصل برقم الطوارئ داخل الحرم: {emergency_phone} (متاح 24/7).\n2. أبلغ الأمن الجامعي (لوحات في المباني).\n3. إذا احتجت مساعدة طبية، توجه إلى عيادة الجامعة أو اتصل بخدمات الطوارئ.\n4. اتبع تعليمات السلطات؛ إخلاء إذا طُلب ذلك.\n\nأرقام الطوارئ معروضة عند مداخل جميع المباني وعلى موقع الجامعة.\n📧 {email_emergency}",
+            "fr": "**Procédure d'urgence sur le campus:**\n\n1. Composer le numéro d'urgence du campus : {emergency_phone} (24/7).\n2. Signaler l'incident à la sécurité du campus.\n3. En cas de besoin médical, se rendre à la clinique universitaire ou appeler les services d'urgence.\n4. Suivre les consignes; évacuer si demandé.\n\nLes contacts d'urgence sont affichés à chaque entrée et sur le site web.\n📧 {email_emergency}"
+        },
+        "keywords": [
+            "emergency",
+            "safety",
+            "طوارئ",
+            "أمان",
+            "urgence"
+        ],
+        "variants": [
+            "campus emergency",
+            "حالة طوارئ",
+            "urgence sur le campus"
+        ]
+    },
+    {
+        "id": 36,
+        "category": "student_life",
+        "question": "What clubs and student organizations are available?",
+        "answers": {
+            "en": "**Clubs & Student Organizations:**\n\n- Academic clubs (Engineering, Medicine, Business, Arts).\n- Sports teams (football, basketball, athletics).\n- Cultural associations (Arabic language, French literature, International).\n- Volunteer groups (community service, environmental).\n- Tech & Innovation Hub (coding, robotics, startups).\n\nJoin by contacting the Student Life Office or signing up via {portal_url}/clubs.\n📧 {email_student_life}",
+            "ar": "**الأندية والجمعيات الطلابية:**\n\n- أندية أكاديمية (هندسة، طب، اقتصاد، فنون).\n- فرق رياضية (كرة قدم، سلة، أثلات).\n- جمعيات ثقافية (العربية، الأدب الفرنسي، دولية).\n- مجموعات تطوعية (خدمة المجتمع، بيئية).\n- مركز التقنية والابتكار (برمجة، روبوتات، مشاريع ناشئة).\n\nالتسجيل عبر مكتب شؤون الطالب أو عبر {portal_url}/clubs.\n📧 {email_student_life}",
+            "fr": "**Clubs et associations étudiantes:**\n\n- Clubs académiques (ingénierie, médecine, commerce, arts).\n- Équipes sportives (football, basket, athlétisme).\n- Associations culturelles (langue arabe, littérature française, internationales).\n- Groupes bénévoles (service communautaire, environnement).\n- Hub Tech & Innovation (coding, robotique, startups).\n\nInscrivez‑vous auprès du bureau vie étudiante ou sur {portal_url}/clubs.\n📧 {email_student_life}"
+        },
+        "keywords": [
+            "clubs",
+            "organizations",
+            "نادي",
+            "جمعية",
+            "clubs étudiants"
+        ],
+        "variants": [
+            "student clubs",
+            "نادي طلاب",
+            "clubs étudiants"
+        ]
+    },
+    {
+        "id": 37,
+        "category": "alumni",
+        "question": "How can I stay connected with university alumni?",
+        "answers": {
+            "en": "**Alumni Network:**\n\n- Register on the Alumni Portal ({portal_url}/alumni) using your graduation year.\n- Attend alumni events, webinars, and networking sessions hosted by the Alumni Office.\n- Access mentorship programs, job postings, and exclusive scholarships.\n\nFor updates, follow the official alumni social media channels.\n📧 {email_alumni}",
+            "ar": "**شبكة الخريجين:**\n\n- سجّل على بوابة الخريجين ({portal_url}/alumni) حسب سنة التخرج.\n- احضر الفعاليات، الندوات، وجلسات التواصل التي ينظمها مكتب الخريجين.\n- استفد من برامج الإرشاد، فرص العمل، والمنح الخاصة.\n\nتابع القنوات الاجتماعية الرسمية للبقاء على اطلاع.\n📧 {email_alumni}",
+            "fr": "**Réseau des anciens:**\n\n- Inscrivez‑vous sur le portail Alumni ({portal_url}/alumni) avec votre promotion.\n- Participez aux événements, webinaires, et sessions de networking organisés par le Bureau des anciens.\n- Accédez aux programmes de mentorat, offres d’emploi, et bourses exclusives.\n\nSuivez les réseaux sociaux officiels pour les actualités.\n📧 {email_alumni}"
+        },
+        "keywords": [
+            "alumni",
+            "network",
+            "خريجين",
+            "شبكة الخريجين",
+            "anciens"
+        ],
+        "variants": [
+            "alumni network",
+            "شبكة الخريجين",
+            "réseau des alumni"
+        ]
+    },
+    {
+        "id": 38,
+        "category": "research_funding",
+        "question": "How can I apply for research funding at the university?",
+        "answers": {
+            "en": "**Research Funding Application:**\n\n1. Identify funding calls on the Research Office website.\n2. Prepare a project proposal (objectives, methodology, budget).\n3. Submit via the online portal ({portal_url}/research/funding).\n4. Attach CV, letters of support, and ethical approvals if required.\n5. Review panel decisions are announced within 6‑8 weeks.\n\nFor guidance, attend the funding workshops offered each semester.\n📧 {email_research_funding}",
+            "ar": "**طلب تمويل بحثي:**\n\n1. استعراض فرص التمويل على موقع مكتب البحث.\n2. إعداد مقترح المشروع (الأهداف، المنهجية، الميزانية).\n3. تقديم الطلب عبر البوابة الإلكترونية ({portal_url}/research/funding).\n4. إرفاق السيرة الذاتية، رسائل الدعم، وموافقات الأخلاقيات إذا لزم.\n5. تُعلن نتائج لجنة المراجعة خلال 6‑8 أسابيع.\n\nللتوجيه، احضر ورش تمويل البحث المتاحة كل فصل.\n📧 {email_research_funding}",
+            "fr": "**Demande de financement de recherche:**\n\n1. Identifier les appels à financement sur le site du Service Recherche.\n2. Rédiger une proposition (objectifs, méthodologie, budget).\n3. Soumettre via le portail ({portal_url}/research/funding).\n4. Joindre CV, lettres de soutien, approbations éthiques si nécessaire.\n5. Décisions du comité annoncées sous 6‑8 semaines.\n\nAssistez aux ateliers de financement chaque semestre.\n📧 {email_research_funding}"
+        },
+        "keywords": [
+            "research funding",
+            "grant",
+            "تمويل",
+            "منحة بحثية",
+            "financement"
+        ],
+        "variants": [
+            "apply for research grant",
+            "طلب منحة بحث",
+            "demander une subvention"
+        ]
+    },
+    {
+        "id": 39,
+        "category": "international_exchange",
+        "question": "Does the university offer student exchange programs?",
+        "answers": {
+            "en": "**Student Exchange Programs:**\n\n- Partnerships with European, African, and Middle‑East universities.\n- Semester‑long or year‑long exchanges (credits fully transferable).\n- Application deadline: March 31 for Fall semester, September 30 for Spring semester.\n- Eligibility: minimum GPA 12/20, language proficiency, and completed at least one semester.\n\nContact the International Office for the list of partner institutions.\n📧 {email_international}",
+            "ar": "**برامج التبادل الطلابي:**\n\n- شراكات مع جامعات أوروبية، أفريقية، والشرق الأوسط.\n- تبادل لمدة نصف سنة أو سنة كاملة (تحويل الساعات).\n- موعد إغلاق التقديم: 31 مارس للفصل الخريفي، 30 سبتمبر للفصل الربيعي.\n- الشروط: متوسط لا يقل عن 12/20، إتقان لغة، وإكمال فصل دراسي على الأقل.\n\nتواصل مع مكتب الطلبة الدوليين للحصول على قائمة الجامعات الشريكة.\n📧 {email_international}",
+            "fr": "**Programmes d'échange étudiant:**\n\n- Partenariats avec des universités européennes, africaines et du Moyen‑Orient.\n- Échanges d'un semestre ou d'une année (crédits transférables).\n- Date limite : 31 mars pour le semestre d’automne, 30 septembre pour le semestre de printemps.\n- Conditions : moyenne ≥12/20, niveau linguistique, au moins un semestre accompli.\n\nContactez le Bureau International pour la liste des établissements partenaires.\n📧 {email_international}"
+        },
+        "keywords": [
+            "exchange",
+            "student exchange",
+            "تبادل",
+            "برنامج تبادل",
+            "échange"
+        ],
+        "variants": [
+            "student exchange program",
+            "برنامج تبادل طلاب",
+            "programme d'échange"
+        ]
+    },
+    {
+        "id": 40,
+        "category": "career",
+        "question": "How can I request a reference letter from the university?",
+        "answers": {
+            "en": "**Reference Letter Request:**\n\n1. Send an email to the Career Office ({email_career}) with your full name, student ID, and purpose of the letter.\n2. Attach your latest CV and any relevant academic records.\n3. Specify the deadline (minimum 2 weeks notice).\n4. The office will draft the letter and send it for your approval.\n\n📧 {email_career}",
+            "ar": "**طلب شهادة توصية:**\n\n1. أرسل بريدًا إلى مكتب التوجيه الوظيفي ({email_career}) مع اسمك الكامل، رقم الطالب، وسبب الطلب.\n2. أرفق سيرتك الذاتية الأخيرة وأي سجلات أكاديمية ذات صلة.\n3. حدد الموعد النهائي (على الأقل قبل أسبوعين).\n4. سيُعدّ المكتب الرسالة ويرسلها للمراجعة.\n\n📧 {email_career}",
+            "fr": "**Demande de lettre de recommandation:**\n\n1. Envoyez un e‑mail au Bureau d'orientation ({email_career}) avec votre nom complet, ID étudiant, et l'objet de la lettre.\n2. Joignez votre CV récent et les relevés académiques pertinents.\n3. Indiquez la date limite (au moins 2 semaines à l’avance).\n4. Le bureau rédige la lettre et vous la renvoie pour validation.\n\n📧 {email_career}"
+        },
+        "keywords": [
+            "reference",
+            "letter",
+            "شهادة توصية",
+            "lettre de référence"
+        ],
+        "variants": [
+            "request reference letter",
+            "طلب شهادة توصية",
+            "demander une lettre"
+        ]
+    }
+]

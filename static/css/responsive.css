@@ -1,0 +1,126 @@
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:root {
+  --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+  --space-md: clamp(0.75rem, 1.5vw, 1.25rem);
+  --space-lg: clamp(1rem, 2vw, 1.75rem);
+  --space-xl: clamp(1.5rem, 3vw, 3rem);
+  --space-2xl: clamp(2rem, 4vw, 5rem);
+
+  --container-max: 1400px;
+  --container-pad: clamp(1rem, 3vw, 3rem);
+}
+
+:root {
+  --fs-hero: clamp(1.75rem, 4vw + 1rem, 3.5rem);
+  --fs-section: clamp(1.5rem, 3vw + 0.5rem, 3rem);
+  --fs-h2: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+  --fs-h3: clamp(1.1rem, 1.5vw + 0.5rem, 1.375rem);
+  --fs-body: clamp(0.875rem, 0.5vw + 0.75rem, 1.125rem);
+  --fs-small: clamp(0.75rem, 0.3vw + 0.7rem, 0.875rem);
+  --fs-btn: clamp(0.8125rem, 0.3vw + 0.75rem, 1rem);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.resp-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.hide-mobile {
+  display: initial;
+}
+
+.show-mobile {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: initial !important;
+  }
+}
+
+.hide-tablet {
+  display: initial;
+}
+
+.show-tablet {
+  display: none !important;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+
+  .show-tablet {
+    display: initial !important;
+  }
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  button,
+  a,
+  select,
+  input[type="checkbox"],
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+.admin-tabs::-webkit-scrollbar {
+  height: 0;
+  display: none;
+}
+
+.admin-tabs {
+  scrollbar-width: none;
+}
+
+@media (min-width: 2560px) {
+  :root {
+    --container-max: 1800px;
+    --container-pad: 4rem;
+  }
+
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1600px;
+  }
+}

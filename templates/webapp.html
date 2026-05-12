@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>اختيار الجامعة</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .header h2 {
+            margin: 0 0 8px 0;
+            color: var(--tg-theme-text-color, #000000);
+        }
+        .header p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--tg-theme-hint-color, #999999);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            background: var(--tg-theme-secondary-bg-color, #f0f0f0);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--tg-theme-hint-color, #cccccc);
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            font-size: 16px;
+            appearance: none;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        select:focus {
+            border-color: var(--tg-theme-button-color, #2481cc);
+        }
+        .loading {
+            display: none;
+            color: var(--tg-theme-hint-color, #999999);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+        /* Custom arrow for select */
+        .select-wrapper {
+            position: relative;
+        }
+        .select-wrapper::after {
+            content: '▼';
+            font-size: 12px;
+            color: var(--tg-theme-hint-color, #999999);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>إعداد الملف الشخصي 🎓</h2>
+            <p>الرجاء اختيار جامعتك وكليتك للمتابعة</p>
+        </div>
+
+        <div class="form-group">
+            <label for="university">الجامعة:</label>
+            <div class="select-wrapper">
+                <select id="university">
+                    <option value="">-- يرجى اختيار الجامعة --</option>
+                </select>
+            </div>
+            <div id="uni-loading" class="loading">جاري التحميل...</div>
+        </div>
+
+        <div class="form-group" id="faculty-group" style="display: none;">
+            <label for="faculty">الكلية:</label>
+            <div class="select-wrapper">
+                <select id="faculty">
+                    <option value="">-- يرجى اختيار الكلية --</option>
+                </select>
+            </div>
+            <div id="fac-loading" class="loading">جاري التحميل...</div>
+        </div>
+
+        <div class="form-group" id="department-group" style="display: none;">
+            <label for="department">القسم (اختياري):</label>
+            <div class="select-wrapper">
+                <select id="department">
+                    <option value="">-- تخطي (بدون قسم محدد) --</option>
+                </select>
+            </div>
+            <div id="dept-loading" class="loading">جاري التحميل...</div>
+        </div>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        
+        tg.MainButton.setText("تأكيد الاختيار ✅");
+        tg.MainButton.color = tg.themeParams.button_color || '#2481cc';
+        tg.MainButton.textColor = tg.themeParams.button_text_color || '#ffffff';
+        tg.MainButton.hide();
+
+        const uniSelect = document.getElementById('university');
+        const facSelect = document.getElementById('faculty');
+        const deptSelect = document.getElementById('department');
+
+        const facGroup = document.getElementById('faculty-group');
+        const deptGroup = document.getElementById('department-group');
+
+        // Load Universities
+        document.getElementById('uni-loading').style.display = 'block';
+        fetch('/webapp/api/universities')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(u => {
+                    const option = document.createElement('option');
+                    option.value = u.id;
+                    option.textContent = `🏛 ${u.name} ${u.city ? '('+u.city+')' : ''}`;
+                    uniSelect.appendChild(option);
+                });
+                document.getElementById('uni-loading').style.display = 'none';
+            })
+            .catch(err => {
+                console.error('Error loading universities:', err);
+                document.getElementById('uni-loading').textContent = '❌ حدث خطأ في التحميل';
+            });
+
+        uniSelect.addEventListener('change', function() {
+            const uniId = this.value;
+            tg.MainButton.hide();
+            facSelect.innerHTML = '<option value="">-- يرجى اختيار الكلية --</option>';
+            deptSelect.innerHTML = '<option value="">-- تخطي (بدون قسم محدد) --</option>';
+            deptGroup.style.display = 'none';
+            
+            if (uniId) {
+                facGroup.style.display = 'block';
+                document.getElementById('fac-loading').style.display = 'block';
+                fetch(`/webapp/api/faculties/${uniId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        data.forEach(f => {
+                            const option = document.createElement('option');
+                            option.value = f.id;
+                            option.textContent = `🏫 ${f.name}`;
+                            facSelect.appendChild(option);
+                        });
+                        document.getElementById('fac-loading').style.display = 'none';
+                        if (data.length === 0) {
+                            facSelect.innerHTML = '<option value="">-- لا توجد كليات مسجلة --</option>';
+                            tg.MainButton.show(); // Can submit if no faculties
+                        }
+                    })
+                    .catch(err => {
+                        document.getElementById('fac-loading').textContent = '❌ حدث خطأ';
+                    });
+            } else {
+                facGroup.style.display = 'none';
+            }
+        });
+
+        facSelect.addEventListener('change', function() {
+            const facId = this.value;
+            deptSelect.innerHTML = '<option value="">-- تخطي (بدون قسم محدد) --</option>';
+            
+            if (facId) {
+                deptGroup.style.display = 'block';
+                document.getElementById('dept-loading').style.display = 'block';
+                fetch(`/webapp/api/departments/${facId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        data.forEach(d => {
+                            const option = document.createElement('option');
+                            option.value = d.id;
+                            option.textContent = `📂 ${d.name}`;
+                            deptSelect.appendChild(option);
+                        });
+                        document.getElementById('dept-loading').style.display = 'none';
+                        // Show main button because faculty is selected
+                        tg.MainButton.show();
+                    });
+            } else {
+                deptGroup.style.display = 'none';
+                tg.MainButton.hide();
+            }
+        });
+
+        deptSelect.addEventListener('change', function() {
+            // Nothing special needed, button is already visible if faculty is selected
+        });
+
+        tg.onEvent('mainButtonClicked', function() {
+            const data = {
+                uni_id: parseInt(uniSelect.value),
+                fac_id: parseInt(facSelect.value) || null,
+                dept_id: deptSelect.value ? parseInt(deptSelect.value) : null
+            };
+            tg.sendData(JSON.stringify(data));
+        });
+    </script>
+</body>
+</html>

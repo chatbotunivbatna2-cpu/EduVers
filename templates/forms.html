@@ -1,0 +1,893 @@
+{% macro render_admin_modals() %}
+<style>
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .7);
+        backdrop-filter: blur(4px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background: var(--surface, #1e1e1e);
+        border: 1px solid var(--border, #2a2a2a);
+        border-radius: 16px;
+        padding: 32px;
+        width: 92%;
+        max-width: 620px;
+        max-height: 88vh;
+        overflow-y: auto;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .8);
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--text-tertiary, #6b6b6b);
+        font-size: 24px;
+        cursor: pointer;
+        transition: color .2s, transform .2s;
+        line-height: 1;
+    }
+
+    .close:hover {
+        color: var(--text-primary, #fff);
+        transform: rotate(90deg);
+    }
+
+    .modal-content h2 {
+        margin: 0 0 24px;
+        font-size: 22px;
+        font-weight: 700;
+        border-bottom: 1px solid var(--border, #2a2a2a);
+        padding-bottom: 16px;
+        padding-right: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--text-secondary, #a0a0a0);
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+
+    .form-group label:has(input[type="checkbox"]) {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: none;
+        letter-spacing: 0;
+        color: var(--text-primary, #fff);
+        font-weight: 400;
+    }
+
+    .form-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--accent-primary, #2563EB);
+        cursor: pointer;
+    }
+
+    .form-group input:not([type="checkbox"]),
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 10px 14px;
+        background: var(--bg-secondary, #111);
+        border: 1px solid var(--border, #2a2a2a);
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--text-primary, #fff);
+        box-sizing: border-box;
+        transition: border-color .2s, box-shadow .2s;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .form-group select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 36px;
+    }
+
+    .form-group input:focus:not([type="checkbox"]),
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--accent-primary, #2563EB);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+        line-height: 1.5;
+    }
+
+    .form-group small {
+        display: block;
+        margin-top: 5px;
+        color: var(--text-tertiary, #6b6b6b);
+        font-size: 11px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: clamp(1rem, 2vw, 1.5rem);
+        padding-top: clamp(0.75rem, 1.5vw, 1.25rem);
+        border-top: 1px solid var(--border, #2a2a2a);
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    @media(max-width: 768px) {
+        .modal-content {
+            width: 96%;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border-radius: 12px;
+            max-height: 92vh;
+        }
+
+        .modal-content h2 {
+            font-size: 18px;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-group label {
+            font-size: 12px;
+        }
+
+        .form-group input:not([type="checkbox"]),
+        .form-group textarea,
+        .form-group select {
+            padding: 9px 12px;
+            font-size: 13px;
+        }
+    }
+
+    html:not(.dark) .modal {
+        background: rgba(0, 0, 0, 0.35);
+    }
+
+    html:not(.dark) .modal-content {
+        background: #FFFFFF;
+        border: 1px solid #CBD5E1;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    html:not(.dark) .modal-content h2 {
+        border-bottom: 1px solid #E2E8F0;
+        color: #0F172A;
+    }
+
+    html:not(.dark) .close:hover {
+        color: #0F172A;
+    }
+
+    html:not(.dark) .form-group label {
+        color: #475569;
+    }
+
+    html:not(.dark) .form-group label:has(input[type="checkbox"]) {
+        color: #0F172A;
+    }
+
+    html:not(.dark) .form-group input:not([type="checkbox"]),
+    html:not(.dark) .form-group textarea,
+    html:not(.dark) .form-group select {
+        background: #F8FAFC;
+        border: 1px solid #CBD5E1;
+        color: #0F172A;
+    }
+
+    html:not(.dark) .form-group input:focus:not([type="checkbox"]),
+    html:not(.dark) .form-group textarea:focus,
+    html:not(.dark) .form-group select:focus {
+        background: #FFFFFF;
+        border-color: #2563EB;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    html:not(.dark) .form-group small {
+        color: #94A3B8;
+    }
+
+    html:not(.dark) .form-actions {
+        border-top: 1px solid #E2E8F0;
+    }
+</style>
+
+
+<div id="facultyFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('facultyFormModal')">&times;</button>
+        <h2 id="facultyFormTitle" data-i18n="form.add_faculty"> Add Faculty</h2>
+        <form id="facultyForm" onsubmit="submitFacultyForm(event)">
+            <input type="hidden" id="facultyId">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.fac_name_en">Faculty Name (English) *</label>
+                    <input type="text" id="facName" name="name" required data-i18n-ph="form.fac_name_en_ph"
+                        placeholder="e.g., Faculty of Science">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.fac_code">Code *</label>
+                    <input type="text" id="facCode" name="code" required maxlength="50" data-i18n-ph="form.fac_code_ph"
+                        placeholder="e.g., FS_B2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.fac_name_ar">Name (Arabic)</label>
+                    <input type="text" id="facNameAr" name="name_ar" data-i18n-ph="form.fac_name_ar_ph"
+                        placeholder="كلية العلوم" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.fac_name_fr">Name (French)</label>
+                    <input type="text" id="facNameFr" name="name_fr" data-i18n-ph="form.fac_name_fr_ph"
+                        placeholder="Faculté des Sciences">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.dean">Dean</label>
+                    <input type="text" id="facDean" name="dean" data-i18n-ph="form.dean_ph" placeholder="Prof. Name">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.building">Building</label>
+                    <input type="text" id="facBuilding" name="building" data-i18n-ph="form.building_ph"
+                        placeholder="Building A">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.email">Email</label>
+                    <input type="email" id="facEmail" name="email" data-i18n-ph="form.fac_email_ph"
+                        placeholder="faculty@university.dz">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.phone">Phone</label>
+                    <input type="tel" id="facPhone" name="phone" data-i18n-ph="form.phone_ph"
+                        placeholder="+213 33 81 51 33">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.official_website">Official Website</label>
+                <input type="url" id="facWebsite" name="official_website" data-i18n-ph="form.official_website_ph"
+                    placeholder="https://faculty.university.dz">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.description">Description</label>
+                <textarea id="facDescription" name="description" rows="3" data-i18n-ph="form.desc_ph"
+                    placeholder="Brief description"></textarea>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="facActive" name="is_active" checked> <span
+                        data-i18n="form.active">Active</span></label>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-i18n="form.save_faculty">Save Faculty</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('facultyFormModal')"
+                    data-i18n="form.cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="departmentFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('departmentFormModal')">&times;</button>
+        <h2 id="departmentFormTitle" data-i18n="form.add_department"> Add Department</h2>
+        <form id="departmentForm" onsubmit="submitDepartmentForm(event)">
+            <input type="hidden" id="departmentId">
+            <div class="form-group">
+                <label data-i18n="form.faculty">Faculty *</label>
+                <select id="deptFaculty" name="faculty_id" required>
+                    <option value="" data-i18n="form.select_faculty">Select Faculty</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.dept_name_en">Department Name (English) *</label>
+                    <input type="text" id="deptName" name="name" required data-i18n-ph="form.dept_name_en_ph"
+                        placeholder="e.g., Computer Science">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.dept_code">Code *</label>
+                    <input type="text" id="deptCode" name="code" required maxlength="50"
+                        data-i18n-ph="form.dept_code_ph" placeholder="e.g., CS_B2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.dept_name_ar">Name (Arabic)</label>
+                    <input type="text" id="deptNameAr" name="name_ar" data-i18n-ph="form.dept_name_ar_ph"
+                        placeholder="علوم الحاسبات" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.head">Head of Department</label>
+                    <input type="text" id="deptHead" name="head_of_department" data-i18n-ph="form.head_ph"
+                        placeholder="Prof. Name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.email">Email</label>
+                    <input type="email" id="deptEmail" name="email" data-i18n-ph="form.dept_email_ph"
+                        placeholder="dept@university.dz">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.phone">Phone</label>
+                    <input type="tel" id="deptPhone" name="phone" data-i18n-ph="form.phone_ph"
+                        placeholder="+213 33 81 51 33">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.building">Building</label>
+                    <input type="text" id="deptBuilding" name="building" data-i18n-ph="form.building_dept_ph"
+                        placeholder="Building A - Floor 2">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.official_website">Official Website</label>
+                    <input type="url" id="deptWebsite" name="official_website" data-i18n-ph="form.dept_website_ph"
+                        placeholder="https://dept.university.dz">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.description">Description</label>
+                <textarea id="deptDescription" name="description" rows="3" data-i18n-ph="form.desc_ph"
+                    placeholder="Brief description"></textarea>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="deptActive" name="is_active" checked> <span
+                        data-i18n="form.active">Active</span></label>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-i18n="form.save_department">Save Department</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('departmentFormModal')"
+                    data-i18n="form.cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="knowledgeFormModal" class="modal" style="display:none;">
+    <div class="modal-content" style="max-width:680px">
+        <button class="close" onclick="closeModal('knowledgeFormModal')">&times;</button>
+        <h2 id="knowledgeFormTitle" data-i18n="form.add_knowledge"> Add Knowledge Entry</h2>
+        <form id="knowledgeForm" onsubmit="submitKnowledgeForm(event)">
+            <input type="hidden" id="knowledgeId">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.kb_title">Title *</label>
+                    <input type="text" id="kbTitle" name="title" required data-i18n-ph="form.kb_title_ph"
+                        placeholder="e.g., Enrollment Deadlines 2025">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.kb_category">Category</label>
+                    <input type="text" id="kbCategory" name="category" data-i18n-ph="form.kb_category_ph"
+                        placeholder="e.g., Academic, Administrative, Events" list="kbCategoryList">
+                    <datalist id="kbCategoryList">
+                        <option value="Academic">
+                        <option value="Administrative">
+                        <option value="Events">
+                        <option value="Regulations">
+                        <option value="Services">
+                        <option value="Research">
+                    </datalist>
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.kb_content_en">Content (English) *</label>
+                <textarea id="kbContent" name="content" rows="5" required data-i18n-ph="form.kb_content_ph"
+                    placeholder="Write the knowledge content here..."></textarea>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.kb_content_ar">Content (Arabic) <span
+                        style="font-size:11px;color:#888;text-transform:none"
+                        data-i18n="form.optional">(optional)</span></label>
+                <textarea id="kbContentAr" name="content_ar" rows="4" dir="rtl" data-i18n-ph="form.kb_content_ar_ph"
+                    placeholder="اكتب المحتوى بالعربية هنا..."></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.kb_tags">Tags <span style="font-size:11px;color:#888;text-transform:none"
+                            data-i18n="form.kb_tags_hint">(comma separated)</span></label>
+                    <input type="text" id="kbTags" name="tags" data-i18n-ph="form.kb_tags_ph"
+                        placeholder="enrollment, deadline, 2025">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.kb_source">Source URL</label>
+                    <input type="url" id="kbSourceUrl" name="source_url" data-i18n-ph="form.kb_source_ph"
+                        placeholder="https://university.dz/page">
+                </div>
+            </div>
+            <div class="form-row" id="kbLastRow">
+                <div class="form-group" id="kbDepartmentGroup">
+                    <label data-i18n="form.kb_department">Department</label>
+                    <select id="kbDepartment" name="department_id">
+                        <option value="" data-i18n="form.kb_university_wide">University-wide</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><span data-i18n="form.kb_priority">Priority</span> — <span
+                            id="kbPriorityValue">5</span>/10</label>
+                    <input type="range" id="kbPriority" name="priority" min="1" max="10" value="5"
+                        oninput="document.getElementById('kbPriorityValue').textContent = this.value"
+                        style="width:100%;accent-color:var(--accent-primary,#2563EB)">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;color:#888;margin-top:4px">
+                        <span data-i18n="form.kb_priority_low">Low (1)</span><span
+                            data-i18n="form.kb_priority_high">High (10)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-i18n="form.save_knowledge">Save Entry</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('knowledgeFormModal')"
+                    data-i18n="form.cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="facultyAdminFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('facultyAdminFormModal')">&times;</button>
+        <h2 data-i18n="form.create_fac_admin"> Create Faculty Admin</h2>
+        <form id="facultyAdminForm" onsubmit="submitFacultyAdminForm(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.username">Username *</label>
+                    <input type="text" id="faUsername" required data-i18n-ph="form.fac_admin_username_ph"
+                        placeholder="faculty_admin_username">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.fullname">Full Name</label>
+                    <input type="text" id="faFullName" data-i18n-ph="form.fullname_ph" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.email">Email *</label>
+                <input type="email" id="faEmail" required data-i18n-ph="form.admin_email_ph"
+                    placeholder="admin@university.dz">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.password">Password *</label>
+                <input type="password" id="faPassword" required data-i18n-ph="form.password_ph"
+                    placeholder="Strong password">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.fac_admin_faculty">Faculty * <small data-i18n="form.fac_admin_faculty_hint">This
+                        admin will manage only the selected faculty.</small></label>
+                <select id="faFacultySelect" required>
+                    <option value="" data-i18n="form.select_faculty">Select Faculty</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-i18n="form.create_fac_admin_btn">Create Faculty
+                    Admin</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('facultyAdminFormModal')"
+                    data-i18n="form.cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="deptAdminFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('deptAdminFormModal')">&times;</button>
+        <h2 data-i18n="form.create_dept_admin"> Create Department Admin</h2>
+        <form id="deptAdminForm" onsubmit="submitDeptAdminForm(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-i18n="form.username">Username *</label>
+                    <input type="text" id="daUsername" required data-i18n-ph="form.dept_admin_username_ph"
+                        placeholder="dept_admin_username">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.fullname">Full Name</label>
+                    <input type="text" id="daFullName" data-i18n-ph="form.fullname_ph" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.email">Email *</label>
+                <input type="email" id="daEmail" required data-i18n-ph="form.admin_email_ph"
+                    placeholder="admin@university.dz">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.password">Password *</label>
+                <input type="password" id="daPassword" required data-i18n-ph="form.password_ph"
+                    placeholder="Strong password">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form.dept_admin_dept">Department * <small data-i18n="form.dept_admin_dept_hint">This
+                        admin will manage only the selected department.</small></label>
+                <select id="daDeptSelect" required>
+                    <option value="" data-i18n="form.select_department">Select Department</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-i18n="form.create_dept_admin_btn">Create Department
+                    Admin</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('deptAdminFormModal')"
+                    data-i18n="form.cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="userViewModal" class="modal" style="display:none;">
+    <div class="modal-content" style="max-width:500px">
+        <button class="close" onclick="closeModal('userViewModal')">&times;</button>
+        <h2 data-i18n="form.user_details"> User Details</h2>
+        <div id="userViewBody"></div>
+        <div class="form-actions">
+            <button class="btn btn-secondary" onclick="closeModal('userViewModal')"
+                data-i18n="form.cancel">Close</button>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro render_login_form() %}
+<form id="loginForm" class="auth-form">
+    <div class="form-group">
+        <label for="email" data-i18n="login.email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="student@gmail.com">
+    </div>
+
+    <div class="form-group">
+        <label for="password" data-i18n="login.password">Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" required data-i18n-ph="login.password_ph"
+                placeholder="Enter your password">
+            <button type="button" class="password-toggle" onclick="togglePassword(this)" aria-label="Show password">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg class="eye-off-icon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" />
+                    <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="form-check-row">
+        <label class="checkbox-label">
+            <input type="checkbox" id="rememberMe" name="remember_me">
+            <span class="checkbox-custom"></span>
+            <span data-i18n="login.remember">Remember me</span>
+        </label>
+    </div>
+
+    <div id="errorMessage" class="error-message" style="display:none;"></div>
+
+    <button type="submit" class="btn btn-primary" data-i18n="login.btn">Log In</button>
+</form>
+{% endmacro %}
+
+{% macro render_signup_form() %}
+<form id="signupForm" class="auth-form">
+    <div class="form-row">
+        <div class="form-group">
+            <label for="username" data-i18n="signup.username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="User123" autocomplete="new-username">
+        </div>
+        <div class="form-group">
+            <label for="full_name" data-i18n="signup.fullname">Full Name</label>
+            <input type="text" id="full_name" name="full_name" data-i18n-ph="signup.fullname_ph" placeholder="Ahmed">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" data-i18n="signup.email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="student@gmail.com">
+    </div>
+
+    <div class="form-group">
+        <label for="university_id" data-i18n="signup.university">University</label>
+        <select id="university_id" name="university_id" required>
+            <option value="" data-i18n="signup.uni_ph">Select university</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="faculty_id" data-i18n="signup.faculty">Faculty</label>
+        <select id="faculty_id" name="faculty_id" required disabled>
+            <option value="" data-i18n="signup.fac_ph">Select faculty</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="department_id" data-i18n="signup.department">Department</label>
+            <select id="department_id" name="department_id" required disabled>
+                <option value="" data-i18n="signup.dept_ph">Select department</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="student_id" data-i18n="signup.student_id">Student ID</label>
+            <input type="text" id="student_id" name="student_id" placeholder="2024001">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" data-i18n="signup.password">Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" required data-i18n-ph="signup.password_ph"
+                placeholder="At least 8 characters" minlength="8" autocomplete="new-password">
+            <button type="button" class="password-toggle" onclick="togglePassword(this)" aria-label="Show password">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg class="eye-off-icon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" />
+                    <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+            </button>
+        </div>
+        <small style="color:var(--text-tertiary);font-size:11px;margin-top:2px;">Min 8 chars, 1 uppercase, 1 lowercase,
+            1 number, 1 special character</small>
+    </div>
+
+    <div class="form-check-row">
+        <label class="checkbox-label" style="align-items: center;">
+            <input type="checkbox" id="agreeTerms" name="agree_terms" required>
+            <span class="checkbox-custom"></span>
+            <div
+                style="line-height: 1.5; flex: 1; font-size: clamp(11px, 2.5vw, 14px); text-align: start; white-space: nowrap;">
+                <span data-i18n="signup.terms">I agree to the</span>
+                <a href="#" class="terms-link" data-i18n="signup.terms_tos">Terms of Service</a>
+                <span data-i18n="signup.terms_and">and</span>
+                <a href="#" class="terms-link" data-i18n="signup.terms_pp">Privacy Policy</a>
+            </div>
+        </label>
+    </div>
+
+    <div id="errorMessage" class="error-message" style="display:none;"></div>
+    <div id="successMessage" class="success-message" style="display:none;"></div>
+
+    <button type="submit" class="btn btn-primary" data-i18n="signup.btn">Create Account</button>
+</form>
+{% endmacro %}
+
+
+{% macro render_chat_form() %}
+<form id="messageForm" class="chat-input-form">
+    <input type="text" id="messageInput" data-i18n-ph="chat.input_ph" placeholder="Type your message..."
+        autocomplete="off" disabled>
+    <button type="submit" id="sendBtn" disabled aria-label="Send">
+        <svg class="send-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M7 11L12 6L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M12 6V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+</form>
+{% endmacro %}
+
+
+{% macro render_dept_info_form() %}
+<form id="deptInfoForm">
+    <div class="form-row">
+        <div class="form-group">
+            <label data-i18n="dept_adm.field_name_en">Department Name (EN)</label>
+            <input type="text" id="editDeptName" data-i18n-ph="dept_adm.ph_name" placeholder="Department name">
+        </div>
+        <div class="form-group">
+            <label data-i18n="dept_adm.field_name_ar">Name (Arabic)</label>
+            <input type="text" id="editDeptNameAr" data-i18n-ph="dept_adm.ph_name_ar" placeholder="اسم القسم" dir="rtl">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label data-i18n="form.head">Head of Department</label>
+            <input type="text" id="editDeptHead" data-i18n-ph="form.head_ph" placeholder="Prof. Name">
+        </div>
+        <div class="form-group">
+            <label data-i18n="form.email">Email</label>
+            <input type="email" id="editDeptEmail" data-i18n-ph="form.dept_email_ph" placeholder="dept@university.dz">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label data-i18n="form.phone">Phone</label>
+            <input type="tel" id="editDeptPhone" data-i18n-ph="form.phone_ph" placeholder="+213 ...">
+        </div>
+        <div class="form-group">
+            <label data-i18n="form.building">Building</label>
+            <input type="text" id="editDeptBuilding" data-i18n-ph="form.building_dept_ph"
+                placeholder="Block A - Floor 2">
+        </div>
+    </div>
+    <div class="form-group">
+        <label data-i18n="form.official_website">Official Website</label>
+        <input type="url" id="editDeptWebsite" data-i18n-ph="form.dept_website_ph"
+            placeholder="https://dept.university.dz">
+    </div>
+    <div class="form-group">
+        <label data-i18n="form.description">Description</label>
+        <textarea id="editDeptDescription" rows="4" data-i18n-ph="dept_adm.ph_description"
+            placeholder="Brief description of the department"></textarea>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary" data-i18n="dept_adm.save_changes">Save Changes</button>
+        <button type="button" class="btn btn-secondary" onclick="loadDeptInfo(currentUser.department_id)"
+            data-i18n="dept_adm.reset">Reset</button>
+    </div>
+</form>
+{% endmacro %}
+
+
+{% macro render_super_admin_modals() %}
+<div id="universityFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeSuperModal('universityFormModal')">&times;</button>
+        <h2 id="universityFormTitle">Add University</h2>
+        <form id="universityForm">
+            <input type="hidden" id="universityId">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>University Name (EN) *</label>
+                    <input type="text" id="uniName" name="name" required placeholder="e.g., University of Algiers">
+                </div>
+                <div class="form-group">
+                    <label>Code *</label>
+                    <input type="text" id="uniCode" name="code" required maxlength="20" placeholder="e.g., UNIV_ALG">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Name (Arabic)</label>
+                    <input type="text" id="uniNameAr" name="name_ar" placeholder="جامعة الجزائر" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="uniCity" name="city" placeholder="e.g., Algiers">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Province / Wilaya</label>
+                    <input type="text" id="uniProvince" name="province" placeholder="e.g., Algiers">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="uniEmail" name="email" placeholder="contact@university.dz">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="uniPhone" name="phone" placeholder="+213 21 ...">
+                </div>
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="url" id="uniWebsite" name="website" placeholder="https://university.dz">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" id="uniAddress" name="address" placeholder="Full address">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="uniDescription" name="description" rows="3" placeholder="Brief description"></textarea>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="uniActive" name="is_active" checked> Active</label>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save University</button>
+                <button type="button" class="btn btn-secondary"
+                    onclick="closeSuperModal('universityFormModal')">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="adminFormModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close" onclick="closeSuperModal('adminFormModal')">&times;</button>
+        <h2 id="adminFormTitle">Create Admin</h2>
+        <form id="adminForm">
+            <input type="hidden" id="adminId">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Username *</label>
+                    <input type="text" id="adminUsername" name="username" required placeholder="admin_username">
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="adminFullName" name="full_name" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" id="adminEmail" name="email" required placeholder="admin@university.dz">
+            </div>
+            <div class="form-group" id="adminPasswordGroup">
+                <label>Password <small id="adminPasswordNote" style="color:var(--text-tertiary)">*
+                        Required</small></label>
+                <input type="password" id="adminPassword" name="password" placeholder="Strong password">
+            </div>
+            <div class="form-group">
+                <label>Role *</label>
+                <select id="adminRoleSelect" name="role" required>
+                    <option value="university_admin">University Admin</option>
+                    <option value="faculty_admin">Faculty Admin</option>
+                    <option value="department_admin">Department Admin</option>
+                </select>
+            </div>
+            <div class="form-group" id="adminUniversityGroup">
+                <label>University</label>
+                <select id="adminUniversity" name="university_id">
+                    <option value="">Select University</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Admin</button>
+                <button type="button" class="btn btn-secondary"
+                    onclick="closeSuperModal('adminFormModal')">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endmacro %}

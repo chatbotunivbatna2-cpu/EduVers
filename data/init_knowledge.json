@@ -1,0 +1,549 @@
+[
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "About Batna 2 University",
+        "content": "Batna 2 University - Mostefa Ben Boulaïd is a major public higher education institution located in Fesdis, Batna, Algeria. It was officially established in 2015 following the restructuring of the original University of Batna (Hadj Lakhdar). The university focuses primarily on science, technology, medicine, and applied sciences. It is spread across a massive modern campus in Fesdis, designed to accommodate tens of thousands of students. Address: Route de Constantine, Fesdis 05078, Batna. Phone: +213 33 23 02 02. Website: www.univ-batna2.dz.",
+        "content_ar": "جامعة باتنة 2 - مصطفى بن بولعيد هي مؤسسة تعليم عالي عمومية رئيسية تقع في فسديس، باتنة، الجزائر. تأسست رسمياً في عام 2015 بعد إعادة هيكلة جامعة باتنة الأصلية (الحاج لخضر). تركز الجامعة بشكل أساسي على العلوم، التكنولوجيا، الطب، والعلوم التطبيقية. تمتد على حرم جامعي حديث وضخم في فسديس، مصمم لاستيعاب عشرات الآلاف من الطلاب. العنوان: طريق قسنطينة، فسديس 05078، باتنة. الهاتف: 0233230202. الموقع: www.univ-batna2.dz.",
+        "category": "General",
+        "tags": [
+            "university",
+            "batna2",
+            "about",
+            "history",
+            "campus"
+        ],
+        "priority": 10,
+        "source_url": "https://www.univ-batna2.dz"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Transportation and Campus Access",
+        "content": "The Batna 2 University campus in Fesdis is accessible via the Batna Tramway and various public bus routes. The university provides dedicated university transport buses (COUS) linking the campus to different student residences and surrounding cities. Students must show their university transport card to board.",
+        "content_ar": "يمكن الوصول إلى حرم جامعة باتنة 2 في فسديس عبر ترامواي باتنة وخطوط حافلات النقل العام المختلفة. توفر الجامعة حافلات نقل جامعي مخصصة (COUS) تربط الحرم الجامعي بمختلف الإقامات الجامعية والمدن المجاورة. يجب على الطلاب إبراز بطاقة النقل الجامعي الخاصة بهم للصعود.",
+        "category": "Campus Life",
+        "tags": [
+            "transport",
+            "bus",
+            "tramway",
+            "access",
+            "location"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Faculty of Technology - Overview",
+        "content": "The Faculty of Technology is the largest faculty at Batna 2 University. It offers Bachelor's, Master's, and Doctorate (LMD) programs across various engineering disciplines. It encompasses departments like Mechanical, Electrical, Civil, and Industrial Engineering. The faculty is known for its advanced laboratories and strong ties with the local industrial sector.",
+        "content_ar": "تعتبر كلية التكنولوجيا أكبر كلية في جامعة باتنة 2. تقدم برامج الليسانس، الماستر، والدكتوراه (LMD) في مختلف التخصصات الهندسية. تضم أقساماً مثل الهندسة الميكانيكية، الكهربائية، المدنية، والصناعية. تشتهر الكلية بمختبراتها المتقدمة وعلاقاتها القوية مع القطاع الصناعي المحلي.",
+        "category": "Academic",
+        "tags": [
+            "technology",
+            "engineering",
+            "faculty",
+            "overview"
+        ],
+        "priority": 9,
+        "source_url": "https://fac-tech.univ-batna2.dz/"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CC_TECH_BATNA2",
+        "title": "Technology - Common Core (Socle Commun)",
+        "content": "The Common Core department in the Faculty of Technology provides the foundational first-year education for all incoming engineering and technology students. The curriculum includes advanced mathematics, physics, chemistry, drafting, and introductory programming, preparing students to choose their specific engineering specialization in their second year.",
+        "content_ar": "يقدم قسم الجذع المشترك في كلية التكنولوجيا التعليم التأسيسي للسنة الأولى لجميع طلاب الهندسة والتكنولوجيا الجدد. يشمل المنهج الرياضيات المتقدمة، الفيزياء، الكيمياء، الرسم الصناعي، ومقدمة في البرمجة، مما يعد الطلاب لاختيار تخصصهم الهندسي الدقيق في السنة الثانية.",
+        "category": "Academic",
+        "tags": [
+            "common core",
+            "first year",
+            "technology",
+            "st",
+            "socle commun"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CIVIL_BATNA2",
+        "title": "Civil Engineering Department",
+        "content": "The Civil Engineering department offers specializations in structural engineering, geotechnics, materials, and public works. Students learn to design, construct, and maintain infrastructure projects. The department collaborates with construction firms for student internships and practical training.",
+        "content_ar": "يقدم قسم الهندسة المدنية تخصصات في الهندسة الإنشائية، الجيوتقنية، المواد، والأشغال العمومية. يتعلم الطلاب كيفية تصميم وبناء وصيانة مشاريع البنية التحتية. يتعاون القسم مع شركات البناء لتوفير التدريب العملي والميداني للطلاب.",
+        "category": "Academic",
+        "tags": [
+            "civil",
+            "engineering",
+            "construction",
+            "structures"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "ELEC_BATNA2",
+        "title": "Electrotechnics Department",
+        "content": "The Electrotechnics department focuses on electrical energy generation, transmission, distribution, and utilization. Master's programs include Electrical Networks, Industrial Control, and Renewable Energies. The labs are equipped with industrial-standard PLC and power systems.",
+        "content_ar": "يركز قسم الهندسة الكهربائية (إلكتروتقني) على توليد ونقل وتوزيع واستخدام الطاقة الكهربائية. تشمل برامج الماستر الشبكات الكهربائية، التحكم الصناعي، والطاقات المتجددة. المخابر مجهزة بأنظمة طاقة ومتحكمات صناعية قياسية.",
+        "category": "Academic",
+        "tags": [
+            "electrical",
+            "power",
+            "energy",
+            "electrotechnics",
+            "engineering"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Faculty of Mathematics and Computer Science - Overview",
+        "content": "This faculty is dedicated to the study of pure and applied mathematics, as well as computer science. It plays a pivotal role in digital transformation research. It offers modern computer labs and hosts several research laboratories focusing on AI, networks, and applied math.",
+        "content_ar": "هذه الكلية مكرسة لدراسة الرياضيات البحتة والتطبيقية، بالإضافة إلى علوم الحاسوب (الإعلام الآلي). تلعب دوراً محورياً في أبحاث التحول الرقمي. توفر مختبرات حاسوب حديثة وتضم عدة مخابر بحثية تركز على الذكاء الاصطناعي، الشبكات، والرياضيات التطبيقية.",
+        "category": "Academic",
+        "tags": [
+            "math",
+            "computer science",
+            "faculty",
+            "mi"
+        ],
+        "priority": 9,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "Computer Science Department",
+        "content": "The Computer Science department (Département d'Informatique) offers Bachelor's degrees in Information Systems and Software Engineering (ISIL) and Computer Science (SI). Master's specialties include Artificial Intelligence, Networks and Security, and Software Engineering. Students must complete a final year project (PFE) for graduation.",
+        "content_ar": "يقدم قسم الإعلام الآلي درجات الليسانس في نظم المعلومات وهندسة البرمجيات (ISIL) وعلوم الحاسوب (SI). تشمل تخصصات الماستر الذكاء الاصطناعي، الشبكات والأمن، وهندسة البرمجيات. يجب على الطلاب إكمال مشروع تخرج نهائي (PFE) للحصول على الشهادة.",
+        "category": "Academic",
+        "tags": [
+            "cs",
+            "computer science",
+            "programming",
+            "software",
+            "ai",
+            "networks"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "MATH_BATNA2",
+        "title": "Mathematics Department",
+        "content": "The Mathematics department provides rigorous training in fundamental mathematics, applied mathematics, and probability/statistics. Graduates often pursue careers in education, financial modeling, cryptography, and academic research.",
+        "content_ar": "يوفر قسم الرياضيات تدريباً صارماً في الرياضيات الأساسية، الرياضيات التطبيقية، والاحتمالات والإحصاء. غالباً ما يتابع الخريجون وظائف في التعليم، النمذجة المالية، التشفير، والبحث الأكاديمي.",
+        "category": "Academic",
+        "tags": [
+            "math",
+            "mathematics",
+            "statistics",
+            "algebra"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Faculty of Medicine - Overview",
+        "content": "The Faculty of Medicine at Batna 2 is one of the most prestigious medical schools in eastern Algeria. It comprises the departments of Medicine, Pharmacy, and Dental Medicine. Clinical training is primarily conducted at the Batna University Hospital Center (CHU Batna).",
+        "content_ar": "تعتبر كلية الطب في جامعة باتنة 2 واحدة من أعرق كليات الطب في شرق الجزائر. وتضم أقسام الطب، الصيدلة، وطب الأسنان. يتم التدريب السريري بشكل رئيسي في المركز الاستشفائي الجامعي بباتنة (CHU Batna).",
+        "category": "Academic",
+        "tags": [
+            "medicine",
+            "medical",
+            "health",
+            "faculty",
+            "chu"
+        ],
+        "priority": 9,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "MED_D_BATNA2",
+        "title": "Department of Medicine",
+        "content": "The Department of Medicine offers a 7-year Doctor of Medicine program. The curriculum combines basic medical sciences with extensive clinical rotations. Admission is highly competitive and requires a high BAC score in experimental sciences or mathematics.",
+        "content_ar": "يقدم قسم الطب برنامج دكتور في الطب يمتد لـ 7 سنوات. يجمع المنهج بين العلوم الطبية الأساسية والتناوبات السريرية المكثفة (التربصات). القبول تنافسي للغاية ويتطلب معدلاً عالياً في البكالوريا شعبة العلوم التجريبية أو الرياضيات.",
+        "category": "Academic",
+        "tags": [
+            "medicine",
+            "doctor",
+            "clinical",
+            "hospital"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "PHARM_BATNA2",
+        "title": "Department of Pharmacy",
+        "content": "The Pharmacy department trains students in pharmaceutical sciences, clinical pharmacy, and pharmacology over a 6-year program leading to a Doctor of Pharmacy degree. Students have access to specialized biochemical and pharmaceutical formulation labs.",
+        "content_ar": "يقوم قسم الصيدلة بتدريب الطلاب في العلوم الصيدلانية، الصيدلة السريرية، وعلم الأدوية على مدار 6 سنوات للحصول على درجة دكتور في الصيدلة. يمكن للطلاب الوصول إلى مختبرات متخصصة في الكيمياء الحيوية والتركيبات الصيدلانية.",
+        "category": "Academic",
+        "tags": [
+            "pharmacy",
+            "drugs",
+            "medical",
+            "pharmacology"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Faculty of Nature and Life Sciences (SNV) - Overview",
+        "content": "The SNV faculty studies biological systems, ecology, and agronomy. It manages expansive experimental farms and greenhouses. The faculty is crucial for research in food security, biodiversity, and biotechnology in the Aurès region.",
+        "content_ar": "تدرس كلية علوم الطبيعة والحياة النظم البيولوجية، علم البيئة، والزراعة. تدير مزارع تجريبية واسعة وبيوت زجاجية. تعتبر الكلية حاسمة للبحث في مجال الأمن الغذائي، التنوع البيولوجي، والتكنولوجيا الحيوية في منطقة الأوراس.",
+        "category": "Academic",
+        "tags": [
+            "biology",
+            "nature",
+            "science",
+            "snv",
+            "faculty"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "MICRO_BIO_BATNA2",
+        "title": "Microbiology and Biochemistry Department",
+        "content": "This department delves into the molecular mechanisms of life and microorganisms. It offers popular Master's programs in Applied Microbiology, Immunology, and Clinical Biochemistry. Graduates often work in medical laboratories and the food industry.",
+        "content_ar": "يتعمق هذا القسم في الآليات الجزيئية للحياة والكائنات الحية الدقيقة. يقدم برامج ماستر شائعة في علم الأحياء الدقيقة التطبيقي، علم المناعة، والكيمياء الحيوية السريرية. غالباً ما يعمل الخريجون في المختبرات الطبية وصناعة الأغذية.",
+        "category": "Academic",
+        "tags": [
+            "microbiology",
+            "biochemistry",
+            "biology",
+            "lab"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Faculty of Letters and Foreign Languages",
+        "content": "This faculty focuses on linguistics, literature, and translation. It hosts the departments of English, French, and Translation. It emphasizes cross-cultural communication and provides language labs for phonetic practice.",
+        "content_ar": "تركز هذه الكلية على اللغويات، الأدب، والترجمة. تضم أقسام اللغة الإنجليزية، الفرنسية، والترجمة. تؤكد على التواصل بين الثقافات وتوفر مختبرات لغوية لممارسة الصوتيات.",
+        "category": "Academic",
+        "tags": [
+            "languages",
+            "letters",
+            "english",
+            "french",
+            "translation"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "ENG_BATNA2",
+        "title": "English Language and Literature Department",
+        "content": "The English department offers studies in British and American literature, civilization, and applied linguistics. Students can pursue Master's degrees in Didactics or Literature & Civilization. The department actively organizes public speaking and debate clubs.",
+        "content_ar": "يقدم قسم اللغة الإنجليزية دراسات في الأدب البريطاني والأمريكي، الحضارة، واللغويات التطبيقية. يمكن للطلاب متابعة درجة الماستر في تعليمية اللغات (Didactics) أو الأدب والحضارة. ينظم القسم بنشاط نوادي الخطابة والمناظرات.",
+        "category": "Academic",
+        "tags": [
+            "english",
+            "literature",
+            "linguistics",
+            "language"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Institute of Hygiene and Safety (IHS)",
+        "content": "The Institute of Hygiene and Safety is a specialized, highly reputed institute in Algeria. It trains HSE (Health, Safety, and Environment) engineers and specialists. Graduates are in high demand in the oil and gas sector (Sonatrach) and heavy industries.",
+        "content_ar": "معهد النظافة والأمن الصناعي هو معهد متخصص وذو سمعة عالية في الجزائر. يقوم بتدريب مهندسي ومختصي الصحة والسلامة والبيئة (HSE). يحظى خريجو المعهد بطلب كبير في قطاع النفط والغاز (سوناطراك) والصناعات الثقيلة.",
+        "category": "Academic",
+        "tags": [
+            "hse",
+            "safety",
+            "security",
+            "hygiene",
+            "institute",
+            "industry"
+        ],
+        "priority": 9,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "ISTU_BATNA2",
+        "title": "Institute of Earth Sciences and Universe (ISTU)",
+        "content": "ISTU offers specialized programs in Geology, Geophysics, and Geography. The institute conducts extensive field research in the Aurès mountains and the Sahara desert. It trains geologists essential for Algeria's mining and hydrocarbon sectors.",
+        "content_ar": "يقدم معهد علوم الأرض والكون (ISTU) برامج متخصصة في الجيولوجيا، الجيوفيزياء، والجغرافيا. يجري المعهد أبحاثاً ميدانية مكثفة في جبال الأوراس والصحراء. يقوم بتدريب الجيولوجيين الأساسيين لقطاعات التعدين والمحروقات في الجزائر.",
+        "category": "Academic",
+        "tags": [
+            "geology",
+            "earth",
+            "geography",
+            "mining",
+            "istu"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "ISTAPS_BATNA2",
+        "title": "Institute of Physical Education and Sports (ISTAPS)",
+        "content": "ISTAPS trains future physical education teachers, sports coaches, and sports managers. The institute utilizes the university's stadium, swimming pool, and multiple sports halls. Admission requires passing physical fitness tests.",
+        "content_ar": "يقوم معهد علوم وتقنيات النشاطات البدنية والرياضية (ISTAPS) بتدريب معلمي التربية البدنية، المدربين الرياضيين، ومديري الرياضة المستقبليين. يستخدم المعهد ملعب الجامعة، المسبح، وقاعات رياضية متعددة. يتطلب القبول اجتياز اختبارات اللياقة البدنية.",
+        "category": "Academic",
+        "tags": [
+            "sports",
+            "physical education",
+            "istaps",
+            "training"
+        ],
+        "priority": 7,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "LMD System at Batna 2",
+        "content": "Batna 2 University follows the LMD system (Licence, Master, Doctorat). The Licence (Bachelor's) takes 3 years (180 credits). The Master's takes an additional 2 years (120 credits). Progression is based on achieving an average of 10/20 per semester or compensating across semesters within the same year.",
+        "content_ar": "تتبع جامعة باتنة 2 نظام LMD (ليسانس، ماستر، دكتوراه). تستغرق مرحلة الليسانس 3 سنوات (180 رصيداً). ويستغرق الماستر سنتين إضافيتين (120 رصيداً). يعتمد الانتقال على تحقيق معدل 10/20 لكل سداسي أو التعويض بين السداسيين في نفس السنة الأكاديمية.",
+        "category": "Rules",
+        "tags": [
+            "lmd",
+            "bachelor",
+            "master",
+            "credits",
+            "system",
+            "grading"
+        ],
+        "priority": 10,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "E-Learning Platform (Moodle)",
+        "content": "The university provides an E-Learning platform powered by Moodle. Students can access course materials, submit assignments, and take online quizzes. You can log in using your university email and the default password provided at registration.",
+        "content_ar": "توفر الجامعة منصة للتعليم الإلكتروني (E-Learning) تعمل بنظام Moodle. يمكن للطلاب الوصول إلى المواد الدراسية، إرسال الواجبات، وإجراء الاختبارات عبر الإنترنت. يمكنك تسجيل الدخول باستخدام بريدك الإلكتروني الجامعي وكلمة المرور الافتراضية المقدمة عند التسجيل.",
+        "category": "Services",
+        "tags": [
+            "moodle",
+            "elearning",
+            "online",
+            "courses",
+            "platform"
+        ],
+        "priority": 9,
+        "source_url": "https://elearning.univ-batna2.dz/"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": null,
+        "title": "Library and Documentation",
+        "content": "Batna 2 University boasts a massive Central Library at the Fesdis campus, along with specialized faculty libraries. Students can borrow books using their student ID card. The library also provides access to digital databases like SNDL (Système National de Documentation en Ligne).",
+        "content_ar": "تفتخر جامعة باتنة 2 بوجود مكتبة مركزية ضخمة في حرم فسديس، بالإضافة إلى مكتبات متخصصة لكل كلية. يمكن للطلاب استعارة الكتب باستخدام بطاقة الطالب الخاصة بهم. كما توفر المكتبة إمكانية الوصول إلى قواعد البيانات الرقمية مثل SNDL (النظام الوطني للتوثيق عبر الإنترنت).",
+        "category": "Services",
+        "tags": [
+            "library",
+            "books",
+            "sndl",
+            "documentation",
+            "reading"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: What is the MI Common Core (L1 MI)?",
+        "content": "The first year of Mathematics and Computer Science (L1 MI - Tronc Commun) is a foundational year for all students entering the MI faculty. During this year, students study core subjects such as Analysis, Algebra, Algorithms, Computer Architecture, and Physics. It aims to build a strong mathematical and computational foundation before students choose their definitive major (Math or CS) in the second year.",
+        "content_ar": "السنة الأولى رياضيات وإعلام آلي (جذع مشترك L1 MI) هي سنة تأسيسية لجميع الطلاب الوافدين إلى كلية الرياضيات والإعلام الآلي. يدرس الطلاب خلال هذه السنة مواد أساسية مثل التحليل (Analyse)، الجبر (Algèbre)، الخوارزميات (Algorithmique)، بنية الحاسوب (Architecture des ordinateurs)، والفيزياء. تهدف هذه السنة إلى بناء أساس رياضي وحاسوبي قوي قبل اختيار التخصص النهائي (رياضيات أو إعلام آلي) في السنة الثانية.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "mi",
+            "common core",
+            "l1",
+            "tronc commun",
+            "first year"
+        ],
+        "priority": 10,
+        "source_url": "https://sc-mi.univ-batna2.dz/"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: What modules are studied in L1 MI?",
+        "content": "In Semester 1 (S1), modules typically include Analysis 1, Algebra 1, Algorithms 1, Computer Structure 1, Terminology (English), and Physics 1. In Semester 2 (S2), the curriculum covers Analysis 2, Algebra 2, Algorithms 2, Computer Structure 2, Physics 2, and Probability & Statistics. Practical works (TPs) in programming usually start with languages like C.",
+        "content_ar": "في السداسي الأول (S1)، تشمل المقاييس عادةً: التحليل 1، الجبر 1، الخوارزميات 1، بنية الآلة 1، المصطلحات (الإنجليزية)، والفيزياء 1. في السداسي الثاني (S2)، يغطي المنهج: التحليل 2، الجبر 2، الخوارزميات 2، بنية الآلة 2، الفيزياء 2، والاحتمالات والإحصاء. تبدأ الأعمال التطبيقية (TPs) في البرمجة عادةً باستخدام لغة C.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "modules",
+            "l1 mi",
+            "semesters",
+            "subjects",
+            "c programming"
+        ],
+        "priority": 9,
+        "source_url": "https://sc-mi.univ-batna2.dz/licence-0"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: How do I choose my specialty after L1 MI?",
+        "content": "At the end of the first year (L1), students fill out a choice form (Fiche de Voeux) to select between Mathematics and Computer Science for their second year (L2). The orientation is based on the student's choices, their overall average, and the available pedagogical seats in each department.",
+        "content_ar": "في نهاية السنة الأولى (L1)، يقوم الطلاب بملء بطاقة الرغبات (Fiche de Voeux) للاختيار بين تخصصي الرياضيات أو الإعلام الآلي للسنة الثانية (L2). يتم التوجيه بناءً على رغبات الطالب، معدله العام، والمقاعد البيداغوجية المتاحة في كل قسم.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "orientation",
+            "specialty",
+            "l2",
+            "choice"
+        ],
+        "priority": 9,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: What are the L3 specialties in Computer Science?",
+        "content": "In the third year of the Licence (L3) at Batna 2 Computer Science Department, students typically choose between two main specialties: ISIL (Information Systems and Software Engineering) which focuses on databases, web development, and software lifecycle, and SI (Computer Systems) which is more oriented towards operating systems, networks, and hardware architecture.",
+        "content_ar": "في السنة الثالثة ليسانس (L3) بقسم الإعلام الآلي بجامعة باتنة 2، يختار الطلاب عادةً بين تخصصين رئيسيين: ISIL (نظم المعلومات وهندسة البرمجيات) والذي يركز على قواعد البيانات، تطوير الويب، ودورة حياة البرمجيات. وتخصص SI (أنظمة الحاسوب) والذي يميل أكثر نحو أنظمة التشغيل، الشبكات، وهندسة الأجهزة.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "l3",
+            "isil",
+            "si",
+            "specialties",
+            "computer science"
+        ],
+        "priority": 10,
+        "source_url": "https://cs.univ-batna2.dz/"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: What Master's programs are available in Computer Science?",
+        "content": "The CS Department offers several highly sought-after Master's degrees, including Artificial Intelligence (IA), Software Engineering (GL - Génie Logiciel), Networks and Distributed Systems (RSD), and Information Systems. Selection is competitive and based on the student's academic ranking during the Licence years.",
+        "content_ar": "يقدم قسم الإعلام الآلي برامج ماستر مطلوبة بشدة، تشمل: الذكاء الاصطناعي (IA)، هندسة البرمجيات (GL)، الشبكات والأنظمة الموزعة (RSD)، ونظم المعلومات. القبول تنافسي ويعتمد على الترتيب الأكاديمي للطالب خلال سنوات الليسانس.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "master",
+            "ai",
+            "software engineering",
+            "networks",
+            "rsd"
+        ],
+        "priority": 10,
+        "source_url": "https://cs.univ-batna2.dz/"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: How does the final year project (PFE) work?",
+        "content": "The PFE (Projet de Fin d'Études) is mandatory for both L3 and Master 2 students. Students form groups of 2-3, choose a topic proposed by professors or propose their own, and develop a software application or conduct research. At the end of the year, they must write a thesis (Mémoire) and defend it before a jury.",
+        "content_ar": "مشروع التخرج (PFE) إلزامي لطلاب السنة الثالثة ليسانس (L3) والسنة الثانية ماستر (M2). يُشكل الطلاب مجموعات من 2-3 أفراد، يختارون موضوعاً مقترحاً من الأساتذة أو يقترحون موضوعهم الخاص، ويقومون بتطوير تطبيق برمجي أو إجراء بحث. في نهاية العام، يجب عليهم كتابة مذكرة تخرج (Mémoire) ومناقشتها أمام لجنة تحكيم.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "pfe",
+            "project",
+            "graduation",
+            "thesis",
+            "memoire"
+        ],
+        "priority": 9,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "MI_BATNA2",
+        "title": "FAQ: Where is the MI Faculty located?",
+        "content": "The Faculty of Mathematics and Computer Science (MI) is located at the Fesdis Campus of Batna 2 University. It features dedicated blocks for lectures, computer labs equipped with modern PCs, and administrative offices for both the Math and CS departments.",
+        "content_ar": "تقع كلية الرياضيات والإعلام الآلي (MI) في حرم فسديس الجامعي التابع لجامعة باتنة 2. تضم الكلية مجمعات مخصصة للمحاضرات، مخابر إعلام آلي مجهزة بحواسيب حديثة، والمكاتب الإدارية لقسمي الرياضيات والإعلام الآلي.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "location",
+            "campus",
+            "fesdis",
+            "mi faculty"
+        ],
+        "priority": 8,
+        "source_url": ""
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: Who do I contact for pedagogical issues in MI?",
+        "content": "For pedagogical inquiries, missing grades, or registration issues in the L1 MI common core, students should contact the administration via the email: pedagogie.scmi@univ-batna2.dz or visit the pedagogical office in the faculty building.",
+        "content_ar": "للاستفسارات البيداغوجية، النقاط المفقودة، أو مشاكل التسجيل في الجذع المشترك L1 MI، يجب على الطلاب التواصل مع الإدارة عبر البريد الإلكتروني: pedagogie.scmi@univ-batna2.dz أو زيارة مكتب الشؤون البيداغوجية في مبنى الكلية.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "contact",
+            "pedagogy",
+            "email",
+            "administration",
+            "scmi"
+        ],
+        "priority": 9,
+        "source_url": "https://sc-mi.univ-batna2.dz/licence-0"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: Can I find courses and lectures online?",
+        "content": "Yes, professors often upload their lectures, TD (Travaux Dirigés) series, and TP assignments to their personal university webpages or the official Moodle e-learning platform. Students are advised to regularly check these links as some materials might only be available on the professor's personal site.",
+        "content_ar": "نعم، يقوم الأساتذة غالباً برفع محاضراتهم، سلاسل الأعمال الموجهة (TD)، ومهام الأعمال التطبيقية (TP) على صفحاتهم الجامعية الشخصية أو على منصة Moodle الرسمية للتعليم الإلكتروني. يُنصح الطلاب بالتحقق من هذه الروابط بانتظام حيث أن بعض المواد قد تكون متاحة فقط على الموقع الشخصي للأستاذ.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "courses",
+            "lectures",
+            "td",
+            "tp",
+            "moodle",
+            "online"
+        ],
+        "priority": 8,
+        "source_url": "https://sc-mi.univ-batna2.dz/licence-0"
+    },
+    {
+        "university_var": "batna2",
+        "dept_code": "CS_BATNA2",
+        "title": "FAQ: Are there programming clubs in the CS Department?",
+        "content": "The CS Department has a vibrant student life with several scientific and technical clubs. These clubs organize workshops on web development, mobile apps, artificial intelligence, and host hackathons and competitive programming events throughout the academic year.",
+        "content_ar": "يتمتع قسم الإعلام الآلي بحياة طلابية نابضة بالحيوية مع العديد من النوادي العلمية والتقنية. تنظم هذه النوادي ورش عمل حول تطوير الويب، تطبيقات الهاتف المحمول، الذكاء الاصطناعي، وتستضيف مسابقات الهاكاثون وفعاليات البرمجة التنافسية على مدار العام الدراسي.",
+        "category": "FAQ",
+        "tags": [
+            "faq",
+            "clubs",
+            "hackathon",
+            "student life",
+            "activities",
+            "programming"
+        ],
+        "priority": 8,
+        "source_url": ""
+    }
+]

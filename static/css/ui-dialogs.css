@@ -1,0 +1,354 @@
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+#toast-container.rtl {
+  right: auto;
+  left: 20px;
+}
+
+.ui-toast {
+  pointer-events: all;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--surface, #1e2130);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  box-shadow: var(--shadow-xl, 0 8px 32px rgba(0,0,0,0.45));
+  animation: toastIn 0.35s cubic-bezier(.21,1.02,.73,1) forwards;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: toastIn 0.35s cubic-bezier(.21,1.02,.73,1) forwards;
+}
+
+.ui-toast.removing {
+  animation: toastOut 0.3s ease forwards;
+  -webkit-animation: toastOut 0.3s ease forwards;
+}
+
+.ui-toast::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  border-radius: 14px 0 0 14px;
+}
+
+#toast-container.rtl .ui-toast::before {
+  left: auto;
+  right: 0;
+  border-radius: 0 14px 14px 0;
+}
+
+.ui-toast.success::before { background: #22c55e; }
+.ui-toast.error::before   { background: #ef4444; }
+.ui-toast.warning::before { background: #f59e0b; }
+.ui-toast.info::before    { background: #3b82f6; }
+
+.toast-icon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.toast-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #f1f5f9);
+  margin-bottom: 2px;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-tertiary, #64748b);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.toast-close:hover { color: var(--text-primary, #f1f5f9); }
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 0 0 0 14px;
+  animation: toastProgress var(--duration, 4s) linear forwards;
+  -webkit-animation: toastProgress var(--duration, 4s) linear forwards;
+}
+
+.ui-toast.success .toast-progress { background: #22c55e; }
+.ui-toast.error   .toast-progress { background: #ef4444; }
+.ui-toast.warning .toast-progress { background: #f59e0b; }
+.ui-toast.info    .toast-progress { background: #3b82f6; }
+
+.ui-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: overlayIn 0.2s ease forwards;
+  -webkit-animation: overlayIn 0.2s ease forwards;
+}
+
+.ui-modal-overlay.removing {
+  animation: overlayOut 0.2s ease forwards;
+}
+
+.ui-modal {
+  background: var(--surface, #1e2130);
+  border: 1px solid var(--border, rgba(255,255,255,0.09));
+  border-radius: 20px;
+  padding: 32px;
+  min-width: 340px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: var(--shadow-xl, 0 24px 60px rgba(0,0,0,0.6));
+  animation: modalIn 0.3s cubic-bezier(.21,1.02,.73,1) forwards;
+}
+
+.ui-modal-overlay.removing .ui-modal {
+  animation: modalOut 0.25s ease forwards;
+}
+
+.ui-modal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.ui-modal-icon.success { background: rgba(34,197,94,0.1); }
+.ui-modal-icon.error   { background: rgba(239,68,68,0.1); }
+.ui-modal-icon.warning { background: rgba(245,158,11,0.1); }
+.ui-modal-icon.info    { background: rgba(59,130,246,0.1); }
+.ui-modal-icon.confirm { background: rgba(245,158,11,0.08); }
+
+.ui-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary, #f1f5f9);
+  margin-bottom: 8px;
+}
+
+.ui-modal-message {
+  font-size: 14px;
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.ui-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.ui-modal-btn {
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  min-width: 80px;
+}
+
+.ui-modal-btn.cancel {
+  background: var(--bg-secondary, rgba(255,255,255,0.07));
+  color: var(--text-secondary, #94a3b8);
+  border: 1px solid var(--border, rgba(255,255,255,0.1));
+}
+.ui-modal-btn.cancel:hover {
+  background: var(--bg-tertiary, rgba(255,255,255,0.12));
+  color: var(--text-primary, #f1f5f9);
+}
+
+.ui-modal-btn.confirm {
+  background: #ef4444;
+  color: #fff;
+}
+.ui-modal-btn.confirm:hover { background: #dc2626; }
+
+.ui-modal-btn.ok {
+  background: #3b82f6;
+  color: #fff;
+}
+.ui-modal-btn.ok:hover { background: #2563eb; }
+
+.ui-modal-btn.ok.success { background: #22c55e; }
+.ui-modal-btn.ok.success:hover { background: #16a34a; }
+
+.ui-modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border, rgba(255,255,255,0.12));
+  background: var(--bg-secondary, rgba(255,255,255,0.05));
+  color: var(--text-primary, #f1f5f9);
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.ui-modal-input:focus { border-color: #3b82f6; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+#toast-container.rtl .ui-toast {
+  animation-name: toastInRtl;
+}
+
+@keyframes toastInRtl {
+  from { opacity: 0; transform: translateX(-40px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes toastOut {
+  to { opacity: 0; transform: translateY(-10px) scale(0.95); }
+}
+
+@keyframes toastProgress {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes overlayOut {
+  to { opacity: 0; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes modalOut {
+  to { opacity: 0; transform: scale(0.94) translateY(8px); }
+}
+
+@media (max-width: 768px) {
+  #toast-container, #toast-container.rtl {
+    left: 12px; right: 12px; top: 12px;
+  }
+  .ui-toast { min-width: unset; max-width: 100%; }
+  .ui-modal { min-width: unset; padding: clamp(1.125rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.25rem); }
+  .ui-modal-actions {
+    flex-direction: column-reverse;
+  }
+  .ui-modal-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #toast-container, #toast-container.rtl {
+    left: 8px; right: 8px; top: 8px;
+  }
+  .ui-toast { padding: 10px 12px; }
+  .ui-modal { padding: 18px 14px; border-radius: 14px; }
+  .ui-modal-title { font-size: 15px; }
+  .ui-modal-message { font-size: 13px; }
+}
+
+html:not(.dark) .ui-toast {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .toast-title {
+  color: #0F172A;
+}
+
+html:not(.dark) .toast-message {
+  color: #475569;
+}
+
+html:not(.dark) .toast-close {
+  color: #94A3B8;
+}
+html:not(.dark) .toast-close:hover {
+  color: #0F172A;
+}
+
+html:not(.dark) .ui-modal {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+}
+
+html:not(.dark) .ui-modal-title {
+  color: #0F172A;
+}
+
+html:not(.dark) .ui-modal-message {
+  color: #475569;
+}
+
+html:not(.dark) .ui-modal-btn.cancel {
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #CBD5E1;
+}
+
+html:not(.dark) .ui-modal-btn.cancel:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+html:not(.dark) .ui-modal-input {
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+html:not(.dark) .ui-modal-input:focus {
+  border-color: #2563EB;
+  background: #FFFFFF;
+}

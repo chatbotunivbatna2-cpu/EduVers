@@ -1,0 +1,14 @@
+#Command
+python -m venv venv  
+.\venv\Scripts\activate 
+pip install -r requirements.txt 
+python.exe -m pip install --upgrade pip
+python init_db.py   
+python app.py
+
+# Test
+Super Admin : superadmin@system.com / Super123!
+University Admin : admin@univ-batna2.dz / Admin123!
+Faculty Admins : fadmin_fs_batna2@univ-batna2.dz / Faculty123!
+Department Admins : dadmin_cs_batna2@univ-batna2.dz / Dept123!
+Student : student@univ-batna2.dz / Test123!

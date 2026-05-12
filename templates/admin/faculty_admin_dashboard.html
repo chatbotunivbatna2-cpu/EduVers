@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% block title %}Faculty Admin Dashboard{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+{% block content %}
+<div class="admin-container">
+
+
+    <div class="admin-header">
+        <div>
+            <h1 data-i18n="fac_adm.title">Faculty Admin Dashboard</h1>
+            <p id="facultyInfo" style="margin:5px 0;color:var(--text-secondary);font-size:14px;"></p>
+        </div>
+        <div class="admin-actions">
+            <span id="adminNameDisplay" style="margin:5px;color:var(--text-secondary);"></span>
+            <button id="refreshBtn" class="btn btn-primary" data-i18n="admin.refresh">Refresh</button>
+            <button id="logoutBtn" class="btn btn-outline" data-i18n="admin.logout">Logout</button>
+        </div>
+    </div>
+
+
+    <div class="admin-tabs">
+        <button class="tab-button active" data-tab="overview" data-i18n="fac_adm.tab_overview">Overview</button>
+        <button class="tab-button" data-tab="departments" data-i18n="fac_adm.tab_departments">Departments</button>
+        <button class="tab-button" data-tab="knowledge" data-i18n="fac_adm.tab_knowledge">Knowledge Base</button>
+        <button class="tab-button" data-tab="users" data-i18n="fac_adm.tab_users">Users</button>
+        <button class="tab-button" data-tab="admins" data-i18n="fac_adm.tab_admins">Dept Admins</button>
+    </div>
+
+    <div class="tab-content active" id="overview-tab">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalDepartments">-</div>
+                    <div class="stat-label" data-i18n="fac_adm.stat_departments">Departments</div>
+                    <div class="stat-detail" id="activeDepartments"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalUsers">-</div>
+                    <div class="stat-label" data-i18n="fac_adm.stat_users">Users</div>
+                    <div class="stat-detail" id="verifiedUsers"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalKnowledge">-</div>
+                    <div class="stat-label" data-i18n="fac_adm.stat_knowledge">Knowledge Entries</div>
+                    <div class="stat-detail" id="activeKnowledge"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-value" id="totalDeptAdmins">-</div>
+                    <div class="stat-label" data-i18n="fac_adm.stat_dept_admins">Dept Admins</div>
+                    <div class="stat-detail" data-i18n="fac_adm.stat_dept_admins_detail">department admins</div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-section">
+            <h2 data-i18n="fac_adm.overview_title">Faculty Overview</h2>
+            <div class="stats-table">
+                <table>
+                    <tr>
+                        <td><strong data-i18n="fac_adm.ov_faculty">Faculty:</strong></td>
+                        <td id="ovFacName">-</td>
+                        <td style="width:50%"></td>
+                        <td><strong data-i18n="fac_adm.ov_university">University:</strong></td>
+                        <td id="ovFacUniversity">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="fac_adm.ov_dean">Dean:</strong></td>
+                        <td id="ovFacDean">-</td>
+                        <td></td>
+                        <td><strong data-i18n="fac_adm.ov_email">Email:</strong></td>
+                        <td id="ovFacEmail">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="fac_adm.ov_total_depts">Total Departments:</strong></td>
+                        <td id="ovFacDepartments">-</td>
+                        <td></td>
+                        <td><strong data-i18n="fac_adm.ov_total_users">Total Users:</strong></td>
+                        <td id="ovFacUsers">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-content" id="departments-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="fac_adm.dept_mgmt">Departments Management</h2>
+                <button class="btn btn-primary" id="addDepartmentBtn" data-i18n="fac_adm.add_dept">+ Add
+                    Department</button>
+            </div>
+            <div class="data-table">
+                <table id="departmentsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="univ_adm.col_dept_name">Department Name</th>
+                            <th data-i18n="fac_adm.col_name_ar">Name (AR)</th>
+                            <th data-i18n="admin.code">Code</th>
+                            <th data-i18n="form.head">Head</th>
+                            <th data-i18n="admin.email">Email</th>
+                            <th data-i18n="admin.status">Status</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="departmentsTableBody">
+                        <tr>
+                            <td colspan="7" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-content" id="knowledge-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="fac_adm.kb_mgmt">Knowledge Base</h2>
+                <div style="display:flex;gap:10px;align-items:center;">
+                    <select id="kbCategoryFilter" class="filter-select">
+                        <option value="" data-i18n="dept_adm.all_categories">All Categories</option>
+                    </select>
+                    <button class="btn btn-primary" id="addKnowledgeBtn" data-i18n="dept_adm.add_entry">+ Add
+                        Entry</button>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="knowledgeTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="dept_adm.col_title">Title</th>
+                            <th data-i18n="dept_adm.col_category">Category</th>
+                            <th data-i18n="dept_adm.col_priority">Priority</th>
+                            <th data-i18n="dept_adm.col_tags">Tags</th>
+                            <th data-i18n="dept_adm.col_updated">Updated</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="knowledgeTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="users-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="fac_adm.users_mgmt">Users in Faculty</h2>
+                <div style="display:flex;gap:10px;">
+                    <select id="userDeptFilter" class="filter-select">
+                        <option value="" data-i18n="fac_adm.all_departments">All Departments</option>
+                    </select>
+                    <select id="userFilter" class="filter-select">
+                        <option value="all" data-i18n="admin.all_users">All Users</option>
+                        <option value="verified" data-i18n="admin.verified_only">Verified Only</option>
+                        <option value="unverified" data-i18n="admin.unverified_only">Unverified Only</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-table">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.username">Username</th>
+                            <th data-i18n="admin.email">Email</th>
+                            <th data-i18n="dept_adm.col_fullname">Full Name</th>
+                            <th data-i18n="univ_adm.col_department">Department</th>
+                            <th data-i18n="fac_adm.col_role">Role</th>
+                            <th data-i18n="dept_adm.col_verified">Verified</th>
+                            <th data-i18n="dept_adm.col_joined">Joined</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td colspan="8" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="admins-tab">
+        <div class="admin-section">
+            <div class="section-header">
+                <h2 data-i18n="fac_adm.dept_admins_mgmt">Department Admins</h2>
+                <button class="btn btn-primary" id="addDeptAdminBtn" data-i18n="fac_adm.add_dept_admin">+ Create Dept
+                    Admin</button>
+            </div>
+            <div class="data-table">
+                <table id="adminsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.username">Username</th>
+                            <th data-i18n="dept_adm.col_fullname">Full Name</th>
+                            <th data-i18n="admin.email">Email</th>
+                            <th data-i18n="univ_adm.col_department">Department</th>
+                            <th data-i18n="admin.created">Created</th>
+                            <th data-i18n="admin.actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;padding:40px;" data-i18n="admin.loading">Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% from 'forms.html' import render_admin_modals %}
+    {{ render_admin_modals() }}
+
+
+    <script src="{{ url_for('static', filename='js/faculty_admin_dashboard.js') }}"></script>
+    {% endblock %}

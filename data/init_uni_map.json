@@ -1,0 +1,274 @@
+[
+    {
+        "var_name": "djelfa",
+        "code": "DJELFA",
+        "domain": "univ-djelfa.dz"
+    },
+    {
+        "var_name": "laghouat",
+        "code": "LAGHOUAT",
+        "domain": "lagh-univ.dz"
+    },
+    {
+        "var_name": "ouargla",
+        "code": "OUARGLA",
+        "domain": "univ-ouargla.dz"
+    },
+    {
+        "var_name": "tlemcen",
+        "code": "TLEMCEN",
+        "domain": "univ-tlemcen.dz"
+    },
+    {
+        "var_name": "oran1",
+        "code": "ORAN1",
+        "domain": "univ-oran1.dz"
+    },
+    {
+        "var_name": "oran2",
+        "code": "ORAN2",
+        "domain": "univ-oran2.dz"
+    },
+    {
+        "var_name": "mostaganem",
+        "code": "MOSTA",
+        "domain": "univ-mosta.dz"
+    },
+    {
+        "var_name": "relizane",
+        "code": "RELIZANE",
+        "domain": "univ-relizane.dz"
+    },
+    {
+        "var_name": "sba",
+        "code": "SBA",
+        "domain": "univ-sba.dz"
+    },
+    {
+        "var_name": "guelma",
+        "code": "GUELMA",
+        "domain": "univ-guelma.dz"
+    },
+    {
+        "var_name": "skikda",
+        "code": "SKIKDA",
+        "domain": "univ-skikda.dz"
+    },
+    {
+        "var_name": "eloued",
+        "code": "ELOUED",
+        "domain": "univ-eloued.dz"
+    },
+    {
+        "var_name": "khenchela",
+        "code": "KHENCHELA",
+        "domain": "univ-khenchela.dz"
+    },
+    {
+        "var_name": "soukahras",
+        "code": "SOUKAHRAS",
+        "domain": "univ-soukahras.dz"
+    },
+    {
+        "var_name": "adrar",
+        "code": "ADRAR",
+        "domain": "univ-adrar.dz"
+    },
+    {
+        "var_name": "bechar",
+        "code": "BECHAR",
+        "domain": "univ-bechar.dz"
+    },
+    {
+        "var_name": "tindouf",
+        "code": "TINDOUF",
+        "domain": "cu-tindouf.dz"
+    },
+    {
+        "var_name": "ghardaia",
+        "code": "GHARDAIA",
+        "domain": "univ-ghardaia.dz"
+    },
+    {
+        "var_name": "illizi",
+        "code": "ILLIZI",
+        "domain": "cu-illizi.dz"
+    },
+    {
+        "var_name": "bordj",
+        "code": "BBA",
+        "domain": "univ-bba.dz"
+    },
+    {
+        "var_name": "medea",
+        "code": "MEDEA",
+        "domain": "univ-medea.dz"
+    },
+    {
+        "var_name": "bouira",
+        "code": "BOUIRA",
+        "domain": "univ-bouira.dz"
+    },
+    {
+        "var_name": "chlef",
+        "code": "CHLEF",
+        "domain": "univ-chlef.dz"
+    },
+    {
+        "var_name": "mascara",
+        "code": "MASCARA",
+        "domain": "univ-mascara.dz"
+    },
+    {
+        "var_name": "tiaret",
+        "code": "TIARET",
+        "domain": "univ-tiaret.dz"
+    },
+    {
+        "var_name": "saida",
+        "code": "SAIDA",
+        "domain": "univ-saida.dz"
+    },
+    {
+        "var_name": "elbayadh",
+        "code": "ELBAYADH",
+        "domain": "cu-elbayadh.dz"
+    },
+    {
+        "var_name": "naama",
+        "code": "NAAMA",
+        "domain": "cu-naama.dz"
+    },
+    {
+        "var_name": "temouchent",
+        "code": "TEMOUCHENT",
+        "domain": "univ-temouchent.dz"
+    },
+    {
+        "var_name": "tissemsilt",
+        "code": "TISSEMSILT",
+        "domain": "cu-tissemsilt.dz"
+    },
+    {
+        "var_name": "mila",
+        "code": "MILA",
+        "domain": "cu-mila.dz"
+    },
+    {
+        "var_name": "tipaza",
+        "code": "TIPAZA",
+        "domain": "cu-tipaza.dz"
+    },
+    {
+        "var_name": "maghnia",
+        "code": "MAGHNIA",
+        "domain": "cu-maghnia.dz"
+    },
+    {
+        "var_name": "kolea",
+        "code": "KOLEA",
+        "domain": "cu-kolea.dz"
+    },
+    {
+        "var_name": "eltarf",
+        "code": "ELTARF",
+        "domain": "univ-eltarf.dz"
+    },
+    {
+        "var_name": "aindefla",
+        "code": "AINDEFLA",
+        "domain": "cu-aindefla.dz"
+    },
+    {
+        "var_name": "barika",
+        "code": "BARIKA",
+        "domain": "cu-barika.dz"
+    },
+    {
+        "var_name": "temouchent_cu",
+        "code": "CU_TEMOUCHENT",
+        "domain": "cu-temouchent.dz"
+    },
+    {
+        "var_name": "touggourt",
+        "code": "TOUGGOURT",
+        "domain": "cu-touggourt.dz"
+    },
+    {
+        "var_name": "bbm",
+        "code": "BBM",
+        "domain": "cu-bbm.dz"
+    },
+    {
+        "var_name": "djanet",
+        "code": "DJANET",
+        "domain": "cu-djanet.dz"
+    },
+    {
+        "var_name": "timimoun",
+        "code": "TIMIMOUN",
+        "domain": "cu-timimoun.dz"
+    },
+    {
+        "var_name": "ouledd",
+        "code": "OULEDDJELLAL",
+        "domain": "cu-ouleddjellal.dz"
+    },
+    {
+        "var_name": "meghaier",
+        "code": "MEGHAIER",
+        "domain": "cu-meghaier.dz"
+    },
+    {
+        "var_name": "beniabbes",
+        "code": "BENIABBES",
+        "domain": "cu-beniabbes.dz"
+    },
+
+    {"var_name": "enp", "code": "ENP", "domain": "enp.edu.dz"},
+    {"var_name": "esi", "code": "ESI", "domain": "esi.dz"},
+    {"var_name": "epau", "code": "EPAU", "domain": "epau-alger.edu.dz"},
+    {"var_name": "enstp", "code": "ENSTP", "domain": "enstp.edu.dz"},
+    {"var_name": "ensa", "code": "ENSA", "domain": "ensa.dz"},
+    {"var_name": "ensh", "code": "ENSH", "domain": "ensh.dz"},
+    {"var_name": "ensv", "code": "ENSV", "domain": "ensv.dz"},
+    {"var_name": "enssmal", "code": "ENSSMAL", "domain": "enssmal.edu.dz"},
+    {"var_name": "ensjsi", "code": "ENSJSI", "domain": "ensjsi.dz"},
+    {"var_name": "ensps", "code": "ENSPS", "domain": "ensps.dz"},
+    {"var_name": "esc", "code": "ESC", "domain": "esc-alger.dz"},
+    {"var_name": "ehec", "code": "EHEC", "domain": "ehec.dz"},
+    {"var_name": "esm", "code": "ESM", "domain": "esm.dz"},
+    {"var_name": "esaa", "code": "ESAA", "domain": "esaa.dz"},
+    {"var_name": "essea", "code": "ESSEA", "domain": "essea.dz"},
+    {"var_name": "essaia", "code": "ESSAIA", "domain": "essaia.dz"},
+
+    {"var_name": "ensia", "code": "ENSIA", "domain": "ensia.edu.dz"},
+    {"var_name": "ensmath", "code": "ENSMATH", "domain": "ensmath.dz"},
+    {"var_name": "enscs", "code": "ENSCS", "domain": "enscs.dz"},
+    {"var_name": "ensas", "code": "ENSAS", "domain": "ensas.dz"},
+
+    {"var_name": "enpc", "code": "ENPC", "domain": "enp-constantine.dz"},
+    {"var_name": "ensb", "code": "ENSB", "domain": "ensbiotech.edu.dz"},
+    {"var_name": "ensmm", "code": "ENSMM", "domain": "ensmm-annaba.dz"},
+    {"var_name": "ensti", "code": "ENSTI", "domain": "ensti-annaba.dz"},
+    {"var_name": "enseredd", "code": "ENSEREDD", "domain": "enseredd.dz"},
+    {"var_name": "essg", "code": "ESSG", "domain": "essg-annaba.dz"},
+
+    {"var_name": "enpo", "code": "ENPO", "domain": "enp-oran.dz"},
+    {"var_name": "esi_sba", "code": "ESI_SBA", "domain": "esi-sba.dz"},
+    {"var_name": "essa_tlemcen", "code": "ESSA_TLEM", "domain": "essa-tlemcen.dz"},
+    {"var_name": "esm_tlemcen", "code": "ESM_TLEM", "domain": "esm-tlemcen.dz"},
+
+    {"var_name": "ens_kouba", "code": "ENS_KOUBA", "domain": "ens-kouba.dz"},
+    {"var_name": "ens_bouzareah", "code": "ENS_BOUZ", "domain": "ensb.dz"},
+    {"var_name": "ens_constantine", "code": "ENS_CONST", "domain": "ensc.dz"},
+    {"var_name": "ens_laghouat", "code": "ENS_LAGH", "domain": "ens-laghouat.dz"},
+    {"var_name": "ens_setif", "code": "ENS_SETIF", "domain": "ens-setif.dz"},
+    {"var_name": "ens_msila", "code": "ENS_MSILA", "domain": "ens-msila.dz"},
+    {"var_name": "ens_skikda", "code": "ENS_SKIK", "domain": "ens-skikda.dz"},
+    {"var_name": "ens_ouargla", "code": "ENS_OUARG", "domain": "ens-ouargla.dz"},
+    {"var_name": "ens_oran", "code": "ENS_ORAN", "domain": "ens-oran.dz"},
+    {"var_name": "ens_mostaganem", "code": "ENS_MOST", "domain": "ens-mostaganem.dz"},
+    {"var_name": "ens_bechar", "code": "ENS_BECH", "domain": "ens-bechar.dz"},
+    {"var_name": "ena", "code": "ENA", "domain": "ena.dz"}
+]
