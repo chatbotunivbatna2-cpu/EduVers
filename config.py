@@ -9,18 +9,19 @@ def _require(var):
     if not val:
         raise RuntimeError(f"Missing required environment variable: '{var}'. Please set it in your .env file.")
     return val
+
+def get_db_url():
+    db_url = _require('DATABASE_URL').strip()
+    if db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql://", 1)
+    return db_url
+
 class Config:
     SECRET_KEY = _require('SECRET_KEY')
     DEBUG = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
 
-    # Handle DATABASE_URL carefully
-    db_url = _require('DATABASE_URL').strip()
-    if db_url.startswith("postgres://"):
-        db_url = db_url.replace("postgres://", "postgresql://", 1)
-    
-    SQLALCHEMY_DATABASE_URI = db_url
+    SQLALCHEMY_DATABASE_URI = get_db_url()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    # Database connection pool parameters
     SQLALCHEMY_ENGINE_OPTIONS = {
         'pool_size': int(_require('DB_POOL_SIZE')),
         'max_overflow': int(_require('DB_MAX_OVERFLOW')),
