@@ -532,7 +532,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         resp, src = build_response(s, msg)
         s.add_turn(msg, resp)
-        await update.message.reply_text(safe_text(resp), parse_mode=ParseMode.MARKDOWN)
+        
+        # Clean markdown to avoid Telegram ParseMode.MARKDOWN errors
+        # Gemini uses **bold** and * list items.
+        clean_resp = resp.replace('**', '*')  # convert to Telegram bold
+        clean_resp = clean_resp.replace('\n* ', '\n• ') # convert list items to bullet characters
+        clean_resp = clean_resp.replace(' * ', ' • ')
+        
+        try:
+            await update.message.reply_text(safe_text(clean_resp), parse_mode=ParseMode.MARKDOWN)
+        except Exception as e:
+            logger.warning(f"Markdown parsing failed, falling back to plain text: {e}")
+            await update.message.reply_text(safe_text(resp))
+            
         logger.info("Sent | user=%s src=%s count=%d", uid, src, s.msg_count)
     except Exception:
         logger.exception("Pipeline error user %s", uid)
