@@ -4,6 +4,7 @@ import logging
 
 from extensions import db
 from models import University, Faculty, Department, KnowledgeBase
+from models.user import User
 
 logger = logging.getLogger(__name__)
 
@@ -127,8 +128,89 @@ def sync_all():
 
         db.session.commit()
         logger.info(f'[sync_data]  Knowledge Base: {kb_count} entries synced')
-        logger.info('[sync_data] ✅ Data sync complete!')
+
+        # Ensure admin accounts exist
+        _ensure_admin_accounts(uni_refs, refs)
+
+        logger.info('[sync_data] Data sync complete!')
 
     except Exception as e:
         db.session.rollback()
-        logger.error(f'[sync_data] ❌ Data sync failed: {e}', exc_info=True)
+        logger.error(f'[sync_data] Data sync failed: {e}', exc_info=True)
+
+
+def _ensure_admin_accounts(uni_refs, refs):
+    """Create default admin accounts if they don't exist."""
+    created = 0
+
+    # Super Admin
+    if not User.query.filter_by(email='superadmin@system.com').first():
+        u = User(username='superadmin', email='superadmin@system.com',
+                 full_name='Super Admin', is_verified=True, role='super_admin')
+        u.set_password('Super123!')
+        db.session.add(u)
+        created += 1
+
+    # Batna 2 admins
+    batna2 = uni_refs.get('batna2')
+    if batna2:
+        domain = 'univ-batna2.dz'
+
+        # University Admin
+        if not User.query.filter_by(email=f'admin@{domain}').first():
+            u = User(username='admin_batna2', email=f'admin@{domain}',
+                     full_name='Batna 2 Admin', university_id=batna2.id,
+                     is_verified=True, role='university_admin')
+            u.set_password('Admin123!')
+            db.session.add(u)
+            created += 1
+
+        # Faculty Admins
+        for code, obj in refs.items():
+            if isinstance(obj, Faculty):
+                fname = f'fadmin_{code.lower()}'
+                email = f'{fname}@{domain}'
+                if not User.query.filter_by(email=email).first():
+                    u = User(username=fname, email=email,
+                             full_name=f'{obj.name} Admin',
+                             university_id=batna2.id, faculty_id=obj.id,
+                             is_verified=True, role='faculty_admin')
+                    u.set_password('Faculty123!')
+                    db.session.add(u)
+                    created += 1
+
+                # Department Admins
+                for code2, obj2 in refs.items():
+                    if isinstance(obj2, Department) and obj2.faculty_id == obj.id:
+                        dname = f'dadmin_{code2.lower()}'
+                        demail = f'{dname}@{domain}'
+                        if not User.query.filter_by(email=demail).first():
+                            u = User(username=dname, email=demail,
+                                     full_name=f'{obj2.name} Admin',
+                                     university_id=batna2.id, faculty_id=obj.id,
+                                     department_id=obj2.id,
+                                     is_verified=True, role='department_admin')
+                            u.set_password('Dept123!')
+                            db.session.add(u)
+                            created += 1
+
+        # Test Student
+        if not User.query.filter_by(email=f'student@{domain}').first():
+            fac_ref = refs.get('MI_BATNA2')
+            dept_ref = refs.get('CS_BATNA2')
+            if fac_ref and dept_ref:
+                u = User(username='test_student', email=f'student@{domain}',
+                         full_name='Test Student',
+                         university_id=batna2.id, faculty_id=fac_ref.id,
+                         department_id=dept_ref.id,
+                         is_verified=True, role='student')
+                u.set_password('Test123!')
+                db.session.add(u)
+                created += 1
+
+    if created:
+        db.session.commit()
+        logger.info(f'[sync_data]  Admin accounts: {created} created')
+    else:
+        logger.info('[sync_data]  Admin accounts: all exist')
+
