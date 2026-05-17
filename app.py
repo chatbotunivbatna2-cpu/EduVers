@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 import logging
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, session, redirect
 from config import get_config
 from extensions import db, limiter, csrf
 
@@ -71,6 +71,8 @@ def create_app(config_class=None):
 
     @app.route('/')
     def index():
+        if 'user_id' in session:
+            return redirect('/admin' if session.get('is_admin') else '/chat/')
         return render_template('landing.html')
 
     @app.route('/health')

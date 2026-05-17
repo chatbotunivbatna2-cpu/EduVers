@@ -240,5 +240,6 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="{{ url_for('static', filename='js/session_guard.js') }}"></script>
 <script src="{{ url_for('static', filename='js/chat.js') }}?v=5"></script>
 {% endblock %}
