@@ -815,35 +815,78 @@ html:not(.dark) .top-user-item {
 .chart-card {
   background: var(--surface);
   border-radius: 16px;
-  padding: 24px;
+  padding: 24px 24px 20px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #3b82f6, #06b6d4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.chart-card:hover::before {
+  opacity: 1;
 }
 
 .chart-card h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-card h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6366f1, #3b82f6);
+  flex-shrink: 0;
 }
 
 .chart-wrapper {
   position: relative;
   width: 100%;
-  max-height: 280px;
+  max-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .chart-wrapper canvas {
-  max-height: 280px !important;
+  max-height: 260px !important;
 }
 
 html:not(.dark) .chart-card {
   background: #FFFFFF;
   border: 1px solid #CBD5E1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) .chart-card:hover {
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.25);
 }
 
 @media (max-width: 768px) {

@@ -82,6 +82,19 @@ async function loadStats() {
         set('univDepartments', d.departments_count || 0);
         set('univUsers', d.users_count || 0);
         set('univKnowledge', d.knowledge_count || 0);
+
+        const verified = d.verified_users_count || 0;
+        const unverified = Math.max((d.users_count || 0) - verified, 0);
+        AdminCharts.doughnut('userDistributionChart',
+            ['Verified', 'Unverified'],
+            [verified, unverified],
+            ['#10b981', '#f59e0b']
+        );
+        AdminCharts.horizontalBar('structureChart',
+            ['Faculties', 'Departments', 'Knowledge', 'Users'],
+            [d.faculties_count || 0, d.departments_count || 0, d.knowledge_count || 0, d.users_count || 0],
+            ['#6366f1', '#3b82f6', '#06b6d4', '#10b981']
+        );
     } catch (e) { }
 }
 

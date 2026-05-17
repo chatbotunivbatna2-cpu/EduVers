@@ -53,7 +53,6 @@ def init_db(drop=True):
         facs = load_json('init_faculties.json')
         uni_map = load_json('init_uni_map.json')
 
-        # Create all universities
         print(f"Adding {len(unis)} universities...")
         uni_refs = {}
         for u in unis:
@@ -65,7 +64,6 @@ def init_db(drop=True):
                 db.session.flush()
             uni_refs[vname] = obj
 
-        # Create faculties and departments for Batna 2 only
         print("Building faculties for Batna 2...")
         refs = {}
 
@@ -110,7 +108,6 @@ def init_db(drop=True):
                                 dname = f'dadmin_{code2.lower()}'
                                 db.session.add(create_user('department_admin', dname, f'{dname}@{domain}', f'{obj2.name} Admin', 'Dept123!', uni_id=batna2.id, fac_id=obj.id, dept_id=obj2.id))
 
-                # Test student account
                 fac_ref = refs.get('MI_BATNA2')
                 dept_ref = refs.get('CS_BATNA2')
                 if fac_ref and dept_ref:
@@ -129,7 +126,6 @@ def init_db(drop=True):
 
         db.session.commit()
 
-        # Knowledge Base seeding
         print("\nSeeding Knowledge Base...")
         kb_data = load_json('init_knowledge.json')
         kb_count = 0
@@ -139,7 +135,6 @@ def init_db(drop=True):
             if not uni_obj:
                 continue
 
-            # resolve faculty_id (uni -> fac -> dept)
             fac_id = None
             fac_code = entry.get('faculty_code')
             if fac_code and fac_code in refs:
@@ -149,7 +144,6 @@ def init_db(drop=True):
             dept_code = entry.get('dept_code')
             if dept_code and dept_code in refs:
                 dept_id = refs[dept_code].id
-                # auto-resolve faculty from department if not set
                 if not fac_id and hasattr(refs[dept_code], 'faculty_id'):
                     fac_id = refs[dept_code].faculty_id
 

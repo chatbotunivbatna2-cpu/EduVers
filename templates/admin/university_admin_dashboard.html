@@ -59,6 +59,21 @@
             </div>
         </div>
 
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3 data-i18n="super.user_distribution">User Distribution</h3>
+                <div class="chart-wrapper">
+                    <canvas id="userDistributionChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 data-i18n="super.structure_overview">Structure Overview</h3>
+                <div class="chart-wrapper">
+                    <canvas id="structureChart"></canvas>
+                </div>
+            </div>
+        </div>
+
         <div class="admin-section">
             <h2 data-i18n="univ_adm.overview_title">University Overview</h2>
             <div class="stats-table">
@@ -260,5 +275,7 @@
     {{ render_admin_modals() }}
 
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/admin_charts.js') }}"></script>
     <script src="{{ url_for('static', filename='js/university_admin_dashboard.js') }}"></script>
     {% endblock %}

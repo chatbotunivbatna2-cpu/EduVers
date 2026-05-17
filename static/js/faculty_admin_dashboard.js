@@ -81,6 +81,19 @@ async function loadStats() {
         set('activeKnowledge', `${d.knowledge_count || 0} entries`);
         set('ovFacDepartments', d.departments_count || 0);
         set('ovFacUsers', d.users_count || 0);
+
+        const verified = d.verified_users_count || 0;
+        const unverified = Math.max((d.users_count || 0) - verified, 0);
+        AdminCharts.doughnut('userDistributionChart',
+            ['Verified', 'Unverified'],
+            [verified, unverified],
+            ['#10b981', '#f59e0b']
+        );
+        AdminCharts.horizontalBar('structureChart',
+            ['Departments', 'Knowledge', 'Users'],
+            [d.departments_count || 0, d.knowledge_count || 0, d.users_count || 0],
+            ['#6366f1', '#06b6d4', '#10b981']
+        );
     } catch (e) { }
 }
 

@@ -82,6 +82,19 @@ async function loadStats() {
         set('verifiedUsers', `${d.verified_users_count || 0} verified`);
         set('verifiedCount', d.verified_users_count || 0);
         set('unverifiedCount', `${(d.users_count || 0) - (d.verified_users_count || 0)} unverified`);
+
+        const verified = d.verified_users_count || 0;
+        const unverified = Math.max((d.users_count || 0) - verified, 0);
+        AdminCharts.doughnut('userDistributionChart',
+            ['Verified', 'Unverified'],
+            [verified, unverified],
+            ['#10b981', '#f59e0b']
+        );
+        AdminCharts.horizontalBar('structureChart',
+            ['Knowledge', 'Users'],
+            [d.knowledge_count || 0, d.users_count || 0],
+            ['#6366f1', '#10b981']
+        );
     } catch (e) { }
 }
 

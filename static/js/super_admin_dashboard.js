@@ -60,8 +60,6 @@ function switchTab(tabName, btn) {
     btn.classList.add('active');
 }
 
-let userDistChart = null;
-let structChart = null;
 
 async function loadStats() {
     try {
@@ -89,102 +87,23 @@ async function loadStats() {
 }
 
 function renderCharts(d) {
-    if (typeof Chart === 'undefined') return;
-
-    const isDark = document.documentElement.classList.contains('dark');
-    const textColor = isDark ? '#cbd5e1' : '#475569';
-    const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
-
-    // -- Doughnut: User Distribution --
-    const students = (d.users_count || 0) - (d.admins_count || 0);
+    const students = Math.max((d.users_count || 0) - (d.admins_count || 0), 0);
     const verified = d.verified_users_count || 0;
-    const unverified = (d.users_count || 0) - verified;
+    const unverified = Math.max((d.users_count || 0) - verified, 0);
 
-    const ctx1 = document.getElementById('userDistributionChart');
-    if (ctx1) {
-        if (userDistChart) userDistChart.destroy();
-        userDistChart = new Chart(ctx1, {
-            type: 'doughnut',
-            data: {
-                labels: ['Students', 'Admins', 'Unverified'],
-                datasets: [{
-                    data: [Math.max(students - unverified, 0), d.admins_count || 0, unverified],
-                    backgroundColor: ['#3b82f6', '#8b5cf6', '#f59e0b'],
-                    borderColor: isDark ? '#1e293b' : '#ffffff',
-                    borderWidth: 3,
-                    hoverOffset: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                cutout: '62%',
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { color: textColor, padding: 16, font: { size: 13, family: 'Inter' }, usePointStyle: true, pointStyleWidth: 10 }
-                    }
-                }
-            }
-        });
-    }
+    AdminCharts.doughnut('userDistributionChart',
+        ['Students', 'Admins', 'Unverified'],
+        [Math.max(students - unverified, 0), d.admins_count || 0, unverified],
+        ['#3b82f6', '#8b5cf6', '#f59e0b']
+    );
 
-    // -- Bar: Structure Overview --
-    const ctx2 = document.getElementById('structureChart');
-    if (ctx2) {
-        if (structChart) structChart.destroy();
-
-        const activeUnis = d.active_universities_count || 0;
-        const inactiveUnis = (d.universities_count || 0) - activeUnis;
-        const activeFacs = d.active_faculties_count || 0;
-        const inactiveFacs = (d.faculties_count || 0) - activeFacs;
-        const activeDepts = d.active_departments_count || 0;
-        const inactiveDepts = (d.departments_count || 0) - activeDepts;
-
-        structChart = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Universities', 'Faculties', 'Departments'],
-                datasets: [
-                    {
-                        label: 'Active',
-                        data: [activeUnis, activeFacs, activeDepts],
-                        backgroundColor: '#10b981',
-                        borderRadius: 6,
-                        barPercentage: 0.6
-                    },
-                    {
-                        label: 'Inactive',
-                        data: [inactiveUnis, inactiveFacs, inactiveDepts],
-                        backgroundColor: '#ef4444',
-                        borderRadius: 6,
-                        barPercentage: 0.6
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { color: textColor, padding: 16, font: { size: 13, family: 'Inter' }, usePointStyle: true, pointStyleWidth: 10 }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: { color: textColor, font: { size: 12, family: 'Inter' } },
-                        grid: { display: false }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        ticks: { color: textColor, font: { size: 12, family: 'Inter' }, stepSize: 1 },
-                        grid: { color: gridColor }
-                    }
-                }
-            }
-        });
-    }
+    AdminCharts.bar('structureChart',
+        ['Universities', 'Faculties', 'Departments'],
+        [
+            { label: 'Active', data: [d.active_universities_count || 0, d.active_faculties_count || 0, d.active_departments_count || 0], color: '#10b981' },
+            { label: 'Inactive', data: [(d.universities_count || 0) - (d.active_universities_count || 0), (d.faculties_count || 0) - (d.active_faculties_count || 0), (d.departments_count || 0) - (d.active_departments_count || 0)], color: '#ef4444' },
+        ]
+    );
 }
 
 async function loadUniversities() {
