@@ -14,7 +14,7 @@ from utils.decorators import (
     faculty_admin_required,
     department_admin_required,
 )
-from sqlalchemy import func
+from sqlalchemy import func, or_
 from models.faculty import Faculty
 from services.knowledge_service import knowledge_service
 
@@ -49,23 +49,51 @@ def _scoped_knowledge_query(current_user):
     if current_user.is_super_admin:
         return q
     if current_user.is_university_admin:
-        return q.filter_by(
-            university_id=current_user.university_id,
-            faculty_id=None,
-            department_id=None
-        )
+        # University admin can see all knowledge entries for their university
+        return q.filter_by(university_id=current_user.university_id)
     if current_user.is_faculty_admin:
-        return q.filter_by(
-            university_id=current_user.university_id,
-            faculty_id=current_user.faculty_id,
-            department_id=None
+        # Faculty admin can see faculty-level and university-level knowledge
+        return q.filter(
+            KnowledgeBase.university_id == current_user.university_id,
+            or_(
+                KnowledgeBase.faculty_id == current_user.faculty_id,
+                db.and_(
+                    KnowledgeBase.faculty_id.is_(None),
+                    KnowledgeBase.department_id.is_(None)
+                )
+            )
         )
     if current_user.is_department_admin:
-        return q.filter_by(
-            university_id=current_user.university_id,
-            department_id=current_user.department_id
+        # Department admin can see department-level, faculty-level and university-level knowledge
+        return q.filter(
+            KnowledgeBase.university_id == current_user.university_id,
+            or_(
+                KnowledgeBase.department_id == current_user.department_id,
+                db.and_(
+                    KnowledgeBase.faculty_id == current_user.faculty_id,
+                    KnowledgeBase.department_id.is_(None)
+                ),
+                db.and_(
+                    KnowledgeBase.faculty_id.is_(None),
+                    KnowledgeBase.department_id.is_(None)
+                )
+            )
         )
     return q.filter(False)
+
+def _scoped_admins_count(current_user):
+    """Count admins visible to the current user based on their role scope."""
+    admin_roles = ['super_admin', 'university_admin', 'faculty_admin', 'department_admin']
+    q = User.query.filter(User.role.in_(admin_roles))
+    if current_user.is_super_admin:
+        return q.count()
+    if current_user.is_university_admin:
+        return q.filter_by(university_id=current_user.university_id).count()
+    if current_user.is_faculty_admin:
+        return q.filter_by(faculty_id=current_user.faculty_id).count()
+    if current_user.is_department_admin:
+        return q.filter_by(department_id=current_user.department_id).count()
+    return 0
 
 @admin_bp.route('/')
 @admin_required
@@ -147,9 +175,7 @@ def dashboard_stats():
             'users_count': user_query.count(),
             'verified_users_count': user_query.filter_by(is_verified=True).count(),
             'students_count': user_query.count(),
-            'admins_count': User.query.filter(
-                User.role.in_(['super_admin', 'university_admin', 'faculty_admin', 'department_admin'])
-            ).count(),
+            'admins_count': _scoped_admins_count(current_user),
             'knowledge_count': kb_query.count(),
         }), 200
 
@@ -243,6 +269,10 @@ def delete_user(user_id):
 
     if user.id == session.get('user_id'):
         return jsonify({'error': 'Cannot delete your own account'}), 400
+
+    # Prevent deleting users with equal or higher role level
+    if User.ROLE_HIERARCHY.get(user.role, 0) >= User.ROLE_HIERARCHY.get(current_user.role, 0):
+        return jsonify({'error': 'Cannot delete a user at the same or higher role level'}), 403
 
     if current_user.is_university_admin and user.university_id != current_user.university_id:
         return jsonify({'error': 'Access denied'}), 403
@@ -368,6 +398,16 @@ def get_admin(admin_id):
     admin = db.session.get(User, admin_id)
     if not admin:
         return jsonify({'error': 'Admin not found'}), 404
+
+    # Scope check: admins can only view admins within their scope
+    if not current_user.is_super_admin:
+        if current_user.is_university_admin and admin.university_id != current_user.university_id:
+            return jsonify({'error': 'Access denied'}), 403
+        if current_user.is_faculty_admin and admin.faculty_id != current_user.faculty_id:
+            return jsonify({'error': 'Access denied'}), 403
+        if current_user.is_department_admin and admin.department_id != current_user.department_id:
+            return jsonify({'error': 'Access denied'}), 403
+
     return jsonify({'admin': admin.to_dict()}), 200
 
 @admin_bp.route('/admins', methods=['POST'])
@@ -638,7 +678,7 @@ def create_faculty(current_user):
         return jsonify({'error': 'Could not create faculty: ' + str(e)}), 500
 
 @admin_bp.route('/faculties/<int:faculty_id>', methods=['PUT'])
-@university_admin_required
+@faculty_admin_required
 def update_faculty(faculty_id, current_user):
     faculty = db.session.get(Faculty, faculty_id)
     if not faculty:
