@@ -101,6 +101,10 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
 
     const errorDiv = document.getElementById('errorMessage');
     const successDiv = document.getElementById('successMessage');
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+
+    // Prevent double-submit
+    if (submitBtn.disabled) return;
 
     if (!document.getElementById('agreeTerms').checked) {
         errorDiv.textContent = t('signup.error_terms');
@@ -152,6 +156,11 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
         student_id: document.getElementById('student_id').value
     };
 
+    // Disable button to prevent double-submit
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '...';
+
     try {
         const response = await fetch('/auth/signup', {
             method: 'POST',
@@ -170,10 +179,16 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
             successDiv.style.display = 'none';
             errorDiv.textContent = data.error || t('signup.error_default');
             errorDiv.style.display = 'block';
+            // Re-enable button on error so user can retry
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
         }
     } catch (error) {
         errorDiv.textContent = t('signup.error_network');
         errorDiv.style.display = 'block';
+        // Re-enable button on network error
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
     }
 });
 
