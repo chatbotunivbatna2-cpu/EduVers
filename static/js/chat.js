@@ -165,13 +165,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function formatMessageContent(content) {
+    // Code blocks first (protect from other formatting)
+    const codeBlocks = [];
+    content = content.replace(/```(\w+)?\n?([\s\S]+?)```/g, (_, lang, code) => {
+      const idx = codeBlocks.length;
+      codeBlocks.push(`<pre><code class="language-${lang || 'plaintext'}">${escapeHtml(code.trim())}</code></pre>`);
+      return `%%CODEBLOCK_${idx}%%`;
+    });
+    const inlineCodes = [];
+    content = content.replace(/`([^`]+)`/g, (_, code) => {
+      const idx = inlineCodes.length;
+      inlineCodes.push(`<code>${escapeHtml(code)}</code>`);
+      return `%%INLINECODE_${idx}%%`;
+    });
+
+    // Convert headers to bold text (### before ## before #)
+    content = content.replace(/^#{1,6}\s+(.+)$/gm, '<strong>$1</strong>');
+
+    // Bold and italic
     content = content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    content = content.replace(/\*(.+?)\*/g, '<em>$1</em>');
-    content = content.replace(/```(\w+)?\n?([\s\S]+?)```/g, (_, lang, code) =>
-      `<pre><code class="language-${lang || 'plaintext'}">${escapeHtml(code.trim())}</code></pre>`);
-    content = content.replace(/`([^`]+)`/g, '<code>$1</code>');
+    content = content.replace(/\*(.+?)\*/g, '$1');
+
+    // Unordered lists (- item or * item)
+    content = content.replace(/^[\-\*]\s+(.+)$/gm, '- $1');
+
+    // Line breaks
     content = content.replace(/\n/g, '<br>');
-    content = content.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+
+    // Links
+    content = content.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+
+    // Restore code blocks
+    codeBlocks.forEach((block, i) => { content = content.replace(`%%CODEBLOCK_${i}%%`, block); });
+    inlineCodes.forEach((code, i) => { content = content.replace(`%%INLINECODE_${i}%%`, code); });
+
     return content;
   }
 
