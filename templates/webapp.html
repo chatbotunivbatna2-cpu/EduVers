@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>اختيار الجامعة</title>
+    <title>EduVerse AI</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
@@ -69,60 +69,134 @@
             position: relative;
         }
         .select-wrapper::after {
-            content: '▼';
+            content: '\25BC';
             font-size: 12px;
             color: var(--tg-theme-hint-color, #999999);
             position: absolute;
-            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none;
+        }
+        /* LTR arrow on right, RTL arrow on left */
+        html[dir="rtl"] .select-wrapper::after {
+            left: 15px;
+            right: auto;
+        }
+        html[dir="ltr"] .select-wrapper::after {
+            right: 15px;
+            left: auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h2>إعداد الملف الشخصي 🎓</h2>
-            <p>الرجاء اختيار جامعتك وكليتك للمتابعة</p>
+            <h2 id="page-title"></h2>
+            <p id="page-subtitle"></p>
         </div>
 
         <div class="form-group">
-            <label for="university">الجامعة:</label>
+            <label for="university" id="uni-label"></label>
             <div class="select-wrapper">
                 <select id="university">
-                    <option value="">-- يرجى اختيار الجامعة --</option>
+                    <option value=""></option>
                 </select>
             </div>
-            <div id="uni-loading" class="loading">جاري التحميل...</div>
+            <div id="uni-loading" class="loading"></div>
         </div>
 
         <div class="form-group" id="faculty-group" style="display: none;">
-            <label for="faculty">الكلية:</label>
+            <label for="faculty" id="fac-label"></label>
             <div class="select-wrapper">
                 <select id="faculty">
-                    <option value="">-- يرجى اختيار الكلية --</option>
+                    <option value=""></option>
                 </select>
             </div>
-            <div id="fac-loading" class="loading">جاري التحميل...</div>
+            <div id="fac-loading" class="loading"></div>
         </div>
 
         <div class="form-group" id="department-group" style="display: none;">
-            <label for="department">القسم (اختياري):</label>
+            <label for="department" id="dept-label"></label>
             <div class="select-wrapper">
                 <select id="department">
-                    <option value="">-- تخطي (بدون قسم محدد) --</option>
+                    <option value=""></option>
                 </select>
             </div>
-            <div id="dept-loading" class="loading">جاري التحميل...</div>
+            <div id="dept-loading" class="loading"></div>
         </div>
     </div>
 
     <script>
+        const TEXTS = {
+            ar: {
+                title: "اعداد الملف الشخصي",
+                subtitle: "الرجاء اختيار جامعتك وكليتك للمتابعة",
+                uni_label: "الجامعة:",
+                fac_label: "الكلية:",
+                dept_label: "القسم (اختياري):",
+                select_uni: "-- يرجى اختيار الجامعة --",
+                select_fac: "-- يرجى اختيار الكلية --",
+                no_fac: "-- لا توجد كليات مسجلة --",
+                skip_dept: "-- تخطي (بدون قسم محدد) --",
+                loading: "جاري التحميل...",
+                load_error: "حدث خطا في التحميل",
+                confirm: "تاكيد الاختيار",
+            },
+            en: {
+                title: "Profile Setup",
+                subtitle: "Please select your university and faculty to continue",
+                uni_label: "University:",
+                fac_label: "Faculty:",
+                dept_label: "Department (optional):",
+                select_uni: "-- Please select a university --",
+                select_fac: "-- Please select a faculty --",
+                no_fac: "-- No faculties registered --",
+                skip_dept: "-- Skip (no specific department) --",
+                loading: "Loading...",
+                load_error: "Error loading data",
+                confirm: "Confirm Selection",
+            },
+            fr: {
+                title: "Configuration du profil",
+                subtitle: "Veuillez selectionner votre universite et faculte pour continuer",
+                uni_label: "Universite:",
+                fac_label: "Faculte:",
+                dept_label: "Departement (optionnel):",
+                select_uni: "-- Veuillez selectionner une universite --",
+                select_fac: "-- Veuillez selectionner une faculte --",
+                no_fac: "-- Aucune faculte enregistree --",
+                skip_dept: "-- Passer (pas de departement specifique) --",
+                loading: "Chargement...",
+                load_error: "Erreur de chargement",
+                confirm: "Confirmer la selection",
+            },
+        };
+
+        // Detect language from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang") || "ar";
+        const txt = TEXTS[lang] || TEXTS["ar"];
+
+        // Set page direction
+        if (lang === "ar") {
+            document.documentElement.setAttribute("dir", "rtl");
+            document.documentElement.setAttribute("lang", "ar");
+        } else {
+            document.documentElement.setAttribute("dir", "ltr");
+            document.documentElement.setAttribute("lang", lang);
+        }
+
+        // Apply translations
+        document.getElementById("page-title").textContent = txt.title;
+        document.getElementById("page-subtitle").textContent = txt.subtitle;
+        document.getElementById("uni-label").textContent = txt.uni_label;
+        document.getElementById("fac-label").textContent = txt.fac_label;
+        document.getElementById("dept-label").textContent = txt.dept_label;
+
         const tg = window.Telegram.WebApp;
         tg.expand();
         
-        tg.MainButton.setText("تأكيد الاختيار ✅");
+        tg.MainButton.setText(txt.confirm);
         tg.MainButton.color = tg.themeParams.button_color || '#2481cc';
         tg.MainButton.textColor = tg.themeParams.button_text_color || '#ffffff';
         tg.MainButton.hide();
@@ -134,7 +208,13 @@
         const facGroup = document.getElementById('faculty-group');
         const deptGroup = document.getElementById('department-group');
 
+        // Set default options
+        uniSelect.querySelector('option').textContent = txt.select_uni;
+        facSelect.querySelector('option').textContent = txt.select_fac;
+        deptSelect.querySelector('option').textContent = txt.skip_dept;
+
         // Load Universities
+        document.getElementById('uni-loading').textContent = txt.loading;
         document.getElementById('uni-loading').style.display = 'block';
         fetch('/webapp/api/universities')
             .then(res => res.json())
@@ -142,43 +222,44 @@
                 data.forEach(u => {
                     const option = document.createElement('option');
                     option.value = u.id;
-                    option.textContent = `🏛 ${u.name} ${u.city ? '('+u.city+')' : ''}`;
+                    option.textContent = u.name + (u.city ? ' (' + u.city + ')' : '');
                     uniSelect.appendChild(option);
                 });
                 document.getElementById('uni-loading').style.display = 'none';
             })
             .catch(err => {
                 console.error('Error loading universities:', err);
-                document.getElementById('uni-loading').textContent = '❌ حدث خطأ في التحميل';
+                document.getElementById('uni-loading').textContent = txt.load_error;
             });
 
         uniSelect.addEventListener('change', function() {
             const uniId = this.value;
             tg.MainButton.hide();
-            facSelect.innerHTML = '<option value="">-- يرجى اختيار الكلية --</option>';
-            deptSelect.innerHTML = '<option value="">-- تخطي (بدون قسم محدد) --</option>';
+            facSelect.innerHTML = '<option value="">' + txt.select_fac + '</option>';
+            deptSelect.innerHTML = '<option value="">' + txt.skip_dept + '</option>';
             deptGroup.style.display = 'none';
             
             if (uniId) {
                 facGroup.style.display = 'block';
+                document.getElementById('fac-loading').textContent = txt.loading;
                 document.getElementById('fac-loading').style.display = 'block';
-                fetch(`/webapp/api/faculties/${uniId}`)
+                fetch('/webapp/api/faculties/' + uniId)
                     .then(res => res.json())
                     .then(data => {
                         data.forEach(f => {
                             const option = document.createElement('option');
                             option.value = f.id;
-                            option.textContent = `🏫 ${f.name}`;
+                            option.textContent = f.name;
                             facSelect.appendChild(option);
                         });
                         document.getElementById('fac-loading').style.display = 'none';
                         if (data.length === 0) {
-                            facSelect.innerHTML = '<option value="">-- لا توجد كليات مسجلة --</option>';
-                            tg.MainButton.show(); // Can submit if no faculties
+                            facSelect.innerHTML = '<option value="">' + txt.no_fac + '</option>';
+                            tg.MainButton.show();
                         }
                     })
                     .catch(err => {
-                        document.getElementById('fac-loading').textContent = '❌ حدث خطأ';
+                        document.getElementById('fac-loading').textContent = txt.load_error;
                     });
             } else {
                 facGroup.style.display = 'none';
@@ -187,18 +268,19 @@
 
         facSelect.addEventListener('change', function() {
             const facId = this.value;
-            deptSelect.innerHTML = '<option value="">-- تخطي (بدون قسم محدد) --</option>';
+            deptSelect.innerHTML = '<option value="">' + txt.skip_dept + '</option>';
             
             if (facId) {
                 deptGroup.style.display = 'block';
+                document.getElementById('dept-loading').textContent = txt.loading;
                 document.getElementById('dept-loading').style.display = 'block';
-                fetch(`/webapp/api/departments/${facId}`)
+                fetch('/webapp/api/departments/' + facId)
                     .then(res => res.json())
                     .then(data => {
                         data.forEach(d => {
                             const option = document.createElement('option');
                             option.value = d.id;
-                            option.textContent = `📂 ${d.name}`;
+                            option.textContent = d.name;
                             deptSelect.appendChild(option);
                         });
                         document.getElementById('dept-loading').style.display = 'none';
