@@ -394,6 +394,8 @@ const TRANSLATIONS = {
     "super.add_admin": "+ Create Admin",
     "super.type": "Type",
     "super.created": "Created",
+    "super.user_distribution": "User Distribution",
+    "super.structure_overview": "Structure Overview",
   },
 
   ar: {
@@ -793,6 +795,8 @@ const TRANSLATIONS = {
     "super.add_admin": "+ إنشاء مشرف",
     "super.type": "النوع",
     "super.created": "تاريخ الإنشاء",
+    "super.user_distribution": "توزيع المستخدمين",
+    "super.structure_overview": "نظرة عامة على الهيكلة",
   }
 };
 
