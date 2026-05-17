@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, session, render_template
+from flask import Blueprint, request, jsonify, session, render_template, redirect, url_for
 from models.user import User
 from models.university import University
 from models.faculty import Faculty
@@ -16,6 +16,8 @@ log = logging.getLogger(__name__)
 @limiter.limit("20 per hour", methods=["POST"])
 def signup():
     if request.method == 'GET':
+        if 'user_id' in session:
+            return redirect('/admin' if session.get('is_admin') else '/chat/')
         return render_template('auth/signup.html')
 
     try:
@@ -100,6 +102,8 @@ def signup():
 @limiter.limit("10 per minute;50 per hour")
 def login():
     if request.method == 'GET':
+        if 'user_id' in session:
+            return redirect('/admin' if session.get('is_admin') else '/chat/')
         return render_template('auth/login.html')
 
     data = request.get_json() if request.is_json else request.form
