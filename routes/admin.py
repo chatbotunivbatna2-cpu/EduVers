@@ -22,7 +22,6 @@ admin_bp = Blueprint('admin', __name__)
 get_current_user = _get_user
 
 def _scoped_faculty_query(current_user):
-    # Search faculties list based on the admin's role
     q = Faculty.query
     if current_user.is_super_admin:
         return q
@@ -49,10 +48,8 @@ def _scoped_knowledge_query(current_user):
     if current_user.is_super_admin:
         return q
     if current_user.is_university_admin:
-        # University admin can see all knowledge entries for their university
         return q.filter_by(university_id=current_user.university_id)
     if current_user.is_faculty_admin:
-        # Faculty admin can see faculty-level and university-level knowledge
         return q.filter(
             KnowledgeBase.university_id == current_user.university_id,
             or_(
@@ -64,7 +61,6 @@ def _scoped_knowledge_query(current_user):
             )
         )
     if current_user.is_department_admin:
-        # Department admin can see department-level, faculty-level and university-level knowledge
         return q.filter(
             KnowledgeBase.university_id == current_user.university_id,
             or_(
@@ -270,7 +266,6 @@ def delete_user(user_id):
     if user.id == session.get('user_id'):
         return jsonify({'error': 'Cannot delete your own account'}), 400
 
-    # Prevent deleting users with equal or higher role level
     if User.ROLE_HIERARCHY.get(user.role, 0) >= User.ROLE_HIERARCHY.get(current_user.role, 0):
         return jsonify({'error': 'Cannot delete a user at the same or higher role level'}), 403
 
@@ -399,7 +394,6 @@ def get_admin(admin_id):
     if not admin:
         return jsonify({'error': 'Admin not found'}), 404
 
-    # Scope check: admins can only view admins within their scope
     if not current_user.is_super_admin:
         if current_user.is_university_admin and admin.university_id != current_user.university_id:
             return jsonify({'error': 'Access denied'}), 403
@@ -489,7 +483,6 @@ def delete_admin(admin_id):
     if admin.id == current_user.id:
         return jsonify({'error': 'Cannot delete your own account'}), 400
 
-    # Ensure admin cannot delete another admin of equal or higher level
     if User.ROLE_HIERARCHY.get(admin.role, 0) >= User.ROLE_HIERARCHY.get(current_user.role, 0):
         return jsonify({'error': 'Cannot delete a user at the same or higher role level'}), 403
 
@@ -955,7 +948,6 @@ def update_knowledge(knowledge_id, current_user):
             return jsonify({'error': 'Access denied'}), 403
 
     data = request.get_json()
-    # Prevent changing scope fields
     for blocked_field in ('university_id', 'faculty_id', 'department_id'):
         data.pop(blocked_field, None)
 

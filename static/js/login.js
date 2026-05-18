@@ -1,4 +1,3 @@
-// If already logged in, redirect immediately
 (async () => {
     try {
         const res = await fetch('/auth/me');

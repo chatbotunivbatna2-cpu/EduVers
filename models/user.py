@@ -29,7 +29,6 @@ class User(db.Model):
 
     chats = db.relationship('Chat', backref='user', lazy='dynamic', cascade='all, delete-orphan')
 
-    # Role hierarchy — each role has a permission level
     ROLE_HIERARCHY = {
         'super_admin': 5,
         'university_admin': 4,

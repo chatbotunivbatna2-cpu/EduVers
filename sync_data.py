@@ -129,7 +129,6 @@ def sync_all():
         db.session.commit()
         logger.info(f'[sync_data]  Knowledge Base: {kb_count} entries synced')
 
-        # Ensure admin accounts exist
         _ensure_admin_accounts(uni_refs, refs)
 
         logger.info('[sync_data] Data sync complete!')
@@ -143,7 +142,6 @@ def _ensure_admin_accounts(uni_refs, refs):
     """Create default admin accounts if they don't exist."""
     created = 0
 
-    # Super Admin
     if not User.query.filter_by(email='superadmin@system.com').first():
         u = User(username='superadmin', email='superadmin@system.com',
                  full_name='Super Admin', is_verified=True, role='super_admin')
@@ -151,12 +149,10 @@ def _ensure_admin_accounts(uni_refs, refs):
         db.session.add(u)
         created += 1
 
-    # Batna 2 admins
     batna2 = uni_refs.get('batna2')
     if batna2:
         domain = 'univ-batna2.dz'
 
-        # University Admin
         if not User.query.filter_by(email=f'admin@{domain}').first():
             u = User(username='admin_batna2', email=f'admin@{domain}',
                      full_name='Batna 2 Admin', university_id=batna2.id,
@@ -165,7 +161,6 @@ def _ensure_admin_accounts(uni_refs, refs):
             db.session.add(u)
             created += 1
 
-        # Faculty Admins
         for code, obj in refs.items():
             if isinstance(obj, Faculty):
                 fname = f'fadmin_{code.lower()}'
@@ -179,7 +174,6 @@ def _ensure_admin_accounts(uni_refs, refs):
                     db.session.add(u)
                     created += 1
 
-                # Department Admins
                 for code2, obj2 in refs.items():
                     if isinstance(obj2, Department) and obj2.faculty_id == obj.id:
                         dname = f'dadmin_{code2.lower()}'
@@ -194,7 +188,6 @@ def _ensure_admin_accounts(uni_refs, refs):
                             db.session.add(u)
                             created += 1
 
-        # Test Student
         if not User.query.filter_by(email=f'student@{domain}').first():
             fac_ref = refs.get('MI_BATNA2')
             dept_ref = refs.get('CS_BATNA2')

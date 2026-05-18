@@ -5,12 +5,6 @@ def validate_email(email):
     return bool(re.match(pattern, email))
 
 def validate_password(password):
-    # Validate password strength:
-    # - At least 8 characters
-    # - At least one uppercase letter (A-Z)
-    # - At least one lowercase letter (a-z)
-    # - At least one digit (0-9)
-    # - At least one special character (!@#$%^&*...)
     if len(password) < 8:
         return False, 'Password must be at least 8 characters long'
     if not re.search(r'[A-Z]', password):

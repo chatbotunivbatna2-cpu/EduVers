@@ -34,7 +34,6 @@ class Config:
     GEMINI_MODEL = _require('GEMINI_MODEL')
     GEMINI_MAX_TOKENS = int(_require('GEMINI_MAX_TOKENS'))
 
-    # EMAIL
     BREVO_API_KEY = _require('BREVO_API_KEY')
     BREVO_SENDER_EMAIL = _require('BREVO_SENDER_EMAIL')
     BREVO_SENDER_NAME = os.getenv('BREVO_SENDER_NAME', 'EduVerse AI Chatbot')

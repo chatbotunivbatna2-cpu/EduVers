@@ -57,7 +57,6 @@ const TRANSLATIONS = {
     "footer.tagline": "Empowering students through intelligent conversation",
     "footer.copy": "© 2026 Algerian Universities. All rights reserved.",
 
-    // login
     "login.back": "Back to Home",
     "login.title": "Welcome Back",
     "login.subtitle": "Log in to continue to EduVerse AI",
@@ -106,7 +105,6 @@ const TRANSLATIONS = {
     "signup.error_terms": "You must agree to the Terms of Service and Privacy Policy.",
     "signup.error_default": "Signup failed",
     "signup.error_network": "An error occurred. Please try again.",
-    // dashboard uni admin
     "adm.title": "Admin Dashboard",
     "adm.tab_overview": "Overview",
     "adm.tab_faculties": "Faculties",
@@ -231,7 +229,6 @@ const TRANSLATIONS = {
     "form.save_admin": "Save Admin",
 
 
-    // chat
     "chat.new_chat": "New Chat",
     "chat.send": "Send",
     "chat.logout": "Logout",
@@ -294,7 +291,6 @@ const TRANSLATIONS = {
     "admin.status": "Status",
     "admin.add": "+ Add",
 
-    // admin
     "admin.title": "Admin Dashboard",
     "admin.tab_overview": "Overview",
     "admin.tab_users": "Users",

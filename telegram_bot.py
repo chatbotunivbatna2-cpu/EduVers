@@ -281,7 +281,6 @@ class Session:
     def add_turn(self, user_msg, bot_msg):
         self.history.append({"role": "user", "content": user_msg})
         self.history.append({"role": "assistant", "content": bot_msg})
-        # Remove the old records to preserve memory
         if len(self.history) > MAX_HIST * 2:
             self.history = self.history[-(MAX_HIST * 2):]
         self.msg_count += 1
@@ -315,7 +314,6 @@ class Session:
         )
 
 
-# Store sessions in a standard dictionary
 _sessions: dict = {}
 
 flask_app = None
@@ -388,7 +386,6 @@ def lang_keyboard():
     return InlineKeyboardMarkup(rows)
 
 def build_response(session, msg):
-    # Logic Order: FAQ first, if not found then KB, if still not found then AI
     with app_ctx():
         uni_ctx = knowledge_service.get_university_context(session.uni_id)
         uni_obj = db.session.get(University, session.uni_id)
@@ -430,7 +427,6 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid = user.id
     s = get_session(uid)
 
-    # If user already has a complete session, welcome them back
     if s.lang_ready and s.ready:
         L = s.lang
         name = f", {user.first_name}" if user.first_name else ""
@@ -455,10 +451,8 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.info("User %s returned with active session.", uid)
         return
 
-    # New user or incomplete session - start fresh
     new_session(uid)
 
-    # First step: language selection
     await update.message.reply_text(
         "*EduVerse AI*\n\n"
         "مرحبا / Hello / Bonjour\n\n"
@@ -484,7 +478,6 @@ async def _send_welcome(update_or_query, uid, is_callback=False):
             await update_or_query.message.reply_text(msg)
         return
 
-    # Append lang parameter to webapp URL
     separator = "&" if "?" in webapp_url else "?"
     webapp_url_with_lang = f"{webapp_url}{separator}lang={L}"
 
@@ -507,7 +500,6 @@ async def _send_welcome(update_or_query, uid, is_callback=False):
             text,
             parse_mode=ParseMode.MARKDOWN,
         )
-        # Send a separate message with the reply keyboard
         chat_id = update_or_query.message.chat_id
         from telegram import Bot
         bot = update_or_query.get_bot()
@@ -741,7 +733,6 @@ async def on_lang(q, uid, code):
     logger.info("User %s lang set to %s", uid, code)
 
     if first_time:
-        # First time selecting language during /start flow - send welcome
         await _send_welcome(q, uid, is_callback=True)
     else:
         await q.edit_message_text(
@@ -818,7 +809,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         resp, src = build_response(s, msg)
         s.add_turn(msg, resp)
         
-        # Clean markdown to avoid Telegram ParseMode.MARKDOWN errors
         clean_resp = resp.replace('**', '*')
         clean_resp = clean_resp.replace('\n* ', '\n- ')
         clean_resp = clean_resp.replace(' * ', ' - ')

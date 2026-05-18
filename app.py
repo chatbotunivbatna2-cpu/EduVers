@@ -6,7 +6,6 @@ from flask import Flask, render_template, jsonify, session, redirect
 from config import get_config
 from extensions import db, limiter, csrf
 
-# Create app
 def create_app(config_class=None):
     app = Flask(__name__)
 
@@ -25,7 +24,6 @@ def create_app(config_class=None):
     from routes.admin import admin_bp
     from routes.webapp import webapp_bp
 
-    # Must be CSRF exempt, otherwise external POST requests will fail
     csrf.exempt(auth_bp)
     csrf.exempt(chat_bp)
     csrf.exempt(admin_bp)
@@ -45,7 +43,6 @@ def create_app(config_class=None):
     @app.after_request
     def add_security_headers(resp):
         resp.headers['X-Content-Type-Options'] = 'nosniff'
-        # Telegram Web Apps need to be displayed in an iframe
         from flask import request
         if not request.path.startswith('/webapp'):
             resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
@@ -85,11 +82,9 @@ def create_app(config_class=None):
         db.create_all()
         log.info('Database tables ready.')
 
-        # Auto-sync seed data on every startup
         from sync_data import sync_all
         sync_all()
 
-        # Reload FAQs from the updated JSON file
         from services.faq_service import faq_matcher, load_faqs
         faq_matcher.faqs = load_faqs()
         log.info(f'FAQs reloaded: {len(faq_matcher.faqs)} entries')

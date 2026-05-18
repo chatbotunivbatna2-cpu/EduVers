@@ -504,7 +504,6 @@ async function deleteFacultyAdmin(id, username) {
     } catch (e) { UIDialogs.toast(e.message, 'error'); }
 }
 
-// help
 async function logout() { await fetch('/auth/logout', { method: 'POST' }); window.location.href = '/auth/login'; }
 function esc(str) { return String(str).replace(/'/g, "\\'"); }
 function setBtnLoading(btn, loading) { if (!btn) return; btn.disabled = loading; if (loading) { btn._orig = btn.textContent; btn.textContent = 'Saving...'; } else { btn.textContent = btn._orig || 'Save'; } }

@@ -369,7 +369,6 @@ async function loadDeptAdmins() {
 }
 
 function openAddDeptAdminForm() {
-    // A department is required before creating an admin
     if (!departments.length) {
         UIDialogs.toast('Please create a department first before adding a department admin.', 'error');
         return;

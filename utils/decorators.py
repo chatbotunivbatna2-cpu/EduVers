@@ -43,7 +43,6 @@ def admin_required(f):
     return decorated
 
 def require_role(min_role):
-    # User must have at least the specified minimum role level
     def wrapper(f):
         @wraps(f)
         def decorated(*args, **kwargs):
