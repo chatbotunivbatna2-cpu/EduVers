@@ -1,29 +1,10 @@
-# Build stage
-FROM python:3.11-slim AS builder
-
-WORKDIR /app
-
-# install build dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc libpq-dev && \
-    rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
-
-
-# Runtime stage
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# runtime dependencies only 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends libpq5 curl && \
-    rm -rf /var/lib/apt/lists/*
-
-# copy installed Python packages from builder
-COPY --from=builder /install /usr/local
+# install pip dependencies (psycopg2-binary = no gcc needed)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # copy application code
 COPY . .
@@ -35,9 +16,9 @@ USER appuser
 # expose Flask port
 EXPOSE 5000
 
-# health check
+# health check (uses python instead of curl to avoid extra apt packages)
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:5000/health || exit 1
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
 
 # run with gunicorn in production
 CMD gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 3 --timeout 120 app:app
